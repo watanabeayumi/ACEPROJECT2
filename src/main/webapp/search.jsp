@@ -23,12 +23,13 @@
       <td>6/21</td>
 </tr>
 <tr>
+      <td></td>
+      <td>〇</td>
+      <td>×</td>
       <td>〇</td>
       <td>〇</td>
       <td>×</td>
       <td>〇</td>
-      <td>〇</td>
-      <td>×</td>
       <td>〇</td>
 </tr>
 </table>

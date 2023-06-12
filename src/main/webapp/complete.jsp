@@ -7,6 +7,7 @@
 <title>コンシェルジュ予約</title>
 </head>
 <body>
+
 <p>登録できました</p>
 </body>
 </html>

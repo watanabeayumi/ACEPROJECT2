@@ -25,6 +25,9 @@ a {
   /*リンクの文字色をグレイに*/
   color:gray;
 }
+table{
+        margin: auto;
+    }
 div{
 float:inline-start;
 padding:50px;

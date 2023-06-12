@@ -11,7 +11,8 @@
 
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
-<table border="1">
+<table id="table" border="1">
+
 <tr>
       <td>日付</td>
 　　  <td>6/15</td>
@@ -21,7 +22,7 @@
       <td>6/19</td>
       <td>6/20</td>
       <td>6/21</td>
-</tr>
+</tr> 
 <tr>
       <td></td>
       <td>〇</td>

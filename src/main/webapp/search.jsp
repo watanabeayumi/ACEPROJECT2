@@ -7,13 +7,13 @@
 <title>コンシェルジュ予約</title>
 </head>
 <body>
-<table>
+<table border="1">
 <tr>
-　　<th>日付</th>
+　　
 　　
 </tr>
 <tr>
-      <td>時間</td>
+      <td>日付</td>
 　　  <td>6/15</td>
 　　  <td>6/16</td>
       <td>6/17</td>
@@ -23,12 +23,13 @@
       <td>6/21</td>
 </tr>
 <tr>
+      <td></td>
+      <td>〇</td>
+      <td>×</td>
       <td>〇</td>
       <td>〇</td>
       <td>×</td>
       <td>〇</td>
-      <td>〇</td>
-      <td>×</td>
       <td>〇</td>
 </tr>
 </table>

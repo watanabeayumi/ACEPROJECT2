@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>コンシェルジュ予約</title>
 </head>
 <body>
-aa
+<p>登録できました</p>
 </body>
 </html>

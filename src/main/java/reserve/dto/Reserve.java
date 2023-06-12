@@ -1,12 +1,16 @@
 package reserve.dto;
 
+import java.time.LocalDate;
+
 public class Reserve {
 	private String Name;
 	private String TimeName;
 	private Integer Tel;
 	private Integer Address;
 	private Integer TimeCd;
-	private Integer ReserveDate;
+	private LocalDate ReserveDate;
+	
+	
 	
 	public String getName() {
 		return Name;
@@ -38,12 +42,13 @@ public class Reserve {
 	public void setTimeCd(Integer timeCd) {
 		TimeCd = timeCd;
 	}
-	public Integer getReserveDate() {
+	public LocalDate getReserveDate() {
 		return ReserveDate;
 	}
-	public void setReserveDate(Integer reserveDate) {
+	public void setReserveDate(LocalDate reserveDate) {
 		ReserveDate = reserveDate;
 	}
+	
 	
 	
 	

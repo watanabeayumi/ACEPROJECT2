@@ -15,6 +15,7 @@
 <body>
 <h1>ご相談予約・削除受付</h1>
 <h2>ご相談内容をお選びください</h2>
+<hr class="cp_hr07" />
 <div id="">
   <div class="">
     <a href="<c:url value='researveHouse' />" id="" class="button">不動産やおうちの修繕</a><br>

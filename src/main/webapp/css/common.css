@@ -26,6 +26,24 @@ a {
   color:gray;
 }
 div{
-float:left;
+float:inline-start;
 padding:50px;
+font-size: 25px;
+}
+.cp_hr07 {
+	position: relative;
+	overflow: visible;
+	text-align: center;
+	color: #f06292;
+	border-width: 3px 0 0 0;
+	border-style: double;
+	border-color: #f06292;
+}
+.cp_hr07::after {
+	position: absolute;
+	top: -0.7em;
+	left: 50%;
+	display: inline-block;
+	content: '61';
+	background: #ffffff;
 }

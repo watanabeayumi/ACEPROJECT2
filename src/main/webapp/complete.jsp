@@ -8,6 +8,7 @@
 <link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
+<h1>ご相談予約完了</h1>
 
 <p>登録できました</p>
 </body>

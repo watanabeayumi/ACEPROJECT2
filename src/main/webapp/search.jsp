@@ -8,6 +8,8 @@
 <link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
+<h1>ご相談予約</h1>
+<h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <table border="1">
 <tr>
 　　

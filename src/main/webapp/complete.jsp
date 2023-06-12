@@ -8,11 +8,11 @@
 <link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
-<<<<<<< HEAD
+
 <h1>ご相談予約完了</h1>
-=======
+
 <h1>予約完了</h1>
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
+
 
 <p>登録できました</p>
 </body>

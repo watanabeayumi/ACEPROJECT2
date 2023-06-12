@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
+<link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
 

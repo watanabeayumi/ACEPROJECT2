@@ -47,8 +47,8 @@ public class Reserve {
 	}
 	public void setReserveDate(LocalDate reserveDate) {
 		ReserveDate = reserveDate;
-	}
 	
+	}
 	
 	
 	

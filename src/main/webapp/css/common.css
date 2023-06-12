@@ -28,7 +28,7 @@ a {
 div{
 float:inline-start;
 padding:50px;
-font-size: 25px;
+font-size: 30px;
 }
 .cp_hr07 {
 	position: relative;
@@ -44,6 +44,6 @@ font-size: 25px;
 	top: -0.7em;
 	left: 50%;
 	display: inline-block;
-	content: '61';
+	content: '★';
 	background: #ffffff;
 }

@@ -17,7 +17,10 @@ public class ReserveHouseServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		
 		//ReseaveDAOから明日の予約情報を持ってくる
+		
 		
 		//flowbeanに入れて、次のページに持ってくる
 		

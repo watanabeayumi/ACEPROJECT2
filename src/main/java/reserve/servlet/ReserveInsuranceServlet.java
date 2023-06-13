@@ -15,6 +15,7 @@ import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
 import reserve.dto.Reserve;
 
+
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
 	
@@ -26,6 +27,7 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		try {
 			Reserve reserve = null;
 			reserve = new ReserveDAO().selectReserve(nowDate, 1, 4);
+			
 		} catch (DaoException e) {
 			e.printStackTrace();
 			

@@ -1,4 +1,4 @@
-package flowbean;
+package reserve.flowbean;
 
 import java.time.LocalDate;
 

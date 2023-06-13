@@ -5,9 +5,11 @@ import java.time.LocalDate;
 public class Reserve {
 	private String Name;
 	private String TimeName;
+	private String ConciergeName;
 	private Integer Tel;
 	private Integer Address;
 	private Integer TimeCd;
+	private Integer ConciergeCd;
 	private LocalDate ReserveDate;
 	
 	
@@ -49,16 +51,18 @@ public class Reserve {
 		ReserveDate = reserveDate;
 	   
 	}
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
+	public String getConciergeName() {
+		return ConciergeName;
+	}
+	public void setConciergeName(String conciergeName) {
+		ConciergeName = conciergeName;
+	}
+	public Integer getConciergeCd() {
+		return ConciergeCd;
+	}
+	public void setConciergeCd(Integer conciergeCd) {
+		ConciergeCd = conciergeCd;
+	}
 	
 	
 	

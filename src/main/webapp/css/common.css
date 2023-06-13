@@ -8,7 +8,11 @@ body {
 h1 {
   /*h1タグ内の文字色を変える*/
   color: #f89174;
+<<<<<<< HEAD
   font-size:100px;
+=======
+  font-size:120px;
+>>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
 }
 #headline {
   /*id="headline"の下に点線を引く*/
@@ -21,7 +25,7 @@ h1 {
 h2 {
   /*h2タグの文字色をオレンジに*/
   color:orange;
-  font-size:1000px;
+  font-size:90px;
 }
 a {
   /*リンクの文字色をグレイに*/
@@ -52,5 +56,5 @@ font-size: 50px;
 	content: '★';
 	background: #ffffff;
 }
-p { font-size:100px;
+p { font-size:75px;
 }

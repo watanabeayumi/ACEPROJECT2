@@ -2,15 +2,15 @@ package reserve.flowbean;
 
 public class SearchFlowBean {
 	String reserve_date;
+	String name;
+	String call;
+	String mail;
 	public String getReserve_date() {
 		return reserve_date;
 	}
 	public void setReserve_date(String reserve_date) {
 		this.reserve_date = reserve_date;
 	}
-	String name;
-	String call;
-	String mail;
 	public String getName() {
 		return name;
 	}

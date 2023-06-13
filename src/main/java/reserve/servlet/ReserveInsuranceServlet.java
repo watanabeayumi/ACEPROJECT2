@@ -28,95 +28,19 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		Date strDate = new Date();
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(1), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day1-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(2), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day2-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(3), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day3-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(4), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day4-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(5), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day5-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(6), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day6-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Reserve reserve = null;
-			reserve = new ReserveDAO().selectReserve(nowDate.plusDays(7), 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
-			flowbean.setReserveDate(reserve.getReserveDate());
-			
-			session.setAttribute("Day7-1", flowbean);
-			
-		} catch (DaoException e) {
-			e.printStackTrace();
+		for(int i=1; i<=7; i++) {
+			try {
+				Reserve reserve = null;
+				reserve = new ReserveDAO().selectReserve(nowDate.plusDays(i), 1, 4);
+				
+				ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
+				flowbean.setReserveDate(reserve.getReserveDate());
+				
+				session.setAttribute("Day"+ i +"-1", flowbean);
+				
+			} catch (DaoException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

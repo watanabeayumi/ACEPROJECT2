@@ -15,8 +15,8 @@
 
 <tr>
       <td>日付</td>
-　　  <td>6/15</td>
-　　  <td>6/16</td>
+      <td>6/15</td>
+      <td>6/16</td>
       <td>6/17</td>
       <td>6/18</td>
       <td>6/19</td>
@@ -25,13 +25,34 @@
 </tr> 
 <tr>
       <td></td>
-      <td>〇</td>
-      <td>×</td>
-      <td>〇</td>
-      <td>〇</td>
-      <td>×</td>
-      <td>〇</td>
-      <td>〇</td>
+      <td>
+      	<c:if test="${empty Day1-1}">×</c:if>
+      	<c:if test="${!empty Day1-1}"><input type="radio" name="reserve_date" value="1-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day2-1}">×</c:if>
+      	<c:if test="${!empty Day2-1}"><input type="radio" name="reserve_date" value="2-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day3-1}">×</c:if>
+      	<c:if test="${!empty Day3-1}"><input type="radio" name="reserve_date" value="3-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day4-1}">×</c:if>
+      	<c:if test="${!empty Day4-1}"><input type="radio" name="reserve_date" value="4-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day5-1}">×</c:if>
+      	<c:if test="${!empty Day5-1}"><input type="radio" name="reserve_date" value="5-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day6-1}">×</c:if>
+      	<c:if test="${!empty Day6-1}"><input type="radio" name="reserve_date" value="6-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day7-1}">×</c:if>
+      	<c:if test="${!empty Day7-1}"><input type="radio" name="reserve_date" value="7-1">○</c:if>
+      </td>
 </tr>
 </table>
 

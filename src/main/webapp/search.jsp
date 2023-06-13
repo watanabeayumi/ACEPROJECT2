@@ -25,34 +25,16 @@
 </tr> 
 <tr>
       <td></td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="6">
       <td>
-      	<c:if test="${empty Day1-1}">×</c:if>
-      	<c:if test="${!empty Day1-1}"><input type="radio" name="reserve_date" value="1-1">○</c:if>
+      	<c:choose>
+      		<c:when test="${empty data}">×</c:when>
+      		<c:when test="${!empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-1">○
+      		</c:when>
+      	</c:choose>
       </td>
-      <td>
-      	<c:if test="${empty Day2-1}">×</c:if>
-      	<c:if test="${!empty Day2-1}"><input type="radio" name="reserve_date" value="2-1">○</c:if>
-      </td>
-      <td>
-      	<c:if test="${empty Day3-1}">×</c:if>
-      	<c:if test="${!empty Day3-1}"><input type="radio" name="reserve_date" value="3-1">○</c:if>
-      </td>
-      <td>
-      	<c:if test="${empty Day4-1}">×</c:if>
-      	<c:if test="${!empty Day4-1}"><input type="radio" name="reserve_date" value="4-1">○</c:if>
-      </td>
-      <td>
-      	<c:if test="${empty Day5-1}">×</c:if>
-      	<c:if test="${!empty Day5-1}"><input type="radio" name="reserve_date" value="5-1">○</c:if>
-      </td>
-      <td>
-      	<c:if test="${empty Day6-1}">×</c:if>
-      	<c:if test="${!empty Day6-1}"><input type="radio" name="reserve_date" value="6-1">○</c:if>
-      </td>
-      <td>
-      	<c:if test="${empty Day7-1}">×</c:if>
-      	<c:if test="${!empty Day7-1}"><input type="radio" name="reserve_date" value="7-1">○</c:if>
-      </td>
+      </c:forEach>
 </tr>
 </table>
     <p>お名前：<input type="text" name="name"></p><br>

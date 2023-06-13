@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
 import reserve.dto.Reserve;
-import reserve.flowbean.ReserveCalendarFlowBean;
 
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
@@ -27,9 +26,6 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		try {
 			Reserve reserve = null;
 			reserve = new ReserveDAO().selectReserve(nowDate, 1, 4);
-			
-			ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean;
-			flowbean
 		} catch (DaoException e) {
 			e.printStackTrace();
 			

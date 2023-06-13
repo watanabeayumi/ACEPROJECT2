@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javax.servlet.http.HttpServletRequest;
 
 public class SearchFormBean {
+	private String reserve_date;
 	private String name;
 	private String call;
 	private String mail;

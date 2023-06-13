@@ -36,12 +36,14 @@ public class ReserveInsuranceServlet extends HttpServlet {
 				ReserveCalendarFlowBean flowbean = new ReserveCalendarFlowBean();
 				flowbean.setReserveDate(reserve.getReserveDate());
 				
-				session.setAttribute("Day"+ i +"-1", flowbean);
+				session.setAttribute("Day"+i+"-1", flowbean);
 				
 			} catch (DaoException e) {
 				e.printStackTrace();
 			}
 		}
+		
+		request.getRequestDispatcher("search.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

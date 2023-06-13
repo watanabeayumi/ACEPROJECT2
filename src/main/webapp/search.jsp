@@ -12,7 +12,7 @@
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <table id="table" border="1" height="200" width="700">
-
+<form  action="" method="post">
 <tr>
       <td>日付</td>
       <td>6/15</td>
@@ -55,8 +55,6 @@
       </td>
 </tr>
 </table>
-
-<form method="POST" action="">
     <p>お名前：<input type="text" name="name"></p><br>
     <p>電話：<input type="text" name="call"></p><br>
     <p>メールアドレス：<input type="text" name="mail"></p><br>

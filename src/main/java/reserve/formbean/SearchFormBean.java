@@ -20,6 +20,10 @@ public class SearchFormBean {
 	
 	ArrayList<String> errMsg=new ArrayList<>();
 	
+	
+	if("".equals(reserve_date)) {
+		errMsg.add("チェックボックスが選択されていません。");
+	}
 	if("".equals(name)) {
 		errMsg.add("名前が入力されていません。");
 	}
@@ -29,7 +33,7 @@ public class SearchFormBean {
 	}
 	
     try{
-    	int callnumber=Integer.parseInt(call);
+    	int callint=Integer.parseInt(call);
     	}catch(NumberFormatException e){
     		errMsg.add("数字以外が入力されています。");
     		}
@@ -42,6 +46,8 @@ public class SearchFormBean {
         }
     return errMsg;
 }
+	
+	
 	public String getReserve_date() {
 		return reserve_date;
 	}

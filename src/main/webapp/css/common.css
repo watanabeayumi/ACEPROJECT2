@@ -5,12 +5,13 @@ body {
   /*ページ全体の背景色をベージュに*/
   background: #fffbf4;
   /*全文字を中央揃えに*/
-  text-align: center;
+  
 }
 h1 {
   /*h1タグ内の文字色を変える*/
   color: #f89174;
   font-size:120px;
+  text-align: center;
 }
 #headline {
   /*id="headline"の下に点線を引く*/
@@ -24,6 +25,7 @@ h2 {
   /*h2タグの文字色をオレンジに*/
   color:orange;
   font-size:85px;
+  text-align: center;
 }
 a {
   /*リンクの文字色をグレイに*/
@@ -49,6 +51,7 @@ font-size: 50px;
 }
 .nyuuryoku{
 	font-size: 50px;
+	
 }
 .cp_hr07::after {
 	position: absolute;
@@ -86,6 +89,7 @@ p { font-size:75px;
     padding-right: 10em;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
+    
 }
 .denwa{
 	padding-left: 10em;
@@ -103,3 +107,4 @@ p { font-size:75px;
 .tyuui{
 	font-size: 5px;
 }
+

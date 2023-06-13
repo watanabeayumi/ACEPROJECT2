@@ -85,3 +85,8 @@ p { font-size:75px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
 }
+.entry-title {
+font-size: 18px; /* 文字サイズ */
+line-height: 1.4; /* 行の高さ */
+}
+@media screen and (max-width: 480px){.entry-title a {font-size: 16px;}}

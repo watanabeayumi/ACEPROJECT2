@@ -3,67 +3,61 @@ package reserve.dto;
 import java.time.LocalDate;
 
 public class Reserve {
-	private String Name;
-	private String TimeName;
-	private String ConciergeName;
-	private Integer Tel;
-	private Integer Address;
-	private Integer TimeCd;
-	private Integer ConciergeCd;
-	private LocalDate ReserveDate;
-	
-	
-	
+	private String name;
+	private String timeName;
+	private String conciergeName;
+	private Integer tel;
+	private String address;
+	private Integer timeCd;
+	private Integer conciergeCd;
+	private LocalDate reserveDate;
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getTimeName() {
-		return TimeName;
+		return timeName;
 	}
 	public void setTimeName(String timeName) {
-		TimeName = timeName;
-	}
-	public Integer getTel() {
-		return Tel;
-	}
-	public void setTel(Integer tel) {
-		Tel = tel;
-	}
-	public Integer getAddress() {
-		return Address;
-	}
-	public void setAddress(Integer address) {
-		Address = address;
-	}
-	public Integer getTimeCd() {
-		return TimeCd;
-	}
-	public void setTimeCd(Integer timeCd) {
-		TimeCd = timeCd;
-	}
-	public LocalDate getReserveDate() {
-		return ReserveDate;
-	}
-	public void setReserveDate(LocalDate reserveDate) {
-		ReserveDate = reserveDate;
-	   
+		this.timeName = timeName;
 	}
 	public String getConciergeName() {
-		return ConciergeName;
+		return conciergeName;
 	}
 	public void setConciergeName(String conciergeName) {
-		ConciergeName = conciergeName;
+		this.conciergeName = conciergeName;
+	}
+	public Integer getTel() {
+		return tel;
+	}
+	public void setTel(Integer tel) {
+		this.tel = tel;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Integer getTimeCd() {
+		return timeCd;
+	}
+	public void setTimeCd(Integer timeCd) {
+		this.timeCd = timeCd;
 	}
 	public Integer getConciergeCd() {
-		return ConciergeCd;
+		return conciergeCd;
 	}
 	public void setConciergeCd(Integer conciergeCd) {
-		ConciergeCd = conciergeCd;
+		this.conciergeCd = conciergeCd;
 	}
-	
-	
+	public LocalDate getReserveDate() {
+		return reserveDate;
+	}
+	public void setReserveDate(LocalDate reserveDate) {
+		this.reserveDate = reserveDate;
+	}
 	
 }

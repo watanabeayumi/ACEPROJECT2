@@ -1,6 +1,7 @@
 package reserve.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,7 @@ public class SearchServlet extends HttpServlet {
 
 		SearchFormBean formBean=new SearchFormBean();
 		
-		request.getAttribute("errMsg",errMsg);
+		List<String> errMsg = formBean.validate(request);
 		
 		if(!errMsg.isEmpty()) {
 			request.getRequestDispatcher("/confirm.jsp").forward(request, response);

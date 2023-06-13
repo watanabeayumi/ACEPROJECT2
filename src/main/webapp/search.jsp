@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,15 +26,15 @@
 </tr> 
 <tr>
       <td></td>
-      <c:forEach items="${ReserveDateList}" var="data">
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="6">
       <td>
       	<c:choose>
-      		<c:when test="${data eq null}">
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
       			<input type="radio" name="reserve_date" value="${i.count}-1">○
       		</c:when>
-      		<c:otherwise>
-      		×
-      		</c:otherwise>
       	</c:choose>
       </td>
       </c:forEach>

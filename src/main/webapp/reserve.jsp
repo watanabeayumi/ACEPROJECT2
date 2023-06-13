@@ -13,8 +13,8 @@
 
 </head>
 <body>
-<h1><font size="80">ご相談予約・削除受付</font></h1>
-<h2><font size="70">ご相談内容をお選びください</font></h2>
+<h1 id="topic">ご相談予約・削除受付</h1>
+<h2 id="sub">ご相談内容をお選びください</h2>
 <hr class="cp_hr07" />
   <div>
     <a href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>

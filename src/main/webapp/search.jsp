@@ -34,13 +34,50 @@
       		</c:when>
       	</c:choose>
       </td>
+<<<<<<< HEAD
       </c:forEach>
 </tr>
+=======
+      <td>
+      	<c:if test="${empty Day2-1}">×</c:if>
+      	<c:if test="${!empty Day2-1}"><input type="radio" name="reserve_date" value="2-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day3-1}">×</c:if>
+      	<c:if test="${!empty Day3-1}"><input type="radio" name="reserve_date" value="3-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day4-1}">×</c:if>
+      	<c:if test="${!empty Day4-1}"><input type="radio" name="reserve_date" value="4-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day5-1}">×</c:if>
+      	<c:if test="${!empty Day5-1}"><input type="radio" name="reserve_date" value="5-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day6-1}">×</c:if>
+      	<c:if test="${!empty Day6-1}"><input type="radio" name="reserve_date" value="6-1">○</c:if>
+      </td>
+      <td>
+      	<c:if test="${empty Day7-1}">×</c:if>
+      	<c:if test="${!empty Day7-1}"><input type="radio" name="reserve_date" value="7-1">○</c:if>
+      </td>
+
+</table><br>
+
+<form method="POST" action="">
+    <table>お名前：<input type="text" name="name" class="namae"></table>
+    <table>電話：<input type="text" name="call" class="denwa"></table>
+    <table>メールアドレス：<input type="text" name="mail" class="meado"></table>
+    <p><input type="submit" value="送信する" class="botton"></p>
+
+>>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
 </table>
     <p>お名前：<input type="text" name="name"></p><br>
     <p>電話：<input type="text" name="call"></p><br>
     <p>メールアドレス：<input type="text" name="mail"></p><br>
     <p><input type="submit" value="送信する"></p>
+
 
   </form>
 

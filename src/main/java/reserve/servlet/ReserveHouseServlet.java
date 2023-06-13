@@ -31,6 +31,10 @@ public class ReserveHouseServlet extends HttpServlet {
 		
 		//flowbeanに入れて、次のページに持ってくる
 		
+		//これを一週間分
+		
+		
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

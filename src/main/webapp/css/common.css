@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+
 body {
   /*ページ全体の背景色をベージュに*/
   background: #fffbf4;
@@ -45,6 +47,9 @@ font-size: 50px;
 	border-style: double;
 	border-color: #f06292;
 }
+.nyuuryoku{
+	font-size: 30px;
+}
 .cp_hr07::after {
 	position: absolute;
 	top: -0.7em;
@@ -61,11 +66,20 @@ p { font-size:75px;
 .sub{
 	font-size:70px;
 }
-.botton{
-	padding-left: 3em;
-    padding-right: 3em;
-    height: 7em;
-    background-color:skyblue;
+.botton{  
+ border-radius: 6px;
+ margin-top: 32px;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ width: 280px;
+ display: block;
+ letter-spacing: 0.05em;
+ background-color:skyblue;
+ font-weight: bold;
+ font-size: 20px;
+
 }
 .namae{
 	padding-left: 10em;
@@ -85,8 +99,6 @@ p { font-size:75px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
 }
-.entry-title {
-font-size: 18px; /* 文字サイズ */
-line-height: 1.4; /* 行の高さ */
+.placeholder{
+	font-size: 70px;
 }
-@media screen and (max-width: 480px){.entry-title a {font-size: 16px;}}

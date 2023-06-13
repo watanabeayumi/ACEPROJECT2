@@ -17,8 +17,8 @@
         <td><input name="name" type="text" class="namae" maxlength="8" </td>
       </tr>
       <tr>
-        <th class="nyuuryoku">電話：</th>
-        <td><input name="call" type="text" class="denwa" maxlength="8" placeholder="ハイフンなし、半角でご記入下さい。" id="placeholder"></td>
+        <th class="nyuuryoku">電話：<br class="tyuui">※ハイフンなし、半角でご記入下さい。</th>
+        <td><input name="call" type="text" class="denwa" maxlength="8"></td>
       </tr>
       <tr>
         <th class="nyuuryoku">メールアドレス：</th>

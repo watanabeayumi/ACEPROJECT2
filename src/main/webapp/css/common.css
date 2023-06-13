@@ -48,7 +48,7 @@ font-size: 50px;
 	border-color: #f06292;
 }
 .nyuuryoku{
-	font-size: 30px;
+	font-size: 50px;
 }
 .cp_hr07::after {
 	position: absolute;
@@ -78,7 +78,7 @@ p { font-size:75px;
  letter-spacing: 0.05em;
  background-color:skyblue;
  font-weight: bold;
- font-size: 20px;
+ font-size: 50px;
 
 }
 .namae{
@@ -92,6 +92,7 @@ p { font-size:75px;
     padding-right: 10em;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
+    text-align:left;
 }
 .meado{
 	padding-left: 10em;
@@ -99,6 +100,6 @@ p { font-size:75px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
 }
-.placeholder{
-	font-size: 70px;
+.tyuui{
+	font-size: 5px;
 }

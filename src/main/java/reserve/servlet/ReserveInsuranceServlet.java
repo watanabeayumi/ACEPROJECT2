@@ -21,6 +21,7 @@ import reserve.flowbean.ReserveCalendarFlowBean;
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
 	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();

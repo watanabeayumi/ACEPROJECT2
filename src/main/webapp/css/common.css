@@ -8,7 +8,7 @@ body {
 h1 {
   /*h1タグ内の文字色を変える*/
   color: #f89174;
-  font-size:300px;
+  font-size:100px;
 }
 #headline {
   /*id="headline"の下に点線を引く*/

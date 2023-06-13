@@ -29,6 +29,7 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 			
+			
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

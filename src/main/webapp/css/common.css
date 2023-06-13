@@ -55,3 +55,33 @@ font-size: 50px;
 }
 p { font-size:75px;
 }
+.topic{
+	font-size:80px;
+}
+.sub{
+	font-size:70px;
+}
+.botton{
+	padding-left: 3em;
+    padding-right: 3em;
+    height: 7em;
+    background-color:skyblue;
+}
+.namae{
+	padding-left: 10em;
+    padding-right: 10em;
+    height: 6em;
+    border: 3px solid rgb(43, 60, 60);
+}
+.denwa{
+	padding-left: 10em;
+    padding-right: 10em;
+    height: 6em;
+    border: 3px solid rgb(43, 60, 60);
+}
+.meado{
+	padding-left: 10em;
+    padding-right: 10em;
+    height: 6em;
+    border: 3px solid rgb(43, 60, 60);
+}

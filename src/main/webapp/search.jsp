@@ -33,13 +33,13 @@
       <td>〇</td>
       <td>〇</td>
 </tr>
-</table>
+</table><br>
 
 <form method="POST" action="">
-    <p>お名前：<input type="text" name="name"></p><br>
-    <p>電話：<input type="text" name="call"></p><br>
-    <p>メールアドレス：<input type="text" name="mail"></p><br>
-    <p><input type="submit" value="送信する"></p>
+    <table>お名前：<input type="text" name="name" class="namae"></table>
+    <table>電話：<input type="text" name="call" class="denwa"></table>
+    <table>メールアドレス：<input type="text" name="mail" class="meado"></table>
+    <p><input type="submit" value="送信する" class="botton"></p>
 
   </form>
 

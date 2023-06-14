@@ -12,8 +12,8 @@ import reserve.flowbean.SearchFlowBean;
 import reserve.formbean.SearchFormBean;
 
 
-@WebServlet("/confirm")
-public class ConfirmServlet extends HttpServlet {
+@WebServlet("/reserveConfirm")
+public class ReserveConfirmServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,7 +31,7 @@ public class ConfirmServlet extends HttpServlet {
 		
 		//次画面呼び出し
 
-			request.getRequestDispatcher("/complete.jsp").forward(request, response);
+			request.getRequestDispatcher("/confirm.jsp").forward(request, response);
 		}
 
 	}

@@ -42,12 +42,22 @@ public class DeleteServlet extends HttpServlet {
 		DeleteFlowBean flowBean = null;
 		try { 
 			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
+			int timeCd = reserve.getTimeCd();
+			int conciergeCd = reserve.getConciergeCd();
+			
 			flowBean = new DeleteFlowBean();
 			flowBean.setName(formBean.getName());
 			flowBean.setTel(formBean.getTel());
 			flowBean.setAddress(formBean.getAddress());
 			flowBean.setReserveDate(reserve.getReserveDate());
+			flowBean.setTimeCd(timeCd);
+			flowBean.setConciergeCd(conciergeCd);
 			
+			String timeName = new ReserveDAO().time(timeCd);
+			flowBean.setTimeName(timeName);
+			
+			String conciergeName = new ReserveDAO().concierge(conciergeCd);
+			flowBean.setConciergeName(conciergeName);
 			
 		} catch (DaoException e) {
 
@@ -55,12 +65,7 @@ public class DeleteServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/error");
 			return;
 		}
-		
-	
 		session.setAttribute("DeleteFlowBean",flowBean);
 		request.getRequestDispatcher("deleteConfirm.jsp").forward(request,response);
-		
-	
-
 }
 	}

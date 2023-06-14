@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +10,13 @@
 </head>
 <body>
 <h1>削除確認</h1>
-<h2>本当に削除されますか？</h2>
-<p>日時：2023/6/15</p>
-<p>名前：名無しのゴンべ</p>
-<p>電話：90908765</p>
-<p>メール：redyfjhkj@yyff</p><br>
-
+<h2>以下の予約内容を削除されますか？</h2>
+<p>日付：<c:out value="${DeleteFlowBean.reserveDate}"/> </p><br>
+<p>時間：<c:out value="${DeleteFlowBean.timeName}"/> </p><br>
+<p>相談内容：<c:out value="${DeleteFlowBean.conciergeName}"/> </p><br>
+<p>名前：<c:out value="${DeleteFlowBean.name}"/></p><br>
+<p>電話：<c:out value="${DeleteFlowBean.tel}"/></p><br>
+<p>メール：<c:out value="${DeleteFlowBean.Address}"/></p><br>
 <p><input type="submit" value="削除する" class="botton"></p>
 </body>
 </html>

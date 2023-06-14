@@ -6,7 +6,7 @@ public class Reserve {
 	private String name;
 	private String timeName;
 	private String conciergeName;
-	private Integer tel;
+	private String tel;
 	private String address;
 	private Integer timeCd;
 	private Integer conciergeCd;
@@ -29,10 +29,10 @@ public class Reserve {
 	public void setConciergeName(String conciergeName) {
 		this.conciergeName = conciergeName;
 	}
-	public Integer getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(Integer tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public String getAddress() {

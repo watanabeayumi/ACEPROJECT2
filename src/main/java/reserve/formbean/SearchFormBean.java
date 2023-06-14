@@ -35,7 +35,7 @@ public class SearchFormBean {
     try{
     	int callint=Integer.parseInt(call);
     	}catch(NumberFormatException e){
-    		errMsg.add("数字以外が入力されています。");
+    		errMsg.add("数字以外の文字が含まれています。");
     		}
     if("".equals(mail)) {
 		errMsg.add("メールアドレスが入力されていません。");

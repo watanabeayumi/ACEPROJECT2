@@ -55,7 +55,7 @@ public class DeleteServlet extends HttpServlet {
 		}
 		
 	
-		request.setAttribute("DeleteFlowBean",flowBean);
+		session.setAttribute("DeleteFlowBean",flowBean);
 		request.getRequestDispatcher("deleteConfirm.jsp").forward(request,response);
 		
 	

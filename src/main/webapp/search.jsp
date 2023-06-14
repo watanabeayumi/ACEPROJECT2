@@ -8,25 +8,12 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 
-<style>
-input[type=radio] {
-visibility: visible; /* ラジオボタンを非表示にする */
-}
-input[type="radio"]:checked + label {
-background: #31A9EE;/* マウス選択時の背景色を指定する */
-color: #ffffff; /* マウス選択時のフォント色を指定する */
-visibility: visible;
-}
-
-</style>
 
 </head>
 <body>
 
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
-
-<div class="radio02">
 <table id="table" border="1" height="200" width="900">
 <form  action="reserveConfirm" method="post">
 <tr>
@@ -37,6 +24,7 @@ visibility: visible;
 </tr> 
 
 <tr>
+
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
       <c:if test="${i.count % 7 == 1}">
       	<td>
@@ -45,12 +33,27 @@ visibility: visible;
       </c:if>
       <td>
       	<c:choose>
+
+      		<c:when test="${empty data}">
+
       		<c:when test="${data =! null}">
       			<label id="batu" class="label2">×</label>
       		</c:when>
+
+      		
+      		<c:when test="${empty data}">
+      			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
+      			
+      			<input type="radio" name="sizeSelect" value="small" id="sizeSelectSmall" checked><label for="sizeSelectSmall">小</label>
+
       		<c:when test="${data == null}">
+
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
       			<label for="${i.count}" class="label">○</label>
+
+      		</c:when>
+      		<c:when test="${!empty data}">
+      			<label id="batu" class="label2">×</label>
       		</c:when>
       	</c:choose>
       </td>
@@ -60,9 +63,7 @@ visibility: visible;
       </c:if>
       </c:forEach>
 </tr>   
-</table>
-</div>
-<br>
+</table><br>
   <table>
       <tr>
         <th class="nyuuryoku">お名前：</th>

@@ -22,7 +22,7 @@ public class ReserveSearchFormBean {
 	if("".equals(reserve_date)) {
 		errMsg.add("チェックボックスが選択されていません。");
 	}else {
-		reserveDate = Integer.parseInt(reserve_date);
+		
 	}
 	if("".equals(name)) {
 		errMsg.add("名前が入力されていません。");
@@ -44,6 +44,8 @@ public class ReserveSearchFormBean {
            errMsg.add("全角が含まれています。");
            }
         }
+    reserveDate = Integer.parseInt(reserve_date);
+    
     return errMsg;
 }
 	

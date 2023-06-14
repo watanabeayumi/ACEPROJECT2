@@ -33,7 +33,7 @@ public class ReserveFinanceServlet extends HttpServlet {
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
 		try {
-			reserveDateList = new ReserveDAO().selectReserve(nowDate, 0, (int)session.getAttribute("conciergeCd"));
+			reserveDateList = new ReserveDAO().selectReserve(nowDate, (int)session.getAttribute("conciergeCd"));
 			} catch (DaoException e) {
 				e.printStackTrace();
 				}

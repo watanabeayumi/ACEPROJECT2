@@ -21,7 +21,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 	
 		request.removeAttribute("ReserveSearchFlowBean");
 		HttpSession session=request.getSession(false);
-		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
+		DleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
 		
 		int ret =new ReserveDAO().selectDelete(flowbean.getName, flowbean.getCall, flowbean.getMail);
 		if(ret !=0) {

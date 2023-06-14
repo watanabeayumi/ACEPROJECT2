@@ -46,7 +46,7 @@ public class ReserveDAO extends CommonDAO {
 				int insert = 0;
 				try {
 					getConnection();
-					PreparedStatement statement=conn.prepareStatement("insert into t_reserve values(?, ?, ?, ?, ?, ?)");
+					PreparedStatement statement=conn.prepareStatement("insert into t_reserve values (?, ?, ?, ?, ?, ?)");
 					
 					statement.setDate(1, Date.valueOf(date));
 					statement.setInt(2, time);

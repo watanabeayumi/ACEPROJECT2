@@ -21,11 +21,8 @@ public class ReserveCompleteServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		request.removeAttribute("SearchFlowBean");
 		HttpSession session=request.getSession(false);
-		ReserveCalendarFlowBean flowbean=(ReserveCalendarFlowBean) session.getAttribute("SearchFlowBean");
+		ReserveCalendarFlowBean flowbean=(ReserveCalendarFlowBean) session.getAttribute("ReserveSearchFlowBean");
 		
 		int ret=0;
 		try {
@@ -35,18 +32,18 @@ public class ReserveCompleteServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(ret !=0) {
-			request.getRequestDispatcher("/WEB-INF/complete.jsp").forward(request, response);
+			request.getRequestDispatcher("complete.jsp").forward(request, response);
 		}else {
 			String err = "登録できませんでした。";
 			request.setAttribute("err", err);
-			request.getRequestDispatcher("/WEB-INF/search.jsp").forward(request, response);
+			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
-		}	
+		}
+		request.removeAttribute("ReserveSearchFlowBean");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

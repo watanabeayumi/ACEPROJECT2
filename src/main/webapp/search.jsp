@@ -8,21 +8,6 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 
-<<<<<<< HEAD
-
-=======
-<style>
-input[type=radio] {
-visibility: visible; /* ラジオボタンを非表示にする */
-}
-input[type="radio"]:checked + label {
-background: #31A9EE;/* マウス選択時の背景色を指定する */
-color: #ffffff; /* マウス選択時のフォント色を指定する */
-visibility: visible;
-}
-
-</style>
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
 
 </head>
 <body>
@@ -48,24 +33,24 @@ visibility: visible;
       </c:if>
       <td>
       	<c:choose>
-<<<<<<< HEAD
+
       		<c:when test="${empty data}">
-=======
+
       		<c:when test="${data =! null}">
       			<label id="batu" class="label2">×</label>
       		</c:when>
-<<<<<<< HEAD
+
       		
       		<c:when test="${empty data}">
       			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
       			
       			<input type="radio" name="sizeSelect" value="small" id="sizeSelectSmall" checked><label for="sizeSelectSmall">小</label>
-=======
+
       		<c:when test="${data == null}">
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
+
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
       			<label for="${i.count}" class="label">○</label>
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
+
       		</c:when>
       		<c:when test="${!empty data}">
       			<label id="batu" class="label2">×</label>

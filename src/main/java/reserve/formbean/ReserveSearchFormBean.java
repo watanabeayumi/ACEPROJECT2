@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class SearchFormBean {
-	private String reserve_date;
+public class ReserveSearchFormBean {
+	private int reserveDate;
 	private String name;
 	private String call;
 	private String mail;
@@ -13,7 +13,7 @@ public class SearchFormBean {
 	
 	public ArrayList<String> validate(HttpServletRequest request){
 	
-	reserve_date=request.getParameter("reserve_date");
+	String reserve_date=request.getParameter("reserve_date");
 	name=request.getParameter("name");
 	call=request.getParameter("call");
 	mail=request.getParameter("mail");
@@ -23,6 +23,8 @@ public class SearchFormBean {
 	
 	if("".equals(reserve_date)) {
 		errMsg.add("チェックボックスが選択されていません。");
+	}else {
+		reserveDate = Integer.parseInt(reserve_date);
 	}
 	if("".equals(name)) {
 		errMsg.add("名前が入力されていません。");
@@ -47,13 +49,14 @@ public class SearchFormBean {
     return errMsg;
 }
 	
-	
-	public String getReserve_date() {
-		return reserve_date;
+	public int getReserveDate() {
+		return reserveDate;
 	}
-	public void setReserve_date(String reserve_date) {
-		this.reserve_date = reserve_date;
+
+	public void setReserveDate(int reserveDate) {
+		this.reserveDate = reserveDate;
 	}
+
 	public String getName() {
 		return name;
 	}

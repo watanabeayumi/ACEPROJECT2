@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
@@ -24,6 +25,10 @@ public class ReserveFinanceServlet extends HttpServlet {
 
 		List<LocalDate> reserveDateList = new ArrayList<>();
 		
+		int conciergeCd = 5;
+		HttpSession session=request.getSession(true);
+		session.setAttribute("conciergeCd", conciergeCd);
+		
 		Date strDate = new Date();
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
@@ -31,7 +36,7 @@ public class ReserveFinanceServlet extends HttpServlet {
 			for(int i=1; i<=7; i++) {
 				try {
 				
-					LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), j, 5);
+					LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), j, (int)session.getAttribute("conciergeCd"));
 				
 					reserveDateList.add(reserveDate);
 				} catch (DaoException e) {

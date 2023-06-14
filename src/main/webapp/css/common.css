@@ -117,3 +117,8 @@ p { font-size:75px;
 .batu{
 	font-size: 7px;
 }
+
+/* ラジオボタンを非表示にする */
+.radio-container input[type="radio"] {
+  display: none;
+}指定する */

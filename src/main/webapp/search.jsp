@@ -7,6 +7,17 @@
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
+
+<style>
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+.label {
+margin: 5px; /* ラベル外側の余白を指定する */
+border: 1px solid #006DD9;/* ラベルの境界線を実線で指定する */
+}
+</style>
+
 </head>
 <body>
 
@@ -20,6 +31,7 @@
       <td><c:out value="${data}" /></td>
       </c:forEach>
 </tr> 
+
 <tr>
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69">
       <c:if test="${i.count % 7 == 1}">
@@ -32,8 +44,10 @@
       		<c:when test="${!empty data}">
       			<p id="batu">×</p>
       		</c:when>
+      		
       		<c:when test="${empty data}">
-      			<input type="radio" name="reserve_date" value="${i.count}"><p id="maru">○</p>
+      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
+      			<label for="maru" class="label">○</label>
       		</c:when>
       	</c:choose>
       </td>

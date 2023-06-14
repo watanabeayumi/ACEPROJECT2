@@ -15,8 +15,8 @@
 <body>
 <h1 id="topic">ご相談予約・削除受付</h1>
 <h2 id="sub">ご相談内容をお選びください</h2>
-<hr class="cp_hr07" />
-  <div>
+ 
+  <div class="cp_hr07">
     <a href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>
     <a href="<c:url value='/reserveHelth' />">介護や終活</a><br>
     <a href="<c:url value='/reserveInheritance' />">相続</a><br>

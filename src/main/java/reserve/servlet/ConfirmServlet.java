@@ -7,22 +7,28 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import reserve.dao.ReserveDAO;
+import reserve.flowbean.SearchFlowBean;
 
 
 @WebServlet("/confirm")
 public class ConfirmServlet extends HttpServlet {
 	
-
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//セッションスコープに保存している内容を取得する
+		HttpSession session=request.getSession(false);
+		SearchFlowBean flowbean=(SearchFlowBean) session.getAttribute("SearchFlowBean");
 		
-		doGet(request, response);
+		//登録処理
+		int ret = new ReserveDAO().update(name,);
+		if(ret !=0) {
+			
+		}
+//sqlのやつ作る get.で
 	}
 
 }

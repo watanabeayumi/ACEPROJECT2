@@ -18,7 +18,6 @@ color: #ffffff; /* マウス選択時のフォント色を指定する */
 visibility: visible;
 }
 
-
 </style>
 
 </head>

@@ -122,10 +122,15 @@ p { font-size:75px;
 	text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
 /* ラジオボタンを非表示にする */
 .radio-container input[type="radio"] {
   display: none;
 }
+<<<<<<< HEAD
 .label {
 display: block; /* ブロックレベル要素化する */
 float: left; /* 要素の左寄せ・回り込を指定する */
@@ -143,3 +148,6 @@ border-radius: 5px; /* 角丸を指定する */
 font-size: 30px;
 font-weight:  bold;
 }
+=======
+
+>>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git

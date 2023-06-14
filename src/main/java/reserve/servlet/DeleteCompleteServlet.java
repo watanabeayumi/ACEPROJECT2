@@ -20,7 +20,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		request.removeAttribute("ReserveSearchFlowBean");
+		request.removeAttribute("DeleteFlowBean");
 		HttpSession session=request.getSession(false);
 		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
 		

@@ -7,7 +7,21 @@ public class ReserveSearchFlowBean {
 	String name;
 	String call;
 	String mail;
+	int timeCd;
+	String timeName;
 	
+	public String getTimeName() {
+		return timeName;
+	}
+	public void setTimeName(String timeName) {
+		this.timeName = timeName;
+	}
+	public int getTimeCd() {
+		return timeCd;
+	}
+	public void setTimeCd(int timeCd) {
+		this.timeCd = timeCd;
+	}
 	public LocalDate getReserve_date() {
 		return reserve_date;
 	}

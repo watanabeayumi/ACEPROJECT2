@@ -8,7 +8,16 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 
+<style>
+input[type=radio] {
+display: ; /* ラジオボタンを非表示にする */
+}
+input[type="radio"]:checked + label {
+background: #31A9EE;/* マウス選択時の背景色を指定する */
+color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
 
+</style>
 
 </head>
 <body>
@@ -25,16 +34,6 @@
 </tr> 
 
 <tr>
-<style>
-input[type=radio] {
-display: none; /* ラジオボタンを非表示にする */
-}
-input[type="radio"]:checked + label {
-background: #31A9EE;/* マウス選択時の背景色を指定する */
-color: #ffffff; /* マウス選択時のフォント色を指定する */
-}
-
-</style>
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
       <c:if test="${i.count % 7 == 1}">
       	<td>
@@ -46,9 +45,9 @@ color: #ffffff; /* マウス選択時のフォント色を指定する */
       		<c:when test="${!empty data}">
       			<label id="batu" class="label2">×</label>
       		</c:when>
-      		
       		<c:when test="${empty data}">
-      			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
+      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
+      			<label for="${i.count}" class="label">○</label>
       		</c:when>
       	</c:choose>
       </td>

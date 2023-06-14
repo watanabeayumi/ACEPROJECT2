@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
 import reserve.flowbean.DeleteFlowBean;
 
@@ -24,7 +25,13 @@ public class DeleteCompleteServlet extends HttpServlet {
 		HttpSession session=request.getSession(false);
 		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
 		
-		int ret =new ReserveDAO().selectDelete(flowbean.getName, flowbean.getCall, flowbean.getMail);
+		int ret=0;
+		try {
+			ret = new ReserveDAO().selectDelete(flowbean.getName(), flowbean.getTel(), flowbean.getAddress());
+		} catch (DaoException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 		if(ret !=0) {
 			request.getRequestDispatcher("/WEB-INF/deleteComplete.jsp").forward(request, response);
 		}else {

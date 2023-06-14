@@ -42,6 +42,17 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		}
 		
 		request.setAttribute("ReserveDateList", reserveDateList);
+		
+		List<LocalDate> weekList = new ArrayList<>();
+		
+		for(int k=1; k<=10; k++) {
+			LocalDate week = nowDate.plusDays(k);
+			
+			weekList.add(week);
+		}
+		
+		request.setAttribute("WeekList", weekList);
+		
 		request.getRequestDispatcher("search.jsp").forward(request, response);
 		
 		return;

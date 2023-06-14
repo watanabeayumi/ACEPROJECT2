@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.Date, java.text.DateFormat" %>
-<%!
-  //メソッドの宣言
-  private String GetDate() {
-    DateFormat df = DateFormat.getTimeInstance(DateFormat.LONG);
-    Date date = new Date();
-    return df.format(date);
-  }
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +16,8 @@
 <form  action="" method="post">
 <tr>
       <td>日付</td>
-      <c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="6">
-      <td><%= GetDate()%></td>
+      <c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
+      <td><c:out value="${data}" /></td>
       </c:forEach>
 </tr> 
 <tr>

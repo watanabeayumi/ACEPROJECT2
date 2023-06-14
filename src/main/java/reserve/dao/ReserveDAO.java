@@ -37,7 +37,7 @@ public class ReserveDAO extends CommonDAO {
 
 		return reserve_date;
 	}
-<<<<<<< HEAD
+
 	
 	public int selectinsert(LocalDate date, int time, int no, String name,  String call, String mail)
 			throws DaoException{
@@ -68,33 +68,9 @@ public class ReserveDAO extends CommonDAO {
 	 
 	
 	
-	public int selectDelete(String name,  String call, String mail)
-			throws DaoException{
-				int delete = 0;
-				try {
-					getConnection();
-					PreparedStatement statement=conn.prepareStatement("delete from t_reserve where name=? and tel=? and address=?");
-					
-					
-					
-					statement.setString(1, name);
-					statement.setString(2, call);
-					statement.setString(3, mail);
-					delete=statement.executeUpdate();
-					
-					
-				
-					
-				}catch(SQLException e) {
-						throw new DaoException(e);
-				}finally {
-						closeConnection();
-				}
-				return delete;
-					
-				}
+	
 	 
-=======
+
 
 	public int selectDelete(String name, String call, String mail)
 			throws DaoException {
@@ -115,6 +91,8 @@ public class ReserveDAO extends CommonDAO {
 		}
 		return delete;
 	}
+	
+	
 
 	public Reserve reserve(String name, String tel, String address) throws DaoException {
 		Reserve reserve = null;
@@ -143,5 +121,5 @@ public class ReserveDAO extends CommonDAO {
 		return reserve;
 
 	}
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
+
 }

@@ -8,31 +8,7 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 
-<style>
-input[type=radio] {
-display: none; /* ラジオボタンを非表示にする */
-}
-input[type="radio"]:checked + label {
-background: #31A9EE;/* マウス選択時の背景色を指定する */
-color: #ffffff; /* マウス選択時のフォント色を指定する */
-}
 
-.label {
-display: block; /* ブロックレベル要素化する */
-float: left; /* 要素の左寄せ・回り込を指定する */
-margin: 5px; /* ボックス外側の余白を指定する */
-width: 130px; /* ボックスの横幅を指定する */
-height: 70px; /* ボックスの高さを指定する */
-padding-left: 5px; /* ボックス内左側の余白を指定する */
-padding-right: 5px; /* ボックス内御右側の余白を指定する */
-color: #b20000; /* フォントの色を指定 */
-text-align: center; /* テキストのセンタリングを指定する */
-cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
-border-radius: 5px; /* 角丸を指定する */
-}
-
-</style>
 
 </head>
 <body>
@@ -49,7 +25,16 @@ border-radius: 5px; /* 角丸を指定する */
 </tr> 
 
 <tr>
-	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69">
+<style>
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+input[type="radio"]:checked + label {
+background: #31A9EE;/* マウス選択時の背景色を指定する */
+color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+</style>
+	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
       <c:if test="${i.count % 7 == 1}">
       	<td>
       		<c:out value="${(i.count + 6) / 7 + 9}" />:00∼<c:out value="${(i.count + 6) / 7 + 10}" />:00
@@ -58,7 +43,7 @@ border-radius: 5px; /* 角丸を指定する */
       <td>
       	<c:choose>
       		<c:when test="${!empty data}">
-      			<label id="batu">×</label>
+      			<label id="batu" class="label2">×</label>
       		</c:when>
       		
       		<c:when test="${empty data}">
@@ -80,7 +65,7 @@ border-radius: 5px; /* 角丸を指定する */
         <td><input name="name" type="text" class="namae" maxlength="8" </td>
       </tr><br>
       <tr>
-        <th class="nyuuryoku">電話：<br><em id="tyuui">※ハイフンなし、半角でご記入下さい。</em></th>
+        <th class="nyuuryoku">電話：<h6 id="tyuui">※ハイフンなし、半角でご記入下さい。</h6></th>
         <td><input name="call" type="text" class="denwa" maxlength="8"></td>
       </tr><br>
       <tr>

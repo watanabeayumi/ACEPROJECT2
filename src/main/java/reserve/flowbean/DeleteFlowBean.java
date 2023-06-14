@@ -3,7 +3,7 @@ package reserve.flowbean;
 public class DeleteFlowBean {
 	
 	private String Name;
-	private Integer Tel;
+	private String Tel;
 	private String Address;
 	
 	
@@ -13,10 +13,10 @@ public class DeleteFlowBean {
 	public void setName(String name) {
 		Name = name;
 	}
-	public Integer getTel() {
+	public String getTel() {
 		return Tel;
 	}
-	public void setTel(Integer tel) {
+	public void setTel(String tel) {
 		Tel = tel;
 	}
 	public String getAddress() {

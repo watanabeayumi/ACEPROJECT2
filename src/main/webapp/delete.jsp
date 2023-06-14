@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
-<link rel="stylesheet"  href="css/common.css">
+<link rel="stylesheet"  href="<c:url value='/css/common.css'/>"css/common.css">
 </head>
 <body>
 <h1>ご相談予約削除</h1>
 <h2>ご入力下さい</h2>
 
 <table>
-<form  action="delete" method="post">
+<form  action="<c:url value='/delete'/>" method="post">
       <tr>
         <th class="nyuuryoku">お名前：</th>
         <td><input name="name" type="text" class="namae" maxlength="8" </td>
@@ -28,6 +28,7 @@
       </tr>
     </table>
     <p><input type="submit" value="送信する" class="botton"></p>
+    <%@include file="/WEB-INF/common/errormsg.jsp" %>
 </body>
 </html>
 

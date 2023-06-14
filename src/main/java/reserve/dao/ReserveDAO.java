@@ -35,6 +35,35 @@ public class ReserveDAO extends CommonDAO{
 		return reserve_date;
 	}
 	
+	public int selectinsert(LocalDate date, int time, int no, String name,  String call, String mail)
+			throws DaoException{
+				int insert = 0;
+				try {
+					getConnection();
+					PreparedStatement statement=conn.prepareStatement("insert into t_reserve values(?, ?, ?, ?, ?, ?)");
+					
+					statement.setDate(1, Date.valueOf(date));
+					statement.setInt(2, time);
+					statement.setInt(3, no);
+					statement.setString(4, name);
+					statement.setString(5, call);
+					statement.setString(6, mail);
+					insert=statement.executeUpdate();
+					
+					
+				
+					
+				}catch(SQLException e) {
+						throw new DaoException(e);
+				}finally {
+						closeConnection();
+				}
+				return insert;
+					
+				}
+	 
+	
+	
 	public int selectDelete(String name,  String call, String mail)
 			throws DaoException{
 				int delete = 0;

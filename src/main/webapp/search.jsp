@@ -24,7 +24,7 @@ border: 1px solid #006DD9;/* ラベルの境界線を実線で指定する */
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <table id="table" border="1" height="300" width="1100">
-<form  action="" method="post">
+<form  action="reserveConfirm" method="post">
 <tr>
       <td>日付</td>
       <c:forEach items="${WeekList}" var="data" varStatus="i" end="6">

@@ -24,9 +24,11 @@ public class ConfirmServlet extends HttpServlet {
 		SearchFlowBean flowbean=(SearchFlowBean) session.getAttribute("SearchFlowBean");
 		
 		//登録処理
-		int ret = new ReserveDAO().update(name,);
+		int ret = new ReserveDAO().update(name,reserveDate,tel,address);
 		if(ret !=0) {
-			
+		
+		//次画面呼び出し
+		request.getRequestDispatcher("/)
 		}
 //sqlのやつ作る get.で
 	}

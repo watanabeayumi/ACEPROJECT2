@@ -29,11 +29,11 @@
       </c:if>
       <td>
       	<c:choose>
-      		<c:when test="${!empty data}" id="batu">
+      		<c:when test="${!empty data}">
       			×
       		</c:when>
       		<c:when test="${empty data}">
-      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">○
+      			<input type="radio" name="reserve_date" value="${i.count}">○
       		</c:when>
       	</c:choose>
       </td>

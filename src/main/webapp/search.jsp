@@ -8,58 +8,13 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 
-<style>
-input[type=radio] {
-display: none; /* ラジオボタンを非表示にする */
-}
-input[type="radio"]:checked + label {
-background: #31A9EE;/* マウス選択時の背景色を指定する */
-color: #ffffff; /* マウス選択時のフォント色を指定する */
-}
-.label {
-display: block; /* ブロックレベル要素化する */
-float: left; /* 要素の左寄せ・回り込を指定する */
-margin:1px; /* ボックス外側の余白を指定する */
-width: 100px; /* ボックスの横幅を指定する */
-height: 50px; /* ボックスの高さを指定する */
-padding-left: 5px; /* ボックス内左側の余白を指定する */
-padding-right: 5px; /* ボックス内御右側の余白を指定する */
-color: #b20000; /* フォントの色を指定 */
-text-align: center; /* テキストのセンタリングを指定する */
-line-height: 45px; /* 行の高さを指定する */
-cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
-border-radius: 5px; /* 角丸を指定する */
-font-size: 30px;
-font-weight:  bold;
 
-}.label2{
-	display: block; /* ブロックレベル要素化する */
-float: left; /* 要素の左寄せ・回り込を指定する */
-margin:1px; /* ボックス外側の余白を指定する */
-width: 100px; /* ボックスの横幅を指定する */
-height: 50px; /* ボックスの高さを指定する */
-padding-left: 5px; /* ボックス内左側の余白を指定する */
-padding-right: 5px; /* ボックス内御右側の余白を指定する */
-color: darkblue; /* フォントの色を指定 */
-text-align: center; /* テキストのセンタリングを指定する */
-line-height: 45px; /* 行の高さを指定する */
-cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
-border-radius: 5px; /* 角丸を指定する */
-font-size: 30px;
-font-weight:  bold;
-}
-
-</style>
 
 </head>
 <body>
 
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
-
-<div class="radio02">
 <table id="table" border="1" height="200" width="900">
 <form  action="reserveConfirm" method="post">
 <tr>
@@ -70,6 +25,7 @@ font-weight:  bold;
 </tr> 
 
 <tr>
+
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
       <c:if test="${i.count % 7 == 1}">
       	<td>
@@ -81,9 +37,11 @@ font-weight:  bold;
       		<c:when test="${!empty data}">
       			<label id="batu" class="label2">×</label>
       		</c:when>
+      		
       		<c:when test="${empty data}">
-      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-      			<label for="${i.count}" class="label">○</label>
+      			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
+      			
+      			<input type="radio" name="sizeSelect" value="small" id="sizeSelectSmall" checked><label for="sizeSelectSmall">小</label>
       		</c:when>
       	</c:choose>
       </td>
@@ -93,9 +51,7 @@ font-weight:  bold;
       </c:if>
       </c:forEach>
 </tr>   
-</table>
-</div>
-<br>
+</table><br>
   <table>
       <tr>
         <th class="nyuuryoku">お名前：</th>

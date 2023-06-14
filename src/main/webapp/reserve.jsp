@@ -8,7 +8,6 @@
 
 <title>コンシェルジュ予約</title>
 
-
 <link rel="stylesheet"  href="css/common.css">
 
 </head>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,16 +16,12 @@
 <form  action="" method="post">
 <tr>
       <td>日付</td>
-      <td>6/15</td>
-      <td>6/16</td>
-      <td>6/17</td>
-      <td>6/18</td>
-      <td>6/19</td>
-      <td>6/20</td>
-      <td>6/21</td>
+      <c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
+      <td><c:out value="${data}" /></td>
+      </c:forEach>
 </tr> 
 <tr>
-      <td></td>
+      <td>10:00∼11:00</td>
       <c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="6">
       <td>
       	<c:choose>
@@ -34,6 +30,141 @@
       		</c:when>
       		<c:when test="${empty data}">
       			<input type="radio" name="reserve_date" value="${i.count}-1">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>11:00∼12:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+7" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-2">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>12:00∼13:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+14" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-3">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>13:00∼14:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+21" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-4">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>14:00∼15:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+28" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-5">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>15:00∼16:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+35" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-6">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>16:00∼17:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+42" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-7">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>17:00∼18:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+49" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-8">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>18:00∼19:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+56" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-9">○
+      		</c:when>
+      	</c:choose>
+      </td>
+      </c:forEach>
+</tr>
+<tr>
+      <td>19:00∼20:00</td>
+      <c:forEach items="${ReserveDateList}" var="data" varStatus="i+63" end="6">
+      <td>
+      	<c:choose>
+      		<c:when test="${!empty data}">
+      			×
+      		</c:when>
+      		<c:when test="${empty data}">
+      			<input type="radio" name="reserve_date" value="${i.count}-10">○
       		</c:when>
       	</c:choose>
       </td>

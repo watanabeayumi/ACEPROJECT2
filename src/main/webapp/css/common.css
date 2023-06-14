@@ -120,10 +120,9 @@ p { font-size:75px;
 	font-weight:  bold;
 }
 
-<<<<<<< HEAD
+
 /* ラジオボタンを非表示にする */
 .radio-container input[type="radio"] {
   display: none;
 }
-=======
->>>>>>> refs/remotes/origin/master
+

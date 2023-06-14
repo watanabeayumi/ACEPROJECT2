@@ -34,26 +34,13 @@
       <td>
       	<c:choose>
 
-      		<c:when test="${empty data}">
-
-      		<c:when test="${data =! null}">
+      		<c:when test="${data != null}">
       			<label id="batu" class="label2">×</label>
       		</c:when>
-
       		
-      		<c:when test="${empty data}">
-      			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
-      			
-      			<input type="radio" name="sizeSelect" value="small" id="sizeSelectSmall" checked><label for="sizeSelectSmall">小</label>
-
       		<c:when test="${data == null}">
-
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
       			<label for="${i.count}" class="label">○</label>
-
-      		</c:when>
-      		<c:when test="${!empty data}">
-      			<label id="batu" class="label2">×</label>
       		</c:when>
       	</c:choose>
       </td>

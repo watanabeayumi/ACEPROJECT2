@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,7 @@
 <h2>ご入力下さい</h2>
 
 <table>
+<form  action="delete" method="post">
       <tr>
         <th class="nyuuryoku">お名前：</th>
         <td><input name="name" type="text" class="namae" maxlength="8" </td>

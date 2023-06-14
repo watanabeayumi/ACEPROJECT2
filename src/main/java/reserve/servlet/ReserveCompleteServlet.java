@@ -1,6 +1,7 @@
 package reserve.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
-import reserve.flowbean.DeleteFlowBean;
+import reserve.flowbean.ReserveCalendarFlowBean;
 
 
 @WebServlet("/reserveComplete")
@@ -23,9 +25,15 @@ public class ReserveCompleteServlet extends HttpServlet {
 		
 		request.removeAttribute("SearchFlowBean");
 		HttpSession session=request.getSession(false);
-		Reserve flowbean=(ReserveSearchFlowBean) session.getAttribute("SearchFlowBean");
+		ReserveCalendarFlowBean flowbean=(ReserveCalendarFlowBean) session.getAttribute("SearchFlowBean");
 		
-		int ret =new ReserveDAO().selectinsert(flowbean.date, flowbean.time, flowbean.no, flowbean.name, flowbean.call);
+		int ret=0;
+		try {
+			ret = new ReserveDAO().selectinsert(flowbean.getReserveDate(), flowbean.getTimeCd(), flowbean.getConciergeCd(), flowbean.getName(), flowbean.getTel(), flowbean.getAddress());
+		} catch (DaoException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 		if(ret !=0) {
 			request.getRequestDispatcher("/WEB-INF/complete.jsp").forward(request, response);
 		}else {
@@ -33,7 +41,7 @@ public class ReserveCompleteServlet extends HttpServlet {
 			request.setAttribute("err", err);
 			request.getRequestDispatcher("/WEB-INF/search.jsp").forward(request, response);
 			return;
-			
+		}	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

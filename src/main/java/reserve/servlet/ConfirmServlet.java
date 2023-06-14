@@ -35,7 +35,7 @@ public class ConfirmServlet extends HttpServlet {
 		session.setAttribute("SearchFlowBean", flowbean);
 		
 		//次画面呼び出し
-			request.getRequestDispatcher("/conplete.jsp").forward(request, response);
+			request.getRequestDispatcher("/complete.jsp").forward(request, response);
 		}
 
 	}

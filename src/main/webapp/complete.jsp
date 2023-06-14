@@ -17,5 +17,9 @@
 
 
 <p>登録できました</p>
+
+<a href="<c:url value='/reserve.jsp'/>" class="button" onclick="history.back()">メニューに戻る</a>
+    
+  
 </body>
 </html>

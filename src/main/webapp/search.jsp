@@ -47,8 +47,7 @@ color: #ffffff; /* マウス選択時のフォント色を指定する */
       		</c:when>
       		
       		<c:when test="${empty data}">
-      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-      			<label for="maru" class="label">○</label>
+      			<label class="label"><input type="radio" name="reserve_date" value="${i.count}" id="maru">○</label>
       		</c:when>
       	</c:choose>
       </td>

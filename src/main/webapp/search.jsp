@@ -29,7 +29,7 @@
       </c:if>
       <td>
       	<c:choose>
-      		<c:when test="${!empty data}"id="batu">
+      		<c:when test="${!empty data}" id="batu">
       			×
       		</c:when>
       		<c:when test="${empty data}">

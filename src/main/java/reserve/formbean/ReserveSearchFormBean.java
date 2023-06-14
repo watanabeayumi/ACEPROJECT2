@@ -20,7 +20,6 @@ public class ReserveSearchFormBean {
 	
 	ArrayList<String> errMsg=new ArrayList<>();
 	
-	
 	if("".equals(reserve_date)) {
 		errMsg.add("チェックボックスが選択されていません。");
 	}else {

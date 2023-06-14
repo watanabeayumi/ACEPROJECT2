@@ -28,7 +28,6 @@
       </tr>
     </table>
     <p><input type="submit" value="送信する" class="botton"></p>
-    <%@include file="/WEB-INF/common/errormsg.jsp" %>
 </body>
 </html>
 

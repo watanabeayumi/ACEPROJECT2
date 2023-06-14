@@ -99,6 +99,7 @@ p { font-size:75px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
+    line-height:5;
 }
 .meado{
 	padding-left: 10em;
@@ -108,6 +109,8 @@ p { font-size:75px;
 }
 .tyuui{
 	font-size: 2px;
+	line-height:10;
+	color: dimgray;
 }
 .maru{
 	font-size: 30%;

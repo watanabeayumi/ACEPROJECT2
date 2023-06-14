@@ -113,7 +113,16 @@ p { font-size:75px;
 .maru{
 	font-size: 7px;
 	color: red;
+	font-weight:  bold;
 }
 .batu{
 	font-size: 7px;
+	font-weight:  bold;
 }
+
+
+/* ラジオボタンを非表示にする */
+.radio-container input[type="radio"] {
+  display: none;
+}
+

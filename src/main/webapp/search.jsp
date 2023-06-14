@@ -7,19 +7,46 @@
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
+
+<style>
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+input[type="radio"]:checked + label {
+background: #31A9EE;/* マウス選択時の背景色を指定する */
+color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+.label {
+display: block; /* ブロックレベル要素化する */
+float: left; /* 要素の左寄せ・回り込を指定する */
+margin: 5px; /* ボックス外側の余白を指定する */
+width: 130px; /* ボックスの横幅を指定する */
+height: 70px; /* ボックスの高さを指定する */
+padding-left: 5px; /* ボックス内左側の余白を指定する */
+padding-right: 5px; /* ボックス内御右側の余白を指定する */
+color: #b20000; /* フォントの色を指定 */
+text-align: center; /* テキストのセンタリングを指定する */
+
+cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
+border-radius: 5px; /* 角丸を指定する */
+}
+</style>
+
 </head>
 <body>
 
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <table id="table" border="1" height="300" width="1100">
-<form  action="" method="post">
+<form  action="reserveConfirm" method="post">
 <tr>
       <td>日付</td>
       <c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
       <td><c:out value="${data}" /></td>
       </c:forEach>
 </tr> 
+
 <tr>
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69">
       <c:if test="${i.count % 7 == 1}">
@@ -32,8 +59,10 @@
       		<c:when test="${!empty data}">
       			<p id="batu">×</p>
       		</c:when>
+      		
       		<c:when test="${empty data}">
-      			<input type="radio" name="reserve_date" value="${i.count}"><p id="maru">○</p>
+      			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
+      			<label for="maru" class="label" >○</label>
       		</c:when>
       	</c:choose>
       </td>

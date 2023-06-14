@@ -26,7 +26,7 @@ padding-left: 5px; /* ボックス内左側の余白を指定する */
 padding-right: 5px; /* ボックス内御右側の余白を指定する */
 color: #b20000; /* フォントの色を指定 */
 text-align: center; /* テキストのセンタリングを指定する */
-line-height: 45px; /* 行の高さを指定する */
+
 cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
 border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
 border-radius: 5px; /* 角丸を指定する */

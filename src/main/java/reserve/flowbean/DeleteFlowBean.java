@@ -10,7 +10,21 @@ public class DeleteFlowBean {
 	private LocalDate reserveDate;
 	private String conciergeName;
 	private String timeName;
+	private int timeCd;
+	private int conciergeCd;
 	
+	public int getTimeCd() {
+		return timeCd;
+	}
+	public void setTimeCd(int timeCd) {
+		this.timeCd = timeCd;
+	}
+	public int getConciergeCd() {
+		return conciergeCd;
+	}
+	public void setConciergeCd(int conciergeCd) {
+		this.conciergeCd = conciergeCd;
+	}
 	public LocalDate getReserveDate() {
 		return reserveDate;
 	}

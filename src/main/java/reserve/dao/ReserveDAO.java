@@ -12,7 +12,9 @@ public class ReserveDAO extends CommonDAO {
 
 	private static final String SELECT_BY_RESERVE = "SELECT * FROM t_reserve WHERE reserve_date=? AND time_cd=? AND concierge_cd=?";
 	private static final String SELECT_BY_RESERVEDATA = "SELECT * FROM t_reserve WHERE tel=? AND address=? AND name=?";
-
+	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
+	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
+	
 	public LocalDate selectReserve(LocalDate reserveDate, int timeCd, int conciergeCd) throws DaoException {
 
 		LocalDate reserve_date = null;
@@ -120,6 +122,52 @@ public class ReserveDAO extends CommonDAO {
 		}
 		return reserve;
 
+	}
+	
+	public String time(int timeCd) throws DaoException{
+		String timeName = null;
+		
+		try {
+			getConnection();
+			PreparedStatement statement = conn.prepareStatement(SELECT_BY_TIME);
+			statement.setInt(1, timeCd);
+
+			ResultSet resultSet = statement.executeQuery();
+
+			if (resultSet.next()) {
+				timeName = resultSet.getString("time_name");
+			}
+
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeConnection();
+		}
+		
+		return timeName;
+	}
+	
+	public String concierge(int conciergeCd) throws DaoException{
+		String conciergeName = null;
+		
+		try {
+			getConnection();
+			PreparedStatement statement = conn.prepareStatement(SELECT_BY_TIME);
+			statement.setInt(1, conciergeCd);
+
+			ResultSet resultSet = statement.executeQuery();
+
+			if (resultSet.next()) {
+				conciergeName = resultSet.getString("time_name");
+			}
+
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeConnection();
+		}
+		
+		return conciergeName;
 	}
 
 }

@@ -45,12 +45,12 @@ visibility: visible;
       </c:if>
       <td>
       	<c:choose>
-      		<c:when test="${data =! null}">
-      			<label id="batu" class="label2">×</label>
-      		</c:when>
-      		<c:when test="${data == null}">
+      		<c:when test="${empty data}">
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
       			<label for="${i.count}" class="label">○</label>
+      		</c:when>
+      		<c:when test="${!empty data}">
+      			<label id="batu" class="label2">×</label>
       		</c:when>
       	</c:choose>
       </td>

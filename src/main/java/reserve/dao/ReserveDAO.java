@@ -17,7 +17,7 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	
-	public List<LocalDate> selectReserve(LocalDate reserveDate, int timeCd, int conciergeCd) throws DaoException {
+	public List<LocalDate> selectReserve(LocalDate reserveDate, int conciergeCd) throws DaoException {
 
 		LocalDate reserve_date = null;
 		List<LocalDate> reserveDateList = new ArrayList<>();
@@ -29,15 +29,15 @@ public class ReserveDAO extends CommonDAO {
 				for(int i=1; i<=7; i++) {
 					PreparedStatement statement = conn.prepareStatement(SELECT_BY_RESERVE);
 					statement.setDate(1, Date.valueOf(reserveDate.plusDays(i)));
-					statement.setInt(2, timeCd + j);
+					statement.setInt(2, j);
 					statement.setInt(3, conciergeCd);
-
+					
 					ResultSet resultSet = statement.executeQuery();
-
+					
 					if (resultSet.next()) {
 						reserve_date = resultSet.getDate("reserve_date").toLocalDate();
 					}
-					reserveDateList.add(reserveDate);
+					reserveDateList.add(reserve_date);
 				}
 			}
 		} catch (SQLException e) {

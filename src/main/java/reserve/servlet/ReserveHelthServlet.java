@@ -31,7 +31,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
 		try {
-			reserveDateList = new ReserveDAO().selectReserve(nowDate, 0, (int)session.getAttribute("conciergeCd"));
+			reserveDateList = new ReserveDAO().selectReserve(nowDate, (int)session.getAttribute("conciergeCd"));
 			} catch (DaoException e) {
 				e.printStackTrace();
 				}

@@ -10,7 +10,6 @@ public class ReserveSearchFormBean {
 	private String call;
 	private String mail;
 	
-	
 	public ArrayList<String> validate(HttpServletRequest request){
 	
 	String reserve_date=request.getParameter("reserve_date");

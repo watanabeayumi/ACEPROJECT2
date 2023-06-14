@@ -23,7 +23,7 @@ public class DeleteFormBean {
 			errMsg.add("電話番号が入力されていません。");
 		}
 		try {
-			int tel = Integer.parseInt(tel);
+			int tel = Integer.parseInt(Tel);
 
 		} catch (NumberFormatException e) {
 			errMsg.add("数字以外の文字が含まれています。");

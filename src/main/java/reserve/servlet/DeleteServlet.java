@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
+import reserve.dto.Reserve;
 import reserve.flowbean.DeleteFlowBean;
 import reserve.formbean.DeleteFormBean;
 
@@ -40,11 +41,12 @@ public class DeleteServlet extends HttpServlet {
 		
 		DeleteFlowBean flowBean = null;
 		try { 
-			ReserveDAO reserveDAO = new ReserveDAO();
+			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
 			flowBean = new DeleteFlowBean();
 			flowBean.setName(formBean.getName());
 			flowBean.setTel(formBean.getTel());
 			flowBean.setAddress(formBean.getAddress());
+			flowBean.setReserveDate(reserve.getReserveDate());
 			
 			
 		} catch (DaoException e) {

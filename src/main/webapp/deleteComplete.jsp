@@ -15,5 +15,7 @@
 
 
 <p>削除できました</p>
+
+<a href="<c:url value='/delete.jsp'/>" class="button" onclick="history.back()">メニューに戻る</a>
 </body>
 </html>

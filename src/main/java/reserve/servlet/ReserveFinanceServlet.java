@@ -16,15 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
 
-@WebServlet("/reserveHouse")
-public class ReserveHouseServlet extends HttpServlet {
+@WebServlet("/reserveFinance")
+public class ReserveFinanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public ReserveHouseServlet() {
-    	
-    	
-    }
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		List<LocalDate> reserveDateList = new ArrayList<>();
 		
 		Date strDate = new Date();
@@ -34,7 +31,7 @@ public class ReserveHouseServlet extends HttpServlet {
 			for(int i=1; i<=7; i++) {
 				try {
 				
-					LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), j, 1);
+					LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), j, 5);
 				
 					reserveDateList.add(reserveDate);
 				} catch (DaoException e) {
@@ -63,5 +60,4 @@ public class ReserveHouseServlet extends HttpServlet {
 		
 	}
 
-	
 }

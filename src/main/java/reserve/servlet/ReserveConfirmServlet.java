@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,10 +22,20 @@ public class ReserveConfirmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		request.setCharacterEncoding("utf-8");
+		
 		//セッションスコープに保存している内容を取得する
 		HttpSession session=request.getSession(false);
 		ReserveSearchFlowBean flowbean = new ReserveSearchFlowBean();
 		ReserveSearchFormBean formbean = new ReserveSearchFormBean();
+		
+		List<String> errMsgList = formbean.validate(request);
+		
+		if(!errMsgList.isEmpty()){
+			request.setAttribute("errMsgList", errMsgList);
+			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			return;
+		}
 		
 		Date strDate = new Date();
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -80,6 +91,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		}
 		flowbean.setCall(formbean.getCall());
 		flowbean.setMail(formbean.getMail());
+		flowbean.setName(formbean.getName());
 		session.setAttribute("ReserveSearchFlowBean", flowbean);
 		
 		//次画面呼び出し

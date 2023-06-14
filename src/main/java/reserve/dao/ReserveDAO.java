@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import reserve.dto.Reserve;
 
@@ -15,29 +17,36 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	
-	public LocalDate selectReserve(LocalDate reserveDate, int timeCd, int conciergeCd) throws DaoException {
+	public List<LocalDate> selectReserve(LocalDate reserveDate, int timeCd, int conciergeCd) throws DaoException {
 
 		LocalDate reserve_date = null;
+		List<LocalDate> reserveDateList = new ArrayList<>();
+		
 		try {
 			getConnection();
-			PreparedStatement statement = conn.prepareStatement(SELECT_BY_RESERVE);
-			statement.setDate(1, Date.valueOf(reserveDate));
-			statement.setInt(2, timeCd);
-			statement.setInt(3, conciergeCd);
+			
+			for(int j=1; j<=10; j++) {
+				for(int i=1; i<=7; i++) {
+					PreparedStatement statement = conn.prepareStatement(SELECT_BY_RESERVE);
+					statement.setDate(1, Date.valueOf(reserveDate.plusDays(i)));
+					statement.setInt(2, timeCd + j);
+					statement.setInt(3, conciergeCd);
 
-			ResultSet resultSet = statement.executeQuery();
+					ResultSet resultSet = statement.executeQuery();
 
-			if (resultSet.next()) {
-				reserve_date = resultSet.getDate("reserve_date").toLocalDate();
+					if (resultSet.next()) {
+						reserve_date = resultSet.getDate("reserve_date").toLocalDate();
+					}
+					reserveDateList.add(reserveDate);
+				}
 			}
-
 		} catch (SQLException e) {
 			throw new DaoException(e);
 		} finally {
 			closeConnection();
 		}
 
-		return reserve_date;
+		return reserveDateList;
 	}
 
 	

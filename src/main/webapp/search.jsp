@@ -62,7 +62,7 @@ border-radius: 5px; /* 角丸を指定する */
       		
       		<c:when test="${empty data}">
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-      			<label for="maru" class="label" >○</label>
+      			<label for="maru" class="label">○</label>
       		</c:when>
       	</c:choose>
       </td>

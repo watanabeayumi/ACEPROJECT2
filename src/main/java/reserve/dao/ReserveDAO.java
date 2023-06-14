@@ -35,5 +35,30 @@ public class ReserveDAO extends CommonDAO{
 		return reserve_date;
 	}
 	
+	public int selectDelete(String name,  String call, String mail)
+			throws DaoException{
+				int delete = 0;
+				try {
+					getConnection();
+					PreparedStatement statement=conn.prepareStatement("delete from t_reserve where name=? and tel=? and address=?");
+					
+					
+					
+					statement.setString(1, name);
+					statement.setString(2, call);
+					statement.setString(3, mail);
+					delete=statement.executeUpdate();
+					
+					
+				
+					
+				}catch(SQLException e) {
+						throw new DaoException(e);
+				}finally {
+						closeConnection();
+				}
+				return delete;
+					
+				}
 	 
 }

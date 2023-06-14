@@ -22,15 +22,22 @@ public class ConfirmServlet extends HttpServlet {
 		//セッションスコープに保存している内容を取得する
 		HttpSession session=request.getSession(false);
 		SearchFlowBean flowbean=(SearchFlowBean) session.getAttribute("SearchFlowBean");
-		
+	
 		//登録処理
 		int ret = new ReserveDAO().update(name,reserveDate,tel,address);
 		if(ret !=0) {
 		
+		//sqlのやつ作る get.で
+		flowbean.setName(flowbean.getName());
+		flowbean.setReserveDate(flowbean.getReserveDate());
+		flowbean.setTel(flowbean.getTel());
+		flowbean.setAddress(flowbean.getAddress());
+		session.setAttribute("SearchFlowBean", flowbean);
+		
 		//次画面呼び出し
-		request.getRequestDispatcher("/)
+			request.getRequestDispatcher("/conplete.jsp").forward(request, response);
 		}
-//sqlのやつ作る get.で
+
 	}
 
 }

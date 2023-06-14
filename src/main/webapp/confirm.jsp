@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +9,12 @@
 <link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
-
 <h1>予約確認</h1>
-<p>日時：6/15</p>
-<p>名前：名無しのゴンべ</p>
-<p>電話：90908765</p>
-<p>メール：redyfjhkj@yyff</p>
+<p>日付：<c:out value="${ReserveSearchFlowBean.reserve_date}" /></p>
+<p>時間：<c:out value="${ReserveSearchFlowBean.timeName}" /></p>
+<p>名前：<c:out value="${ReserveSearchFlowBean.name}" /></p>
+<p>電話：<c:out value="${ReserveSearchFlowBean.call}" /></p>
+<p>メール：<c:out value="${ReserveSearchFlowBean.mail}" /></p>
+<a href="<c:url value='/reserveComplete' />">予約する</a>
 </body>
 </html>

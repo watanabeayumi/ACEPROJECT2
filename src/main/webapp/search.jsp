@@ -12,9 +12,24 @@
 input[type=radio] {
 display: none; /* ラジオボタンを非表示にする */
 }
+input[type="radio"]:checked + label {
+background: #31A9EE;/* マウス選択時の背景色を指定する */
+color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
 .label {
-margin: 5px; /* ラベル外側の余白を指定する */
-border: 1px solid #006DD9;/* ラベルの境界線を実線で指定する */
+display: block; /* ブロックレベル要素化する */
+float: left; /* 要素の左寄せ・回り込を指定する */
+margin: 5px; /* ボックス外側の余白を指定する */
+width: 130px; /* ボックスの横幅を指定する */
+height: 70px; /* ボックスの高さを指定する */
+padding-left: 5px; /* ボックス内左側の余白を指定する */
+padding-right: 5px; /* ボックス内御右側の余白を指定する */
+color: #b20000; /* フォントの色を指定 */
+text-align: center; /* テキストのセンタリングを指定する */
+
+cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
+border-radius: 5px; /* 角丸を指定する */
 }
 </style>
 
@@ -47,7 +62,7 @@ border: 1px solid #006DD9;/* ラベルの境界線を実線で指定する */
       		
       		<c:when test="${empty data}">
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-      			<label for="maru" class="label">○</label>
+      			<label for="maru" class="label" >○</label>
       		</c:when>
       	</c:choose>
       </td>

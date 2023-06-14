@@ -33,6 +33,7 @@ input[type="radio"]:checked + label {
 background: #31A9EE;/* マウス選択時の背景色を指定する */
 color: #ffffff; /* マウス選択時のフォント色を指定する */
 }
+
 </style>
 	<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
       <c:if test="${i.count % 7 == 1}">

@@ -57,7 +57,7 @@ color: #ffffff; /* マウス選択時のフォント色を指定する */
       	<tr>
       </c:if>
       </c:forEach>
-</tr>
+</tr>   
 </table><br>
   <table>
       <tr>

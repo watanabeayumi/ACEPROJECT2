@@ -16,9 +16,7 @@ input[type="radio"]:checked + label {
 background: #31A9EE;/* マウス選択時の背景色を指定する */
 color: #ffffff; /* マウス選択時のフォント色を指定する */
 }
-<<<<<<< HEAD
 
-=======
 .label {
 display: block; /* ブロックレベル要素化する */
 float: left; /* 要素の左寄せ・回り込を指定する */
@@ -29,12 +27,11 @@ padding-left: 5px; /* ボックス内左側の余白を指定する */
 padding-right: 5px; /* ボックス内御右側の余白を指定する */
 color: #b20000; /* フォントの色を指定 */
 text-align: center; /* テキストのセンタリングを指定する */
-
 cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
 border: 2px solid #fffbf4;/* ボックスの境界線を実線で指定する */
 border-radius: 5px; /* 角丸を指定する */
 }
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
+
 </style>
 
 </head>

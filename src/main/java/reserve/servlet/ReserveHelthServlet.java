@@ -18,6 +18,31 @@ import reserve.dao.ReserveDAO;
 
 @WebServlet("/reserveHelth")
 public class ReserveHelthServlet extends HttpServlet {
+<<<<<<< HEAD
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		List<LocalDate> reserveDateList = new ArrayList<>();
+
+		Date strDate = new Date();
+		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+		for (int i = 1; i <= 7; i++) {
+
+			try {
+
+				LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), 1, 2);
+
+				reserveDateList.add(reserveDate);
+
+			} catch (DaoException e) {
+				e.printStackTrace();
+
+			}
+		}
+		request.setAttribute("ReserveDateList", reserveDateList);
+		request.getRequestDispatcher("search.jsp").forward(request, response);
+=======
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();
@@ -53,10 +78,12 @@ public class ReserveHelthServlet extends HttpServlet {
 		request.getRequestDispatcher("search.jsp").forward(request, response);
 		
 		return;
+>>>>>>> refs/remotes/origin/master
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }

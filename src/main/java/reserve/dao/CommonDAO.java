@@ -29,8 +29,8 @@ public class CommonDAO {
 
 		try {
 			Class.forName("org.postgresql.Driver");
-			String url = "jdbc:postgresql://localhost:5432/groupproject";
-			conn = DriverManager.getConnection(url, "postgres", "postgres");
+			String url = "jdbc:postgresql://groupproject0707-server.postgres.database.azure.com:5432/groupproject0707-server";
+			conn = DriverManager.getConnection(url, "mtcdpkkkak", "tebasaki1234!");
 
 		} catch (ClassNotFoundException e) {
 			throw new DaoException(e);

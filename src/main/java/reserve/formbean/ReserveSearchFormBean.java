@@ -30,14 +30,14 @@ public class ReserveSearchFormBean {
 	
 	if("".equals(call)) {
 		errMsg.add("電話番号が入力されていません。");
-	}
-    if("".equals(mail)) {
-		errMsg.add("メールアドレスが入力されていません。");
 	}else{
         if(call.length() * 3 ==call.getBytes().length){
-           errMsg.add("電話番号の入力に誤りがあります。");
-           }
-        }
+            errMsg.add("電話番号の入力に誤りがあります。");
+            }
+         }
+    if("".equals(mail)) {
+		errMsg.add("メールアドレスが入力されていません。");
+	}
     try{
     	reserveDate = Integer.parseInt(reserve_date);
     	}catch(NumberFormatException e){

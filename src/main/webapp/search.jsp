@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,8 +25,8 @@
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">
 					<td>
-						<c:out value="${(i.count + 6) / 7 + 9}" />:00∼
-						<c:out value="${(i.count + 6) / 7 + 10}" />:00
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 9}"/>:00∼
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 10}"/>:00
 					</td>
 				</c:if>
 				<td>

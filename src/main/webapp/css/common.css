@@ -66,6 +66,10 @@ font-size: 50px;
 }
 .nyuuryoku{
 	font-size: 50px;
+	margin: 100;
+	
+}
+.th{font-size: 30px;
 	
 }
 .cp_hr07::after {
@@ -123,7 +127,7 @@ border-radius: 6px;
     padding-right: 10em;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
-    
+    text-align: left;
 }
 .denwa{
 	padding-left: 10em;
@@ -131,13 +135,15 @@ border-radius: 6px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
-    line-height:5;
+    line-height:10;
+  
 }
 .meado{
 	padding-left: 10em;
     padding-right: 10em;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
+    text-align: left;
 }
 .tyuui{
 	font-size: 2px;

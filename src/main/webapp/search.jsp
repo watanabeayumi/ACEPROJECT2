@@ -51,24 +51,13 @@
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text" class="namae" maxlength="8" </td>
 		</tr>
-		<br>
-		<tr>
+			<c:forEach var="i" begin="0" end="7" step="1">
+　       <tr>
 			<th></th>
 			<td></td>
-			
 		</tr>
-		<br>
-		<tr>
-			<th></th>
-			<td></td>
-			
-		</tr>
-		<br>
-		<tr>
-			<th></th>
-			<td></td>
-			
-		</tr>
+            </c:forEach>
+		
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
@@ -77,10 +66,10 @@
 		</tr>
 		<br>
 		<tr>
-			<th>※ハイフンなし、半角でご記入下さい。</th>
+			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
 			
 		</tr>
-		<br>
+		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="text" class="meado" maxlength="8"></td>

@@ -32,7 +32,7 @@
 	</p><br>
 <table class="sousin">
 <tr>
-<th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">戻る</a></th>
 <th><input type="submit" value="削除する" class="botton"></th>
 </form>
 </tr>

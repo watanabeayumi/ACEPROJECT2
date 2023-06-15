@@ -42,19 +42,19 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		int reserveDate = formbean.getReserveDate();
 		
-		if(reserveDate>=1 && reserveDate<=10) {
+		if(reserveDate%7==1) {
 			flowbean.setReserve_date(nowDate.plusDays(1));
-		}else if(reserveDate>=11 && reserveDate<=20) {
+		}else if(reserveDate%7==2) {
 			flowbean.setReserve_date(nowDate.plusDays(2));
-		}else if(reserveDate>=21 && reserveDate<=30) {
+		}else if(reserveDate%7==3) {
 			flowbean.setReserve_date(nowDate.plusDays(3));
-		}else if(reserveDate>=31 && reserveDate<=40) {
+		}else if(reserveDate%7==4) {
 			flowbean.setReserve_date(nowDate.plusDays(4));
-		}else if(reserveDate>=41 && reserveDate<=50) {
+		}else if(reserveDate%7==5) {
 			flowbean.setReserve_date(nowDate.plusDays(5));
-		}else if(reserveDate>=51 && reserveDate<=60) {
+		}else if(reserveDate%7==6) {
 			flowbean.setReserve_date(nowDate.plusDays(6));
-		}else if(reserveDate>=61 && reserveDate<=70) {
+		}else if(reserveDate%7==0) {
 			flowbean.setReserve_date(nowDate.plusDays(7));
 		}
 		

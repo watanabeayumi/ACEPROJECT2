@@ -19,6 +19,7 @@
   </dependency>
   </dependencies>
   <build>
+	<finalName>reservesys</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>

@@ -13,7 +13,7 @@
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <form  action="reserveConfirm" method="post">
-	<table class="table" border="1" height="200" width="900">
+	<table class="table" border="1" height="200" width="1000">
 		<tr>
 			<td>日付</td>
 			<c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
@@ -24,7 +24,7 @@
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">
 					<td>
-						<c:out value="${(i.count + 6) / 7 + 9}" />:00∼<c:out value="${(i.count + 6) / 7 + 10}" />:00
+						<c:out value="${(i.count + 6) / 7 + 9}" />:00<c:out value="${(i.count + 6) / 7 + 10}" />:00
 					</td>
 				</c:if>
 				<td>
@@ -53,8 +53,32 @@
 		</tr>
 		<br>
 		<tr>
-			<th class="nyuuryoku">電話：<h6 id="tyuui">※ハイフンなし、半角でご記入下さい。</h6></th>
+			<th></th>
+			<td></td>
+			
+		</tr>
+		<br>
+		<tr>
+			<th></th>
+			<td></td>
+			
+		</tr>
+		<br>
+		<tr>
+			<th></th>
+			<td></td>
+			
+		</tr>
+		<br>
+		<tr>
+			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="text" class="denwa" maxlength="8"></td>
+			
+		</tr>
+		<br>
+		<tr>
+			<th>※ハイフンなし、半角でご記入下さい。</th>
+			
 		</tr>
 		<br>
 		<tr>

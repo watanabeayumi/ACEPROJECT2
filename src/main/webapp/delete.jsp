@@ -28,13 +28,11 @@
       </tr>
     </table>
     <p><input type="submit" value="送信する" class="botton"></p>
-<<<<<<< HEAD
-=======
-    
-    <a href="<c:url value='/reserve.jsp'/>" class="button" onclick="history.back()">戻る</a>
+
+    <a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">戻る</a>
     
     <%@include file="/WEB-INF/common/errormsg.jsp" %>
->>>>>>> refs/remotes/origin/master
+
 </body>
 </html>
 

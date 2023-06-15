@@ -157,7 +157,13 @@ border-radius: 6px;
 	font-weight:  bold;
 	text-align: center;
 }
-
+input[type=text]{
+	font-size: 200%;
+    height: 2em;
+    border: 3px solid rgb(43, 60, 60);
+    text-align:left;
+    line-height:2;
+}
 input[type=radio]{
     content: "";
     display: inline-block;

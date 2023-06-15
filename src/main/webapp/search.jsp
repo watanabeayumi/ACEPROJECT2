@@ -8,11 +8,6 @@
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
-<style>
-input[type="text"]{
-    font-size: 300%;
-}
-</style>
 </head>
 <body>
 <h1>ご相談予約</h1>
@@ -55,7 +50,7 @@ input[type="text"]{
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
-			<td><input name="name" type="text" class="namae"></td>
+			<td><input name="name" type="text"></td>
 		</tr>
 			<c:forEach var="i" begin="0" end="7" step="1">
 		<tr>
@@ -66,7 +61,7 @@ input[type="text"]{
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="text" class="denwa"></td>
+			<td><input name="call" type="text"></td>
 			
 		</tr>
 		<br>
@@ -77,7 +72,7 @@ input[type="text"]{
 		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
-			<td><input name="mail" type="text" class="meado"></td>
+			<td><input name="mail" type="text"></td>
 		</tr>
 		<br>
 	</table>

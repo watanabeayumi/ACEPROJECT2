@@ -107,30 +107,15 @@ p { font-size:75px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
 }
-
 .tyuui{
 	font-size: 2px;
 	line-height:10;
 	color: dimgray;
 }
-.maru{
-	font-size: 30%;
-	color: red;
-	font-weight:  bold;
-	text-align: center;
-	
-}
+
 .batu{
 	font-size: 30px;
 	font-weight:  bold;
 	text-align: center;
 }
-input[type=radio]{
-    content: "";
-    display: inline-block;
-    background-size: contain;
-    width: 140px;
-    height: 140px;
-}
-
 

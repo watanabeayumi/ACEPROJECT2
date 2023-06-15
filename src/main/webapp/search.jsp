@@ -49,17 +49,17 @@
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
-			<td><input name="name" type="text" class="namae" maxlength="8" </td>
+			<td><input name="name" type="text" class="namae" ></td>
 		</tr>
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：<h6 id="tyuui">※ハイフンなし、半角でご記入下さい。</h6></th>
-			<td><input name="call" type="text" class="denwa" maxlength="8"></td>
+			<td><input name="call" type="text" class="denwa" ></td>
 		</tr>
 		<br>
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
-			<td><input name="mail" type="text" class="meado" maxlength="8"></td>
+			<td><input name="mail" type="text" class="meado" ></td>
 		</tr>
 		<br>
 	</table>

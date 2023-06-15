@@ -16,10 +16,14 @@
 <p>名前：<c:out value="${ReserveSearchFlowBean.name}" /></p>
 <p>電話：<c:out value="${ReserveSearchFlowBean.call}" /></p>
 <p>メール：<c:out value="${ReserveSearchFlowBean.mail}" /></p>
-<a href="<c:url value='/reserveComplete' />">予約する</a>
 
-<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
-    
-    
+
+
+  <table class="sousin">
+<tr><th><a  class="botton" href="<c:url value='/reserveComplete' />">予約する</a></th>
+	
+	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
+	</tr>
+</table>
 </body>
 </html>

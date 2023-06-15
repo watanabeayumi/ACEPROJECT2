@@ -12,8 +12,8 @@
 <h1>ご相談予約削除</h1>
 <h2>ご入力下さい</h2>
 
-<table>
-<form  action="<c:url value='/delete'/>" method="post">
+<table class="table">
+<form  action="/delete" method="post">
       <tr>
         <th class="nyuuryoku">お名前：</th>
         <td><input name="name" type="text" class="namae" maxlength="8" </td>
@@ -27,9 +27,14 @@
         <td><input name="mail" type="text" class="meado" maxlength="8"></td>
       </tr>
     </table>
-    <p><input type="submit" value="送信する" class="botton"></p>
-</form>
-    <a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">戻る</a>
+    
+    <table class="sousin">
+<tr><th><input type="submit" value="送信する" class="botton"></th>
+	</form>
+	
+	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">戻る</a></th>
+	</tr>
+</table>
 
 </body>
 </html>

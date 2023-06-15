@@ -18,8 +18,12 @@
 
 <p>登録できました</p>
 
-<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
-    
+
+    <table class="sousin">
+<tr>
+	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
+	</tr>
+  </table>  
   
 </body>
 </html>

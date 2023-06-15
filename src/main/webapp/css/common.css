@@ -30,12 +30,21 @@ h2 {
   /*リンクの文字色をグレイに*/
   color:gray;
 }
-table{
+.table{
     margin: auto;
     font-size: 13pt;
     text-align: center;
     line-height: 30px;
-    }
+    
+	}
+.sousin{
+	 margin: auto;
+    font-size: 13pt;
+    text-align: center;
+    line-height: 30px;
+    
+	
+}
 div{
 float:inline-start;
 padding:50px;
@@ -86,6 +95,21 @@ p { font-size:75px;
  font-weight: bold;
  font-size: 50px;
 
+}
+.anka{
+	 border-radius: 6px;
+ margin-top: 32px;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ width: 280px;
+ 
+ display: block;
+ letter-spacing: 0.05em;
+ background-color:skyblue;
+ font-weight: bold;
+ font-size: 50px;
 }
 .namae{
 	padding-left: 10em;

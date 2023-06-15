@@ -13,7 +13,7 @@
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
 <form  action="reserveConfirm" method="post">
-	<table id="table" border="1" height="200" width="900">
+	<table class="table" border="1" height="200" width="900">
 		<tr>
 			<td>日付</td>
 			<c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
@@ -46,7 +46,7 @@
 		</tr>   
 	</table>
 	<br>
-	<table>
+	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text" class="namae" maxlength="8" </td>
@@ -62,11 +62,15 @@
 			<td><input name="mail" type="text" class="meado" maxlength="8"></td>
 		</tr>
 		<br>
-	
-	<
-<input type="submit" value="送信する" class="botton">
+	</table>
+	<table class="sousin">
+<tr><th><input type="submit" value="送信する" class="botton"></th>
 	</form>
-	<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
-table tagu to
+	
+	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
+	</tr>
+</table>
+<a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a>
+<form><input type="submit" value="送信する"></form>
 </body>
 </html>

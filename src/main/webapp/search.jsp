@@ -63,7 +63,7 @@
 		</tr>
 		<br>
 	
-	
+	<
 <input type="submit" value="送信する" class="botton">
 	</form>
 	<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>

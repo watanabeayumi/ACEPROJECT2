@@ -18,7 +18,8 @@
 <p>メール：<c:out value="${ReserveSearchFlowBean.mail}" /></p>
 <a href="<c:url value='/reserveComplete' />">予約する</a>
 
-<a href="<c:url value='/search.jsp'/>" class="button" onclick="history.back()">戻る</a>
+<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
+    
     
 </body>
 </html>

@@ -36,19 +36,11 @@ public class ReserveHouseServlet extends HttpServlet {
 		Date strDate = new Date();
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
-		for(int j=1; j<=10; j++) {
-			for(int i=1; i<=7; i++) {
-				try {
-				
-					LocalDate reserveDate = new ReserveDAO().selectReserve(nowDate.plusDays(i), j, (int)session.getAttribute("conciergeCd"));
-				
-					reserveDateList.add(reserveDate);
-				} catch (DaoException e) {
-					e.printStackTrace();
+		try {
+			reserveDateList = new ReserveDAO().selectReserve(nowDate, (int)session.getAttribute("conciergeCd"));
+			} catch (DaoException e) {
+				e.printStackTrace();
 				}
-			}
-		}
-		
 		request.setAttribute("ReserveDateList", reserveDateList);
 		
 		List<LocalDate> weekList = new ArrayList<>();

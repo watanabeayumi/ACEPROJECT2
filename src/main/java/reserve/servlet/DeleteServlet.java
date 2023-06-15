@@ -18,9 +18,19 @@ import reserve.formbean.DeleteFormBean;
 
 @WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
+<<<<<<< HEAD
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+=======
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.getRequestDispatcher("delete.jsp").forward(request,response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+>>>>>>> refs/remotes/origin/master
 		DeleteFormBean formBean = new DeleteFormBean();
 		List<String> errMsgList = formBean.validate(request);
 

@@ -3,13 +3,20 @@ package reserve.flowbean;
 import java.time.LocalDate;
 
 public class ReserveSearchFlowBean {
-	LocalDate reserve_date;
-	String name;
-	String call;
-	String mail;
-	int timeCd;
-	String timeName;
+	private LocalDate reserve_date;
+	private String name;
+	private String call;
+	private String mail;
+	private int timeCd;
+	private String timeName;
+	private int conciergeCd;
 	
+	public int getConciergeCd() {
+		return conciergeCd;
+	}
+	public void setConciergeCd(int conciergeCd) {
+		this.conciergeCd = conciergeCd;
+	}
 	public String getTimeName() {
 		return timeName;
 	}

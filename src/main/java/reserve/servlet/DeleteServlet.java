@@ -36,7 +36,6 @@ public class DeleteServlet extends HttpServlet {
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}
-		
 		DeleteFlowBean flowBean = new DeleteFlowBean();
 		try {
 			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());

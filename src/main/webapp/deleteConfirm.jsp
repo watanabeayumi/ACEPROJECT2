@@ -30,9 +30,6 @@
 	<p>メール：
 		<c:out value="${DeleteFlowBean.address}" />
 	</p><br>
-	
-</form>
-
 <table class="sousin">
 <tr>
 <th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>

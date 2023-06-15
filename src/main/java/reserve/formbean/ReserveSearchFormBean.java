@@ -31,17 +31,11 @@ public class ReserveSearchFormBean {
 	if("".equals(call)) {
 		errMsg.add("電話番号が入力されていません。");
 	}
-	
-    try{
-    	int callint=Integer.parseInt(call);
-    	}catch(NumberFormatException e){
-    		errMsg.add("数字以外が入力されています。");
-    		}
     if("".equals(mail)) {
 		errMsg.add("メールアドレスが入力されていません。");
 	}else{
         if(call.length() * 3 ==call.getBytes().length){
-           errMsg.add("全角が含まれています。");
+           errMsg.add("電話番号の入力に誤りがあります。");
            }
         }
     try{

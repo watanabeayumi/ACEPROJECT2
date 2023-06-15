@@ -25,12 +25,6 @@ public class DeleteFormBean {
 		if ("".equals(tel)) {
 			errMsg.add("電話番号が入力されていません。");
 		}
-		try {
-			int intTel = Integer.parseInt(tel);
-
-		} catch (NumberFormatException e) {
-			errMsg.add("数字以外の文字が含まれています。");
-		}
 		if ("".equals(address)) {
 			errMsg.add("メールアドレスが入力されていません。");
 		}

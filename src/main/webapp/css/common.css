@@ -39,9 +39,10 @@ h2 {
 	}
 .sousin{
 	 margin: auto;
-    font-size: 13pt;
+	 padding:1px;
+    font-size: 2pt;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     
 	
 }
@@ -97,19 +98,22 @@ p { font-size:75px;
 
 }
 .anka{
-	 border-radius: 6px;
+border-radius: 6px;
  margin-top: 32px;
  margin-left: auto;
  margin-right: auto;
- padding-top: 20px;
- padding-bottom: 20px;
- width: 280px;
- 
+ padding-top: 30px;
+ padding-bottom: 10px;
+ width: 295px;
+ height: 73px; 
+ border: solid 2px #696969;/*線*/
  display: block;
  letter-spacing: 0.05em;
  background-color:skyblue;
  font-weight: bold;
- font-size: 50px;
+ font-size: 40px;
+ text-align: center;
+ color:#000;
 }
 .namae{
 	padding-left: 10em;

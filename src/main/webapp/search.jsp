@@ -64,13 +64,10 @@
 		<br>
 	</table>
 	<table class="sousin">
-<tr><th><input type="submit" value="送信する" class="botton"></th>
+<tr><th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><input type="submit" value="送信する" class="botton"></th>
 	</form>
-	
-	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
 	</tr>
 </table>
-<a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a>
-<form><input type="submit" value="送信する"></form>
 </body>
 </html>

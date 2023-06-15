@@ -16,6 +16,11 @@
 
 <p>削除できました</p>
 
-<a href="<c:url value='/delete.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
+
+<table class="sousin">
+<tr>
+	<th><a href="<c:url value='/delete.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
+	</tr>
+  </table>  
 </body>
 </html>

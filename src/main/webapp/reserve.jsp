@@ -16,12 +16,12 @@
 <h2 id="sub">ご相談内容をお選びください</h2>
  
   <div class="cp_hr07">
-    <a href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>
-    <a href="<c:url value='/reserveHelth' />">介護や終活</a><br>
-    <a href="<c:url value='/reserveInheritance' />">相続</a><br>
-    <a href="<c:url value='/reserveInsurance' />">車や保険</a><br>
-    <a href="<c:url value='/reserveFinance' />">金融</a><br>
-    <a href="<c:url value='/delete' />">予約キャンセル</a>
+    <a class="menu" href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>
+    <a class="menu" href="<c:url value='/reserveHelth' />">介護や終活</a><br>
+    <a class="menu" href="<c:url value='/reserveInheritance' />">相続</a><br>
+    <a class="menu" href="<c:url value='/reserveInsurance' />">車や保険</a><br>
+    <a class="menu" href="<c:url value='/reserveFinance' />">金融</a><br>
+    <a class="menu" href="<c:url value='/delete' />">予約キャンセル</a>
   </div>
 </body>
 </html>

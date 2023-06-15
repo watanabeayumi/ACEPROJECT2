@@ -39,7 +39,7 @@
       		</c:when>
       		<c:when test="${data == null}">
       			<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-      			<label for="${i.count}" class="label">○</label>
+      			<label for="maru">○</label>
       		</c:when>
       	</c:choose>
       </td>

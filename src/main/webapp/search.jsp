@@ -10,7 +10,7 @@
 <link rel="stylesheet"  href="css/common.css">
 <style>
 input[type="text"]{
-    font-size: 150%;
+    font-size: 300%;
 }
 </style>
 </head>

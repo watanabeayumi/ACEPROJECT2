@@ -18,8 +18,7 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	
 	public List<LocalDate> selectReserve(LocalDate reserveDate, int conciergeCd) throws DaoException {
-
-		LocalDate reserve_date = null;
+		
 		List<LocalDate> reserveDateList = new ArrayList<>();
 		
 		try {
@@ -27,6 +26,8 @@ public class ReserveDAO extends CommonDAO {
 			
 			for(int j=1; j<=10; j++) {
 				for(int i=1; i<=7; i++) {
+					LocalDate reserve_date = null;
+					
 					PreparedStatement statement = conn.prepareStatement(SELECT_BY_RESERVE);
 					statement.setDate(1, Date.valueOf(reserveDate.plusDays(i)));
 					statement.setInt(2, j);

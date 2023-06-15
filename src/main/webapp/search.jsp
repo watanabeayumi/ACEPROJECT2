@@ -7,26 +7,7 @@
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
-<style>
-input[type=radio]{
-    content: "";
-    display: inline-block;
-    background-size: contain;
-    width: 100px;
-    height: 50px;
-}
-input[type=radio][value="${i.count}"]{
-	background-image: url(/pic/maru.gif);
 
-}
-input[type=radio]:checked{
-    border: 3px solid #000;
-    box-sizing: border-box;
-}
-input[type=radio]{
-    display: none;
-}
-</style>
 </head>
 <body>
 <h1>ご相談予約</h1>
@@ -50,10 +31,10 @@ input[type=radio]{
 					<c:choose>
 						<c:when test="${data == null}">
 							<input type="radio" name="reserve_date" value="${i.count}" id="maru">
-							<label for="maru">○</label>
+							<label for="maru"></label>
 						</c:when>
 						<c:when test="${data != null}">
-							<label id="batu" class="label2">×</label>
+							<label id="batu">×</label>
 						</c:when>
 					</c:choose>
 				</td>

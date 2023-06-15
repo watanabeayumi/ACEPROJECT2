@@ -44,8 +44,11 @@ public class ReserveSearchFormBean {
            errMsg.add("全角が含まれています。");
            }
         }
-    reserveDate = Integer.parseInt(reserve_date);
-    
+    try{
+    	reserveDate = Integer.parseInt(reserve_date);
+    	}catch(NumberFormatException e){
+    		errMsg.add("日時が選択されていません。");
+    		}
     return errMsg;
 }
 	

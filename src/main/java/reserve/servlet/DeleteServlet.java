@@ -26,43 +26,35 @@ public class DeleteServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("utf-8");
+		HttpSession session=request.getSession(false);
 		DeleteFormBean formBean = new DeleteFormBean();
 		List<String> errMsgList = formBean.validate(request);
 		
 		if (!errMsgList.isEmpty()) {
-			
-			response.sendRedirect(request.getContextPath()+"/error");
+			request.setAttribute("errMsgList", errMsgList);
+			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}
 		
-		HttpSession session = request.getSession(false);
-		String Name = (String) session.getAttribute("Name");
-		String Address = (String) session.getAttribute("Address");
-		
-		DeleteFlowBean flowBean = null;
-		try { 
+		DeleteFlowBean flowBean = new DeleteFlowBean();
+		try {
 			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
-			int timeCd = reserve.getTimeCd();
-			int conciergeCd = reserve.getConciergeCd();
+			String timeName = new ReserveDAO().time(reserve.getTimeCd());
+			String conciergeName = new ReserveDAO().concierge(reserve.getConciergeCd());
 			
 			flowBean = new DeleteFlowBean();
 			flowBean.setName(formBean.getName());
 			flowBean.setTel(formBean.getTel());
 			flowBean.setAddress(formBean.getAddress());
 			flowBean.setReserveDate(reserve.getReserveDate());
-			flowBean.setTimeCd(timeCd);
-			flowBean.setConciergeCd(conciergeCd);
-			
-			String timeName = new ReserveDAO().time(timeCd);
+			flowBean.setTimeCd(reserve.getTimeCd());
+			flowBean.setConciergeCd(reserve.getConciergeCd());
 			flowBean.setTimeName(timeName);
-			
-			String conciergeName = new ReserveDAO().concierge(conciergeCd);
 			flowBean.setConciergeName(conciergeName);
-			
 		} catch (DaoException e) {
-
 			e.printStackTrace();
-			response.sendRedirect(request.getContextPath() + "/error");
+			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}
 		session.setAttribute("DeleteFlowBean",flowBean);

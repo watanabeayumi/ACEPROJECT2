@@ -16,7 +16,7 @@
 <p>相談内容：<c:out value="${DeleteFlowBean.conciergeName}"/> </p><br>
 <p>名前：<c:out value="${DeleteFlowBean.name}"/></p><br>
 <p>電話：<c:out value="${DeleteFlowBean.tel}"/></p><br>
-<p>メール：<c:out value="${DeleteFlowBean.Address}"/></p><br>
+<p>メール：<c:out value="${DeleteFlowBean.address}"/></p><br>
 <p><input type="submit" value="削除する" class="botton"></p>
 
 <a href="<c:url value='/delete.jsp'/>" class="botton" onclick="history.back()">戻る</a>

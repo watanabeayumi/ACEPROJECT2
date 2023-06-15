@@ -1,71 +1,64 @@
 package reserve.formbean;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class DeleteFormBean {
-	private String Name;
-	private String Tel;
-	private String Address;
+	private String name;
+	private String tel;
+	private String address;
 
-	public ArrayList<String> validate(HttpServletRequest request) {
-		Name = request.getParameter("Name");
-		Tel = request.getParameter("Tel");
-		Address = request.getParameter("Address");
+	public ArrayList<String> validate(HttpServletRequest request) throws UnsupportedEncodingException {
+		
+		request.setCharacterEncoding("utf-8");
+		name = request.getParameter("name");
+		tel = request.getParameter("call");
+		address = request.getParameter("mail");
 
 		ArrayList<String> errMsg = new ArrayList<>();
 
-		if ("".equals(Name)) {
+		if ("".equals(name)) {
 			errMsg.add("名前が入力されていません。");
 		}
-		if ("".equals(Tel)) {
+		if ("".equals(tel)) {
 			errMsg.add("電話番号が入力されていません。");
 		}
 		try {
-			int tel = Integer.parseInt(Tel);
+			int intTel = Integer.parseInt(tel);
 
 		} catch (NumberFormatException e) {
 			errMsg.add("数字以外の文字が含まれています。");
 		}
-		if ("".equals(Address)) {
+		if ("".equals(address)) {
 			errMsg.add("メールアドレスが入力されていません。");
-		} else {
-			if (Address.length() * 3 == Address.getBytes().length) {
-				errMsg.add("全角が含まれています。");
-			}
 		}
-
 		return errMsg;
-
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getTel() {
-		return Tel;
+		return tel;
 	}
 
 	public void setTel(String tel) {
-		Tel = tel;
+		this.tel = tel;
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
-
-	
-	
-	
 	
 }

@@ -77,13 +77,7 @@ public class ReserveDAO extends CommonDAO {
 				return insert;
 					
 				}
-	 
 	
-	
-	
-	 
-
-
 	public int selectDelete(String name, String call, String mail)
 			throws DaoException {
 		int delete = 0;
@@ -168,7 +162,7 @@ public class ReserveDAO extends CommonDAO {
 			ResultSet resultSet = statement.executeQuery();
 
 			if (resultSet.next()) {
-				conciergeName = resultSet.getString("time_name");
+				conciergeName = resultSet.getString("concierge_name");
 			}
 
 		} catch (SQLException e) {

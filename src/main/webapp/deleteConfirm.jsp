@@ -30,16 +30,15 @@
 	<p>メール：
 		<c:out value="${DeleteFlowBean.address}" />
 	</p><br>
-	<p>
-		<input type="submit" value="削除する" class="botton">
-	</p>
+	
 </form>
+
 <table class="sousin">
-	<tr>
-		<th>
-			<a href="<c:url value='/delete.jsp' />" class="botton" onclick="history.back()">戻る</a>
-		</th>
-	</tr>
+<tr>
+<th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><input type="submit" value="削除する" class="botton"></th>
+</form>
+</tr>
 </table>
 </body>
 </html>

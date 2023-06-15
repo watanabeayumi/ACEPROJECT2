@@ -26,13 +26,14 @@
 			<td><input name="mail" type="text" class="meado" maxlength="8"></td>
 		</tr>
 	</table>
-	<table class="sousin">
-		<tr>
-			<th><input type="submit" value="送信する" class="botton"></th>
-		</tr>
-	</table>
+
+<table class="sousin">
+<tr>
+<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><input type="submit" value="送信する" class="botton"></th>
 </form>
-<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">戻る</a>
+</tr>
+</table>
 </body>
 </html>
 

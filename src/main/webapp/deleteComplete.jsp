@@ -17,10 +17,11 @@
 <p>削除できました</p>
 
 
-<table class="sousin">
+ <table class="sousin">
 <tr>
-	<th><a href="<c:url value='/delete.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
-	</tr>
-  </table>  
+<th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+</form>
+</tr>
+</table>
 </body>
 </html>

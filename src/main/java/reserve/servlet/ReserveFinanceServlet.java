@@ -42,7 +42,7 @@ public class ReserveFinanceServlet extends HttpServlet {
 		
 		List<LocalDate> weekList = new ArrayList<>();
 		
-		for(int k=1; k<=10; k++) {
+		for(int k=1; k<=7; k++) {
 			LocalDate week = nowDate.plusDays(k);
 			
 			weekList.add(week);

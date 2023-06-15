@@ -18,12 +18,12 @@
 
 <p>登録できました</p>
 
-
-    <table class="sousin">
-<tr>
-	<th><a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a></th>
-	</tr>
-  </table>  
   
+ <table class="sousin">
+<tr>
+<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+</form>
+</tr>
+</table>
 </body>
 </html>

@@ -135,8 +135,13 @@ border-radius: 6px;
     height: 6em;
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
+<<<<<<< HEAD
     line-height:10;
   
+=======
+    line-height:5;
+   
+>>>>>>> refs/remotes/origin/master
 }
 .meado{
 	padding-left: 10em;

@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
-
 </head>
 <body>
 <h1>ご相談予約</h1>
@@ -24,7 +25,12 @@
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">
 					<td>
+<<<<<<< HEAD
 						<c:out value="${(i.count + 6) / 7 + 9}" />:00<c:out value="${(i.count + 6) / 7 + 10}" />:00
+=======
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 9}"/>:00∼
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 10}"/>:00
+>>>>>>> refs/remotes/origin/master
 					</td>
 				</c:if>
 				<td>
@@ -49,7 +55,7 @@
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
-			<td><input name="name" type="text" class="namae" maxlength="8" </td>
+			<td><input name="name" type="text" class="namae" ></td>
 		</tr>
 			<c:forEach var="i" begin="0" end="7" step="1">
 　       <tr>
@@ -60,9 +66,14 @@
 		
 		<br>
 		<tr>
+<<<<<<< HEAD
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="text" class="denwa" maxlength="8"></td>
 			
+=======
+			<th class="nyuuryoku">電話：<h6 id="tyuui">※ハイフンなし、半角でご記入下さい。</h6></th>
+			<td><input name="call" type="text" class="denwa" ></td>
+>>>>>>> refs/remotes/origin/master
 		</tr>
 		<br>
 		<tr>   
@@ -72,7 +83,7 @@
 		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
-			<td><input name="mail" type="text" class="meado" maxlength="8"></td>
+			<td><input name="mail" type="text" class="meado" ></td>
 		</tr>
 		<br>
 	</table>

@@ -17,7 +17,6 @@
 
 <p>削除できました</p>
 
-
  <table class="sousin">
 <tr>
 <th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>

@@ -14,7 +14,15 @@
 <body>
 <h1 id="topic">ご相談予約・削除受付</h1>
 <h2 id="sub">ご相談内容をお選びください</h2>
- 
+<c:if test="${!empty errMsgList}">
+	<ul>
+		<c:forEach items="${errMsgList}" var="err">
+			<li>
+				<c:out value="${err}" />
+			</li>
+		</c:forEach>
+	</ul>
+</c:if>
   <div class="cp_hr07">
     <a class="menu" href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>
     <a class="menu" href="<c:url value='/reserveHelth' />">介護や終活</a><br>

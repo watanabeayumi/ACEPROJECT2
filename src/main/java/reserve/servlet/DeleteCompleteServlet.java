@@ -1,6 +1,8 @@
 package reserve.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,9 +37,10 @@ public class DeleteCompleteServlet extends HttpServlet {
 		if(ret !=0) {
 			request.getRequestDispatcher("/WEB-INF/deleteComplete.jsp").forward(request, response);
 		}else {
-			String err = "削除できませんでした。";
-			request.setAttribute("err", err);
-			request.getRequestDispatcher("delete.jsp").forward(request, response);
+			List<String> errMsgList = new ArrayList<>();
+			errMsgList.add("削除できませんでした。");
+			request.setAttribute("errMsgList", errMsgList);
+			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 			
 		}

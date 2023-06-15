@@ -1,6 +1,8 @@
 package reserve.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,8 +41,9 @@ public class ReserveCompleteServlet extends HttpServlet {
 			
 			return;
 		}else {
-			String err = "登録できませんでした。";
-			request.setAttribute("err", err);
+			List<String> errMsgList = new ArrayList<>();
+			errMsgList.add("登録できませんでした。");
+			request.setAttribute("errMsgList", errMsgList);
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}

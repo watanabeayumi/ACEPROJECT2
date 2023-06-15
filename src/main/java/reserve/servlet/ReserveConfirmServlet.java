@@ -58,34 +58,34 @@ public class ReserveConfirmServlet extends HttpServlet {
 			flowbean.setReserve_date(nowDate.plusDays(7));
 		}
 		
-		if(reserveDate%10==1) {
+		if(reserveDate>=1&&reserveDate<=7) {
 			flowbean.setTimeCd(1);
 			flowbean.setTimeName("10:00∼11:00");
-		}else if(reserveDate%10==2) {
+		}else if(reserveDate>=8&&reserveDate<=14) {
 			flowbean.setTimeCd(2);
 			flowbean.setTimeName("11:00∼12:00");
-		}else if(reserveDate%10==3) {
+		}else if(reserveDate>=15&&reserveDate<=21) {
 			flowbean.setTimeCd(3);
 			flowbean.setTimeName("12:00∼13:00");
-		}else if(reserveDate%10==4) {
+		}else if(reserveDate>=22&&reserveDate<=28) {
 			flowbean.setTimeCd(4);
 			flowbean.setTimeName("13:00∼14:00");
-		}else if(reserveDate%10==5) {
+		}else if(reserveDate>=29&&reserveDate<=35) {
 			flowbean.setTimeCd(5);
 			flowbean.setTimeName("14:00∼15:00");
-		}else if(reserveDate%10==6) {
+		}else if(reserveDate>=36&&reserveDate<=42) {
 			flowbean.setTimeCd(6);
 			flowbean.setTimeName("15:00∼16:00");
-		}else if(reserveDate%10==7) {
+		}else if(reserveDate>=43&&reserveDate<=49) {
 			flowbean.setTimeCd(7);
 			flowbean.setTimeName("16:00∼17:00");
-		}else if(reserveDate%10==8) {
+		}else if(reserveDate>=50&&reserveDate<=56) {
 			flowbean.setTimeCd(8);
 			flowbean.setTimeName("17:00∼18:00");
-		}else if(reserveDate%10==9) {
+		}else if(reserveDate>=57&&reserveDate<=63) {
 			flowbean.setTimeCd(9);
 			flowbean.setTimeName("18:00∼19:00");
-		}else if(reserveDate%10==0) {
+		}else if(reserveDate>=64&&reserveDate<=70) {
 			flowbean.setTimeCd(10);
 			flowbean.setTimeName("19:00∼20:00");
 		}

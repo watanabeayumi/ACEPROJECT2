@@ -37,7 +37,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 		}else {
 			String err = "削除できませんでした。";
 			request.setAttribute("err", err);
-			request.getRequestDispatcher("/WEB-INF/delete.jsp").forward(request, response);
+			request.getRequestDispatcher("delete.jsp").forward(request, response);
 			return;
 			
 		}

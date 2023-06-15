@@ -24,7 +24,8 @@
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">
 					<td>
-						<c:out value="${(i.count + 6) / 7 + 9}" />:00<c:out value="${(i.count + 6) / 7 + 10}" />:00
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 9}"/>:00∼
+						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 10}"/>:00
 					</td>
 				</c:if>
 				<td>

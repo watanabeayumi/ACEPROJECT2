@@ -62,11 +62,11 @@
 			<td><input name="mail" type="text" class="meado" maxlength="8"></td>
 		</tr>
 		<br>
-	</table>
-	<p><input type="submit" value="送信する" class="botton"></p>
 	
+	
+<input type="submit" value="送信する" class="botton">
+	</form>
 	<a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">メニューに戻る</a>
-    
-</form>
+table tagu to
 </body>
 </html>

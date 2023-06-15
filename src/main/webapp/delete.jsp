@@ -30,8 +30,6 @@
     <p><input type="submit" value="送信する" class="botton"></p>
 
     <a href="<c:url value='/reserve.jsp'/>" class="botton" onclick="history.back()">戻る</a>
-    
-    <%@include file="/WEB-INF/common/errormsg.jsp" %>
 
 </body>
 </html>

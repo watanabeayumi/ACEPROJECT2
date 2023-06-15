@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
-import reserve.flowbean.ReserveCalendarFlowBean;
+import reserve.flowbean.ReserveSearchFlowBean;
 
 
 @WebServlet("/reserveComplete")
@@ -22,24 +22,28 @@ public class ReserveCompleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session=request.getSession(false);
-		ReserveCalendarFlowBean flowbean=(ReserveCalendarFlowBean) session.getAttribute("ReserveSearchFlowBean");
+		ReserveSearchFlowBean flowbean=(ReserveSearchFlowBean) session.getAttribute("ReserveSearchFlowBean");
 		
 		int ret=0;
 		try {
-			ret = new ReserveDAO().selectinsert(flowbean.getReserveDate(), flowbean.getTimeCd(), flowbean.getConciergeCd(), flowbean.getName(), flowbean.getTel(), flowbean.getAddress());
+			ret = new ReserveDAO().selectinsert(flowbean.getReserve_date(), flowbean.getTimeCd(), (int)session.getAttribute("conciergeCd"), flowbean.getName(), flowbean.getCall(), flowbean.getMail());
 		} catch (DaoException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+		
+		request.removeAttribute("ReserveSearchFlowBean");
+		request.removeAttribute("conciergeCd");
 		if(ret !=0) {
 			request.getRequestDispatcher("complete.jsp").forward(request, response);
+			
+			return;
 		}else {
 			String err = "登録できませんでした。";
 			request.setAttribute("err", err);
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}
-		request.removeAttribute("ReserveSearchFlowBean");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

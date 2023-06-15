@@ -21,7 +21,7 @@
     <a href="<c:url value='/reserveInheritance' />">相続</a><br>
     <a href="<c:url value='/reserveInsurance' />">車や保険</a><br>
     <a href="<c:url value='/reserveFinance' />">金融</a><br>
-    <a href="<c:url value='/' />">予約キャンセル</a>
+    <a href="<c:url value='/delete' />">予約キャンセル</a>
   </div>
 </body>
 </html>

@@ -48,6 +48,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'GroupProject0707'
+          app_location: '/'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_56A0B0F4051D4D158A963FADDC21F799 }}
           package: '*.war'

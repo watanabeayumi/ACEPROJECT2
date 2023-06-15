@@ -25,8 +25,12 @@
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">
 					<td>
+
+						<c:out value="${(i.count + 6) / 7 + 9}" />:00<c:out value="${(i.count + 6) / 7 + 10}" />:00
+
 						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 9}"/>:00∼
 						<fmt:formatNumber maxFractionDigits="0" value="${(i.count + 6) / 7 + 10}"/>:00
+
 					</td>
 				</c:if>
 				<td>
@@ -54,17 +58,22 @@
 			<td><input name="name" type="text" class="namae" ></td>
 		</tr>
 			<c:forEach var="i" begin="0" end="7" step="1">
-		<tr>
+　       <tr>
 			<th></th>
 			<td></td>
 		</tr>
             </c:forEach>
+		
 		<br>
 		<tr>
+
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="text" class="denwa" maxlength="8"></td>
+			
+
 			<th class="nyuuryoku">電話：<h6 id="tyuui">※ハイフンなし、半角でご記入下さい。</h6></th>
 			<td><input name="call" type="text" class="denwa" ></td>
+
 		</tr>
 		<br>
 		<tr>   

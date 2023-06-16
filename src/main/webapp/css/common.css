@@ -182,3 +182,11 @@ input[type=radio]:checked{
 input[type=radio]{
     visibility: visible;
 }
+@media (max-width: 320px) {
+   /* 横幅が320px以下の場合に適用するスタイル */
+   div#sidebar { width: 100%; }
+}
+@media (min-width: 800px) {
+   /* 横幅が800px以上の場合に適用するスタイル */
+   div#sidebar { width: 240px }
+}

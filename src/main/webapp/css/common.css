@@ -242,4 +242,7 @@ input[type=radio]{
 .err{
 	text-align: left;
 }
+td{
+	height:100px;
+}
 }

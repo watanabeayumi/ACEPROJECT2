@@ -3,7 +3,7 @@
 
 body {
   /*ページ全体の背景色をベージュに*/
-  background-image:url("/src/main/webapp/pic/cloud.jpg");
+  background: #fffbf4;
   text-align: center;
   
 }
@@ -79,8 +79,7 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background:transparent;
-	text-align: center;
+	background: #ffffff;
 }
 p { font-size:50px;
 }
@@ -182,11 +181,12 @@ input[type=email]{
 input[type=radio]{
     content: "";
     display: inline-block;
- 
-    width: 300px;
-    height: 200px;
+    background-size: contain;
+    width: 65px;
+    height: 30px;
     visibility: visible;
 }
+
 input[type=radio]:checked{
     border: 3px solid rgb(233, 64, 50);
     box-sizing: border-box;

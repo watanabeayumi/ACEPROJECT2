@@ -200,12 +200,13 @@ input[type=radio]{
    /* 横幅が800px以下の場合に適用するスタイル */
    h1 {font-size: 60px;}
    h2 {font-size: 50px;}
-   cp_hr07 {font-size: 45px;}
+   .cp_hr07 {font-size: 45px;}
   
 }
 @media (min-width: 120px) {
    /* 横幅が320px以上の場合に適用するスタイル */
    h1 {font-size: 80px;}
-   h2 {font-size: 50px;}
-   cp_hr07 {font-size: 45px;}
+   h2 {font-size: 45px;}
+   .cp_hr07 {font-size: 45px;}
+   .th{font-size: 25px;}
 }

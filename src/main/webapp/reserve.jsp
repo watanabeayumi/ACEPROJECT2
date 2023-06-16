@@ -32,6 +32,7 @@
 <body>
 <h1 id="topic">ご相談予約・削除受付</h1>
 <h2 id="sub">ご相談内容をお選びください</h2>
+<p>test</p>
 <c:if test="${!empty errMsgList}">
 	<div id="errormsg">
 		<ul>

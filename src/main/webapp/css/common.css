@@ -4,6 +4,7 @@
 body {
   /*ページ全体の背景色をベージュに*/
   background: #fffbf4;
+  text-align: center;
   
 }
 h1 {
@@ -29,6 +30,7 @@ h2 {
 .menu {
   /*リンクの文字色をグレイに*/
   color:gray;
+  text-align: center;
 }
 .table{
     margin: auto;
@@ -41,7 +43,6 @@ h2 {
 	margin-top: 50px;
  margin-left: auto;
  margin-right: auto;
-	
 	 padding:1px;
     font-size: 2pt;
     text-align: center;

@@ -96,17 +96,17 @@ p { font-size:75px;
  padding-top: 20px;
  padding-bottom: 20px;
  width: 280px;
- 
  display: block;
  letter-spacing: 0.05em;
  background-color:skyblue;
  font-weight: bold;
  font-size: 50px;
 
+
 }
 .anka{
 border-radius: 6px;
- margin-top: 32px;
+ margin-top: 35px;
  margin-left: auto;
  margin-right: auto;
  padding-top: 30px;
@@ -116,11 +116,12 @@ border-radius: 6px;
  border: solid 2px #696969;/*線*/
  display: block;
  letter-spacing: 0.05em;
- background-color:skyblue;
+ background-color:rgb(204, 166, 201);
  font-weight: bold;
  font-size: 40px;
  text-align: center;
  color:#000;
+ 
 }
 .namae{
 	padding-left: 10em;

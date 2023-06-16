@@ -16,14 +16,22 @@ import reserve.dao.ReserveDAO;
 import reserve.flowbean.DeleteFlowBean;
 
 
+/**
+ * 削除完了画面を開くサーブレットです。
+ * @author 黒田
+ * @version 1.0
+ */
+
+
 @WebServlet("/deleteComplete")
 public class DeleteCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	//黒田りさ作成
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		//DeleteServletでセットしたkey名DeleteFlowBeanの値（FormBean
 		request.removeAttribute("DeleteFlowBean");
 		HttpSession session=request.getSession(false);
 		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");

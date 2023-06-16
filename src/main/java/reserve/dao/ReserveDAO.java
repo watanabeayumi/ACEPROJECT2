@@ -17,6 +17,12 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	
+	/**
+	 * selectReserveメソッド
+	 * 予約情報が入っているかを確認するためのDAOメソッドです。
+	 * @author 渡辺友里
+	 * @version 1.0
+	 */
 	public List<LocalDate> selectReserve(LocalDate reserveDate, int conciergeCd) throws DaoException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();

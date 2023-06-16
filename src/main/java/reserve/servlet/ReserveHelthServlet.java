@@ -36,7 +36,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				e.printStackTrace();
 				}
 		
-		request.setAttribute("ReserveDateList", reserveDateList);
+		session.setAttribute("ReserveDateList", reserveDateList);
 		
 		List<LocalDate> weekList = new ArrayList<>();
 		
@@ -46,7 +46,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			weekList.add(week);
 		}
 		
-		request.setAttribute("WeekList", weekList);
+		session.setAttribute("WeekList", weekList);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 		

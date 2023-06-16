@@ -41,7 +41,7 @@ public class ReserveHouseServlet extends HttpServlet {
 			} catch (DaoException e) {
 				e.printStackTrace();
 				}
-		request.setAttribute("ReserveDateList", reserveDateList);
+		session.setAttribute("ReserveDateList", reserveDateList);
 		
 		List<LocalDate> weekList = new ArrayList<>();
 		
@@ -51,7 +51,7 @@ public class ReserveHouseServlet extends HttpServlet {
 			weekList.add(week);
 		}
 		
-		request.setAttribute("WeekList", weekList);
+		session.setAttribute("WeekList", weekList);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 		

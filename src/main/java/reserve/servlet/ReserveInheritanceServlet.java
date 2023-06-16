@@ -36,7 +36,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				e.printStackTrace();
 				}
 		
-		request.setAttribute("ReserveDateList", reserveDateList);
+		session.setAttribute("ReserveDateList", reserveDateList);
 		
 		List<LocalDate> weekList = new ArrayList<>();
 		

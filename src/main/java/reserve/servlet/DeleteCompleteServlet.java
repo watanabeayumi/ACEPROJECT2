@@ -29,6 +29,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 
 	
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		//DeleteServletでセットしたkey名DeleteFlowBeanの値（FormBean

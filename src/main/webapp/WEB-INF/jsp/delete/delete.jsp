@@ -25,13 +25,17 @@
 			</c:forEach>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="tel" pattern="[0-9]{10-11}"></td>
+
+			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
+
+
 		</tr>
 		<br>
 		<tr>
 			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
 			
 		</tr>
+		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="email"></td>

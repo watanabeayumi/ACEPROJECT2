@@ -13,6 +13,17 @@
 <body>
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
+<c:if test="${!empty errMsgList}">
+	<div id="errormsg">
+		<ul>
+			<c:forEach items="${errMsgList}" var="err">
+				<li>
+					<c:out value="${err}" />
+				</li>
+			</c:forEach>
+		</ul>
+	</div>
+</c:if>
 <form  action="reserveConfirm" method="post">
 	<table class="table" border="1" height="200" width="1000">
 		<tr>

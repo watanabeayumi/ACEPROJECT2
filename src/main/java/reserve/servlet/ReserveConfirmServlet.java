@@ -33,7 +33,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		if(!errMsgList.isEmpty()){
 			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 			return;
 		}
 		

@@ -19,6 +19,8 @@ import reserve.formbean.ReserveSearchFormBean;
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
 	
+	//中山りんかと渡辺ゆうり作成
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

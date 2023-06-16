@@ -20,6 +20,7 @@ import reserve.flowbean.ReserveSearchFlowBean;
 public class ReserveCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	//黒田りさ作成
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

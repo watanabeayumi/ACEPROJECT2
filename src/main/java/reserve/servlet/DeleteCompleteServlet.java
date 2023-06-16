@@ -20,6 +20,7 @@ import reserve.flowbean.DeleteFlowBean;
 public class DeleteCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	//黒田りさ作成
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	

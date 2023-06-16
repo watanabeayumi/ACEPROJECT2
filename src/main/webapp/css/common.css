@@ -184,19 +184,15 @@ input[type=radio]{
     background-size: contain;
     width: 65px;
     height: 30px;
+    visibility: visible;
 }
-input[type=radio][value="${i.count}"]{
-	background-image: url(/pic/maru.gif);
-    
-}
+
 input[type=radio]:checked{
     border: 3px solid rgb(233, 64, 50);
     box-sizing: border-box;
     color: lightcoral;
 }
-input[type=radio]{
-    visibility: visible;
-}
+
 @media (max-width: 800px) {
    /* 横幅が800px以下の場合に適用するスタイル */
    h1 {font-size: 60px;}

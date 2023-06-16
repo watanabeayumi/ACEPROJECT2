@@ -25,7 +25,7 @@
 			</c:forEach>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="text"></td>
+			<td><input name="call" type="tel" pattern="[0-9]{10-11}"></td>
 		</tr>
 		<br>
 		<tr>
@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
-			<td><input name="mail" type="text"></td>
+			<td><input name="mail" type="email"></td>
 		</tr>
 	</table>
 

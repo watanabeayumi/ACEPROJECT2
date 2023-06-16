@@ -34,7 +34,7 @@ h2 {
 }
 .table{
     margin: auto;
-    font-size: 100pt;
+    font-size: 13pt;
     text-align: center;
     line-height: 30px;
     
@@ -79,7 +79,7 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background: transparent;
+	background: #ffffff;
 }
 p { font-size:50px;
 }
@@ -194,7 +194,7 @@ input[type=radio]:checked{
     box-sizing: border-box;
     color: lightcoral;
 }
-input[type=radio]{  
+input[type=radio]{
     visibility: visible;
 }
 @media (max-width: 800px) {
@@ -243,5 +243,4 @@ input[type=radio]{
 	text-align: left;
 }
 
-	
 }

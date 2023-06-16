@@ -203,7 +203,6 @@ input[type=radio]{
    h2 {font-size: 50px;}
    .cp_hr07 {font-size: 45px;}
    p {font-size: 30px;}
-   
   
 }
 @media (min-width: 120px) {
@@ -243,8 +242,5 @@ input[type=radio]{
 .err{
 	text-align: left;
 }
-td{
-	height:100px;
-	
-}
+
 }

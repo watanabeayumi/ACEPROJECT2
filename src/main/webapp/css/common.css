@@ -3,8 +3,8 @@
 
 body {
   /*ページ全体の背景色をベージュに*/
+  background: #fffbf4;
   text-align: center;
-  background-image:url(/src/pic/clouds-1282314_1280.jpg);
   
 }
 h1 {
@@ -34,7 +34,7 @@ h2 {
 }
 .table{
     margin: auto;
-    font-size: 50px;
+    font-size: 100pt;
     text-align: center;
     line-height: 30px;
     
@@ -79,7 +79,7 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background: transparent;
+	background: #ffffff;
 }
 p { font-size:50px;
 }
@@ -243,4 +243,5 @@ input[type=radio]{
 	text-align: left;
 }
 
+	
 }

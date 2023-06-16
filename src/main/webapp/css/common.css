@@ -183,19 +183,16 @@ input[type=radio]{
     content: "";
     display: inline-block;
     background-size: contain;
-    width: 80px;
-    height: 50px;
-    
+    width: 200px;
+    height: 100px;
+    visibility: visible;
 }
 input[type=radio]:checked{
     border: 3px solid rgb(233, 64, 50);
     box-sizing: border-box;
     color: lightcoral;
 }
-input[type=radio]{
-    visibility: visible;
-    
-}
+
 @media (max-width: 800px) {
    /* 横幅が800px以下の場合に適用するスタイル */
    h1 {font-size: 60px;}

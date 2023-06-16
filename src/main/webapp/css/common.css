@@ -211,13 +211,15 @@ input[type=radio]{
    .cp_hr07 {font-size: 45px;}
    .th{font-size: 25px;}
    p{font-size: 30px;}
+   #errormsg{font-size: 30px;
 }  
 @media (min-width: 320px) {
    p {font-size: 30px;}
-}  
+}   
 
 #errormsg ul{
-	margin:5px 0;	
+	margin:5px 0;
+	text-align: left;	
 }
 #errormsg{
 	margin: auto;
@@ -234,6 +236,8 @@ input[type=radio]{
 	-ms-user-select: none;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
-	text-align: center;
+	
 }
-   
+.err{
+	text-align: left;
+}

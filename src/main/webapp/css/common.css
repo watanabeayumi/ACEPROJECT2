@@ -34,7 +34,7 @@ h2 {
 }
 .table{
     margin: auto;
-    font-size: 13pt;
+    font-size: 100pt;
     text-align: center;
     line-height: 30px;
     
@@ -244,6 +244,6 @@ input[type=radio]{
 }
 td{
 	height:100px;
-	width:10;
+	
 }
 }

@@ -3,7 +3,7 @@
 
 body {
   /*ページ全体の背景色をベージュに*/
-  background-image:url(/src/main/webapp/pic/clouds-1282314_1280.jpg);
+  background-image:url("/src/main/webapp/pic/cloud.jpg");
   text-align: center;
   
 }

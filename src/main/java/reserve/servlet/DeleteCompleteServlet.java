@@ -35,7 +35,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(ret !=0) {
-			request.getRequestDispatcher("deleteComplete.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/delete/deleteComplete.jsp").forward(request, response);
 		}else {
 			List<String> errMsgList = new ArrayList<>();
 			errMsgList.add("削除できませんでした。");

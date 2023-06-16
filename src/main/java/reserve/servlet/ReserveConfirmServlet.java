@@ -96,7 +96,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		//次画面呼び出し
 
-			request.getRequestDispatcher("/confirm.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/reserve/confirm.jsp").forward(request, response);
 		}
 
 	}

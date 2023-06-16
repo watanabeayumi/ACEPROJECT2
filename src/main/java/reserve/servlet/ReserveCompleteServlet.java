@@ -37,7 +37,7 @@ public class ReserveCompleteServlet extends HttpServlet {
 		request.removeAttribute("ReserveSearchFlowBean");
 		request.removeAttribute("conciergeCd");
 		if(ret !=0) {
-			request.getRequestDispatcher("complete.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/reserve/complete.jsp").forward(request, response);
 			
 			return;
 		}else {

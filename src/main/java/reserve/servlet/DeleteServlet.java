@@ -22,7 +22,7 @@ public class DeleteServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("delete.jsp").forward(request,response);
+		request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -57,6 +57,6 @@ public class DeleteServlet extends HttpServlet {
 			return;
 		}
 		session.setAttribute("DeleteFlowBean",flowBean);
-		request.getRequestDispatcher("deleteConfirm.jsp").forward(request,response);
+		request.getRequestDispatcher("/WEB-INF/jsp/delete/deleteConfirm.jsp").forward(request,response);
 }
 	}

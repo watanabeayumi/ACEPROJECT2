@@ -48,10 +48,9 @@ public class ReserveInsuranceServlet extends HttpServlet {
 			
 			weekList.add(week);
 		}
-		
 		request.setAttribute("WeekList", weekList);
 		
-		request.getRequestDispatcher("search.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 		
 		return;
 	}

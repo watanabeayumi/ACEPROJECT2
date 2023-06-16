@@ -19,7 +19,7 @@
 
  <table class="sousin">
 <tr>
-<th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
 </form>
 </tr>
 </table>

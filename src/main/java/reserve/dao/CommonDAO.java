@@ -20,7 +20,7 @@ public class CommonDAO {
 			throw new DaoException(e);
 		}
 	}
-
+ 
 	/**
 	 * データベースコネクションを取得する。
 	 * @throws DaoException
@@ -29,7 +29,7 @@ public class CommonDAO {
 
 		try {
 			Class.forName("org.postgresql.Driver");
-			String url = "jdbc:postgresql://groupproject0707-server.postgres.database.azure.com:5432/groupproject0707-server?user=mtcdpkkkak&password=tebasaki1234!&sslmode=require";
+			String url = "jdbc:postgresql://groupproject0707-server.postgres.database.azure.com:5432/groupproject0707-database";
 			conn = DriverManager.getConnection(url, "mtcdpkkkak", "tebasaki1234!");
 
 		} catch (ClassNotFoundException e) {

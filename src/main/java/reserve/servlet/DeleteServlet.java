@@ -53,6 +53,8 @@ public class DeleteServlet extends HttpServlet {
 			flowBean.setConciergeName(conciergeName);
 		} catch (DaoException e) {
 			e.printStackTrace();
+			errMsgList.add("入力された内容の予約情報は存在しませんでした。");
+			request.setAttribute("errMsgList", errMsgList);
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
 			return;
 		}

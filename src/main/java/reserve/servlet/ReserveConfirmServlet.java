@@ -33,8 +33,13 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		if(!errMsgList.isEmpty()){
 			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
-			return;
+			if((int)session.getAttribute("conciergeCd") == 1) {
+				request.getRequestDispatcher("/reserveHouse").forward(request, response);
+				return;
+			}else if((int)session.getAttribute("conciergeCd") == 2) {
+				request.getRequestDispatcher("/reserveHelth").forward(request, response);
+				return;
+			}
 		}
 		
 		Date strDate = new Date();

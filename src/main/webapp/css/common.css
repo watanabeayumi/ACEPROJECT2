@@ -3,8 +3,8 @@
 
 body {
   /*ページ全体の背景色をベージュに*/
-  background: #fffbf4;
   text-align: center;
+  background-image:url(/src/pic/clouds-1282314_1280.jpg);
   
 }
 h1 {
@@ -79,7 +79,7 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background: #ffffff;
+	background: transparent;
 }
 p { font-size:50px;
 }

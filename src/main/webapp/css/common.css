@@ -182,7 +182,7 @@ input[type=radio]{
     content: "";
     display: inline-block;
     background-size: contain;
-    width: 65px;
+    width: 80px;
     height: 30px;
     visibility: visible;
 }

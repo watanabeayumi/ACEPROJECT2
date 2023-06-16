@@ -48,7 +48,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		request.setAttribute("WeekList", weekList);
 		
-		request.getRequestDispatcher("search.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 		
 		return;
 	}

@@ -19,18 +19,24 @@ import reserve.formbean.ReserveSearchFormBean;
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
 	
-	//中山りんかと渡辺ゆうり作成
+	
+	/**
+	 * 【予約確認画面に入力値を表示させる画面です。】
+	 * @author 【中山凜香、渡辺友里】
+	 * @version 1.0
+	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		//セッションスコープに保存している内容を取得する
+		//1.セッションスコープに保存している内容を取得する
 		HttpSession session=request.getSession(false);
 		ReserveSearchFlowBean flowbean = new ReserveSearchFlowBean();
 		ReserveSearchFormBean formbean = new ReserveSearchFormBean();
 		
+		//2.
 		List<String> errMsgList = formbean.validate(request);
 		
 		if(!errMsgList.isEmpty()){

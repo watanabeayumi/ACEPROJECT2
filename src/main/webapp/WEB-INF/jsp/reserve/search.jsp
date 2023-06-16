@@ -29,7 +29,7 @@
 		<tr>
 			<td>日付</td>
 			<c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
-				<td><c:out value="${data}" /></td>
+				<td height="50"><c:out value="${data}" /></td>
 			</c:forEach>
 		</tr>
 		<tr>

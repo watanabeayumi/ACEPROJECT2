@@ -38,5 +38,6 @@ public class CommonDAO {
 			e.printStackTrace();
 			throw new DaoException(e);
 		}
+
 	}   
 } 

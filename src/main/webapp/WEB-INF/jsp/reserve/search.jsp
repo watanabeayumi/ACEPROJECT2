@@ -25,7 +25,7 @@
 	</div>
 </c:if>
 <form  action="reserveConfirm" method="post">
-	<table class="table" border="1" height="150" width="300" size="large">
+	<table class="table" border="1" height="150" width="300">
 
 		<tr>
 			<td>日付</td>

@@ -21,6 +21,8 @@ import reserve.dao.ReserveDAO;
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
 	
+	//渡辺ゆうり作成(ReserveHouseServletのコピー)
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();

@@ -19,12 +19,9 @@ import reserve.dao.ReserveDAO;
 
 @WebServlet("/reserveHouse")
 public class ReserveHouseServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-    public ReserveHouseServlet() {
-    	
-    	
-    }
+	
+	//渡辺ゆうり作成
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();

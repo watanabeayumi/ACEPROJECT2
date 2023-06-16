@@ -20,6 +20,8 @@ import reserve.dao.ReserveDAO;
 @WebServlet("/reserveFinance")
 public class ReserveFinanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	//渡辺ゆうり作成(ReserveHouseServletのコピー)
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

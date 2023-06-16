@@ -14,22 +14,22 @@
 <form action="<c:url value='/deleteComplete' />"  method="post">
 	<p>日付：
 		<c:out value="${DeleteFlowBean.reserveDate}" />
-	</p><br>
+	</p>
 	<p>時間：
 		<c:out value="${DeleteFlowBean.timeName}" />
-	</p><br>
+	</p>
 	<p>相談内容：
 		<c:out value="${DeleteFlowBean.conciergeName}" />
-	</p><br>
+	</p>
 	<p>名前：
 		<c:out value="${DeleteFlowBean.name}" />
-	</p><br>
+	</p>
 	<p>電話：
 		<c:out value="${DeleteFlowBean.tel}" />
-	</p><br>
+	</p>
 	<p>メール：
 		<c:out value="${DeleteFlowBean.address}" />
-	</p><br>
+	</p>
 <table class="sousin">
 <tr>
 <th><a href="<c:url value='/delete.jsp'/>" class="anka" onclick="history.back()">戻る</a></th>

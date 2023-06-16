@@ -65,7 +65,6 @@
 
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
 
-			<td><input name="call" type="tel" pattern="[0-9]" minlength="10" maxlength="12"></td>
 
 		</tr>
 		<br>

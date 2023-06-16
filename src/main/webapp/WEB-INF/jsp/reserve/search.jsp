@@ -62,12 +62,11 @@
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-<<<<<<< HEAD
+
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
-=======
+
 			<td><input name="call" type="tel" pattern="[0-9]" minlength="10" maxlength="12"></td>
->>>>>>> branch 'master' of https://github.com/watanabeayumi/ACEPROJECT2.git
-			
+
 		</tr>
 		<br>
 		<tr>

@@ -37,7 +37,8 @@ h2 {
     margin: auto;
     font-size: 13pt;
     text-align: center;
-    line-height: 1px;
+    line-height: 30px;
+    
     
 	}
 .sousin{
@@ -241,5 +242,9 @@ input[type=radio]{
 }
 .err{
 	text-align: left;
+}
+td{
+	height:100px;
+	width:10;
 }
 }

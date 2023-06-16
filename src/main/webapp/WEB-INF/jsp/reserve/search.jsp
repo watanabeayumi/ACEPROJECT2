@@ -26,12 +26,14 @@
 </c:if>
 <form  action="reserveConfirm" method="post">
 	<table class="table" border="1" height="200" width="1000">
+
 		<tr>
 			<td>日付</td>
 			<c:forEach items="${WeekList}" var="data" varStatus="i" end="6">
 				<td><c:out value="${data}" /></td>
 			</c:forEach>
 		</tr>
+		
 		<tr>
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">

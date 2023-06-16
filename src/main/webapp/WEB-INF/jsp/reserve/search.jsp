@@ -62,7 +62,7 @@
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="tel" pattern="[0-9]{10-11}"></td>
+			<td><input name="call" type="text" maxlength="12"></td>
 			
 		</tr>
 		<br>

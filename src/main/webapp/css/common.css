@@ -80,7 +80,7 @@ font-size: 50px;
 	content: '★';
 	background: #ffffff;
 }
-p { font-size:75px;
+p { font-size:50px;
 }
 .topic{
 	font-size:80px;
@@ -201,12 +201,17 @@ input[type=radio]{
    h1 {font-size: 60px;}
    h2 {font-size: 50px;}
    .cp_hr07 {font-size: 45px;}
+   p {font-size: 30px;}
   
 }
 @media (min-width: 120px) {
-   /* 横幅が320px以上の場合に適用するスタイル */
+   /* 横幅が120px以上の場合に適用するスタイル */
    h1 {font-size: 80px;}
    h2 {font-size: 45px;}
    .cp_hr07 {font-size: 45px;}
    .th{font-size: 25px;}
+   p{font-size: 30px;}
 }  
+@media (min-width: 320px) {
+   p {font-size: 30px;}
+}

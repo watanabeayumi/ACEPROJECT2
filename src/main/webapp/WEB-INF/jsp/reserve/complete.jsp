@@ -17,7 +17,7 @@
 <h2>予約完了</h2>
 
 
-<p>登録できました</p>
+<p id="touroku">登録できました</p>
 
   
  <table class="sousin">

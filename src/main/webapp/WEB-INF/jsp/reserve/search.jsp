@@ -33,7 +33,7 @@
 				<td><c:out value="${data}" /></td>
 			</c:forEach>
 		</tr>
-		
+		 
 		<tr>
 			<c:forEach items="${ReserveDateList}" var="data" varStatus="i" end="69" >
 				<c:if test="${i.count % 7 == 1}">

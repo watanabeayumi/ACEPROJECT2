@@ -34,7 +34,6 @@ public class ReserveCompleteServlet extends HttpServlet {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-		
 		request.removeAttribute("ReserveSearchFlowBean");
 		request.removeAttribute("conciergeCd");
 		request.removeAttribute("ReserveDateList");

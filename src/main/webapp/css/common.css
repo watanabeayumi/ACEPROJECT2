@@ -3,7 +3,7 @@
 
 body {
   /*ページ全体の背景色をベージュに*/
-  background: #fffbf4;
+  background:url("../pic/cloud.jpg");
   text-align: center;
   
 }
@@ -79,7 +79,7 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background: #ffffff;
+	background: transparent;
 }
 p { font-size:50px;
 }

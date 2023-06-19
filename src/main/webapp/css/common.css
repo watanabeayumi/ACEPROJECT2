@@ -218,7 +218,7 @@ input[type=radio]:checked{
 	margin:5px 0;
 	text-align: left;	
 }
-#errormsg{
+.errormsg{
 	margin: auto;
 	padding: auto;
     color: #C0392B;

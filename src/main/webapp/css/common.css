@@ -69,7 +69,7 @@ div{
     max-width: 100%;
     padding: 0.8em;
     box-sizing: border-box;
-    margin: 0.7em 0;
+    margin: 0.7em 0 auto;
     font-size: 40px;
 }
 .th{

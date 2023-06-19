@@ -11,7 +11,7 @@
 
 <body>
 <h1>予約確認</h1>
-<p>日付：<c:out value="${ReserveSearchFlowBean.reerveDate}" /></p>
+<p>日付：<c:out value="${ReserveSearchFlowBean.reserveDate}" /></p>
 <p>時間：<c:out value="${ReserveSearchFlowBean.timeName}" /></p>
 <p>名前：<c:out value="${ReserveSearchFlowBean.name}" /></p>
 <p>電話：<c:out value="${ReserveSearchFlowBean.call}" /></p>

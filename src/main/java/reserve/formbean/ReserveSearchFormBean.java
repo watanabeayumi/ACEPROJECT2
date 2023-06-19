@@ -40,7 +40,7 @@ public class ReserveSearchFormBean {
 	
 	public ArrayList<String> checkCall(HttpServletRequest request){
 		
-		name=request.getParameter("call");
+		call=request.getParameter("call");
 		
 		ArrayList<String> callErr =new ArrayList<>();
 		if("".equals(call)) {
@@ -60,7 +60,7 @@ public class ReserveSearchFormBean {
 	
 	public ArrayList<String> checkMail(HttpServletRequest request){
 		
-		name=request.getParameter("mail");
+		mail=request.getParameter("mail");
 		
 		ArrayList<String> mailErr =new ArrayList<>();
 		if("".equals(mail)) {

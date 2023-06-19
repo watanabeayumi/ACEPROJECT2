@@ -23,6 +23,7 @@ import reserve.dao.ReserveDAO;
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
 	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//1.コンシェルジュコードをセッションに入れる

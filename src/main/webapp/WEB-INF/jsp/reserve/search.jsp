@@ -43,24 +43,27 @@ pageEncoding="UTF-8"%>
 				</td>
 				<c:if test="${i.count % 7 == 0}">
 					</tr>
-					<tr>
+					
 				</c:if>
 			</c:forEach>
 		</tr>
 		
 	</table>
+	
+	<table>
 	<c:if test="${!empty ReserveErr}">
-	<div id="errormsg">
-		<ul>
+	<div class="errormsg">
+		
 			<c:forEach items="${ReserveErr}" var="err">
-				<li>
-					<c:out value="${err}" />
-				</li>
+				
+					<tr><th><c:out value="${err}" /></th></tr>
 			</c:forEach>
-		</ul>
+			
 	</div>
 	</c:if>
+	</table>
 	<br>
+	<p><c:out value="${conciergeName}"/></p>
 	<table> 
 	
 		<tr>
@@ -69,7 +72,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 	      <c:if test="${!empty NameErr}">
 		
-			<div id="errormsg">
+			<div class="errormsg">
 				<tr><th><c:out value="${NameErr}"/></th></tr>
 			</div>
 		  </c:if>
@@ -84,7 +87,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 		<c:if test="${!empty CallErr}">
 		
-		<div id="errormsg">
+		<div class="errormsg">
 			<c:forEach items="${CallErr}" var="err">
 				
 						<tr><th><c:out value="${err}" /></th></tr>
@@ -103,7 +106,7 @@ pageEncoding="UTF-8"%>
 		
 		<c:if test="${!empty MailErr}">
 		
-			<div id="errormsg">
+			<div class="errormsg">
 				
 				<tr><th><c:out value="${MailErr}"/></th></tr>
 				

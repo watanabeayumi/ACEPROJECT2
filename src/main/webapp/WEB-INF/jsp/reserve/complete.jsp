@@ -4,27 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>コンシェルジュ予約</title>
-<link rel="stylesheet"  href="css/common.css">
-
+	<meta charset="UTF-8">
+	<title>コンシェルジュ予約</title>
+	<link rel="stylesheet"  href="css/common.css">
 </head>
-
 <body>
-
-<h1>ご相談予約完了</h1>
-
-<h2>予約完了</h2>
-
-
-<p id="touroku">登録できました</p>
-
-  
- <table class="sousin">
-<tr>
-<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
-</form>
-</tr>
-</table>
+	<h1>ご相談予約完了</h1>
+	<h2>予約完了</h2>
+	<p id="touroku">登録できました</p>
+	<table class="sousin">
+		<tr>
+			<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+		</tr>
+	</table>
 </body>
 </html>

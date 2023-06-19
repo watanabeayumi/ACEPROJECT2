@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import reserve.dao.DaoException;
+import reserve.dao.ReserveDAO;
 import reserve.flowbean.ReserveSearchFlowBean;
 import reserve.formbean.ReserveSearchFormBean;
 
@@ -68,7 +70,11 @@ public class ReserveConfirmServlet extends HttpServlet {
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);
-				flowbean.setTimeName((i+10) + ":00∼" + (i+11) + ":00");
+				try {
+					flowbean.setTimeName(new ReserveDAO().time(i+1));
+				} catch (DaoException e) {
+					e.printStackTrace();
+				}
 				break;
 			}
 		}

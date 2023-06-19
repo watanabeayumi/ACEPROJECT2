@@ -61,11 +61,12 @@ public class ReserveConfirmServlet extends HttpServlet {
 		}
 		
 		//4.選択した予約カレンダーから選択した時間帯を特定する
+		ReserveDAO dao = new ReserveDAO();
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);
 				try {
-					flowbean.setTimeName(new ReserveDAO().time(i+1));
+					flowbean.setTimeName(dao.time(i+1));
 				} catch (DaoException e) {
 					e.printStackTrace();
 				}

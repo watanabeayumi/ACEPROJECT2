@@ -30,7 +30,9 @@ public class ReserveDAO extends CommonDAO {
 		try {
 			getConnection();
 			
+			//時間帯コード1∼10を繰り返す
 			for(int j=1; j<=10; j++) {
+				//日付を明日の日付から8日後の日付を繰り返す
 				for(int i=1; i<=7; i++) {
 					LocalDate reserve_date = null;
 					
@@ -40,8 +42,8 @@ public class ReserveDAO extends CommonDAO {
 					statement.setInt(3, conciergeCd);
 					
 					ResultSet resultSet = statement.executeQuery();
-					
 					if (resultSet.next()) {
+						//予約情報が入っていた場合予約日が入り、予約情報が無かった場合nullが入る。
 						reserve_date = resultSet.getDate("reserve_date").toLocalDate();
 					}
 					reserveDateList.add(reserve_date);

@@ -82,3 +82,4 @@ public class DeleteServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/jsp/delete/deleteConfirm.jsp").forward(request,response);
 }
 	}
+

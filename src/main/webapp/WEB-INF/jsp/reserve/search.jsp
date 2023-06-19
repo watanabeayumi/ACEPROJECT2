@@ -61,7 +61,7 @@ pageEncoding="UTF-8"%>
 	</div>
 	</c:if>
 	<br>
-	<table>
+	<table> 
 	
 		<tr>
 			<th class="nyuuryoku">お名前：</th>

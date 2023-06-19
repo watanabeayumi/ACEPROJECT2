@@ -67,16 +67,16 @@ pageEncoding="UTF-8"%>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
-		<c:if test="${!empty NameErr}">
 		<tr>
+		<c:if test="${!empty NameErr}">
+		
 			<div id="errormsg">
-				<ul>
-					<li><c:out value="${NameErr}"/></li>
-				</ul>
+				<th><c:out value="${NameErr}"/></th>
+				
 			</div>
 		</tr>
 		</c:if>
-		
+			</tr>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>

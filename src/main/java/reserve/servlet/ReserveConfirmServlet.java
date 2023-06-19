@@ -68,7 +68,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);
-				flowbean.setTimeName((i+10) + ":00∼" + i+11 + ":00");
+				flowbean.setTimeName((i+10) + ":00∼" + (i+11) + ":00");
 				break;
 			}
 		}

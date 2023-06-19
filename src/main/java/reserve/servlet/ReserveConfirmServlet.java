@@ -38,9 +38,16 @@ public class ReserveConfirmServlet extends HttpServlet {
 		ReserveSearchFormBean formbean = new ReserveSearchFormBean();
 		
 		//2.もしエラーメッセージが空でなかった場合、エラーメッセージを表示させる。
-		List<String> errMsgList = formbean.validate(request);
+		List<String> reserveErr = formbean.checkDate(request);
+		List<String> nameErr = formbean.checkName(request);
+		List<String> callErr = formbean.checkCall(request);
+		List<String> mailErr = formbean.checkMail(request);
 		
-		if(!errMsgList.isEmpty()){
+		if(!reserveErr.isEmpty() || !nameErr.isEmpty() || !callErr.isEmpty() || !mailErr.isEmpty()){
+			request.setAttribute("ReserveErr", reserveErr);
+			request.setAttribute("NameErr", nameErr);
+			request.setAttribute("CallErr", callErr);
+			request.setAttribute("MailErr", mailErr);
 			request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 			return;
 		}

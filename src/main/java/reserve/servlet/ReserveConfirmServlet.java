@@ -83,6 +83,6 @@ public class ReserveConfirmServlet extends HttpServlet {
 		session.setAttribute("ReserveSearchFlowBean", flowbean);
 		
 		//6.次画面呼び出しの設定。
-			request.getRequestDispatcher("/WEB-INF/jsp/reserve/confirm.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/reserve/confirm.jsp").forward(request, response);
 		}
 	}

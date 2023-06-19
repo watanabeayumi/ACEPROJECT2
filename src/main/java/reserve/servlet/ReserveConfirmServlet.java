@@ -19,14 +19,11 @@ import reserve.formbean.ReserveSearchFormBean;
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
 	
-	
 	/**
 	 * 【予約確認画面に入力値を表示させる画面です。】
 	 * @author 【中山凜香、渡辺友里】
 	 * @version 1.0
 	 */
-	
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -52,7 +49,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			return;
 		}
 		
-		//3.７日分の予約可能日を表示させる設定。
+		//3.選択した予約カレンダーから選択した日付を特定する
 		LocalDate nowDate = LocalDate.now();
 		
 		int reserveDate = formbean.getReserveDate();
@@ -71,7 +68,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			}
 		}
 		
-		//4.予約時間の表示設定。
+		//4.選択した予約カレンダーから選択した時間帯を特定する
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);

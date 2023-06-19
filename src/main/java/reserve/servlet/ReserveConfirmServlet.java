@@ -53,12 +53,12 @@ public class ReserveConfirmServlet extends HttpServlet {
 		for(int i=0; i<=6; i++) {
 			if(i==0) {
 				if(reserveDate%7==0) {
-					flowbean.setReserve_date(nowDate.plusDays(7));
+					flowbean.setReserveDate(nowDate.plusDays(7));
 					break;
 				}
 			}else {
 				if(reserveDate%7==i) {
-					flowbean.setReserve_date(nowDate.plusDays(i));
+					flowbean.setReserveDate(nowDate.plusDays(i));
 					break;
 				}
 			}

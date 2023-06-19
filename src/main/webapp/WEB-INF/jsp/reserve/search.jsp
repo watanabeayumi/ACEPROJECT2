@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
 				<td>
 					<c:choose>
 						<c:when test="${data == null}">
-							<input type="radio" name="reserve_date" value="${i.count}" id="maru">
+							<input type="radio" name="reserveDate" value="${i.count}" id="maru">
 							<label for="maru"></label>
 						</c:when>
 						<c:when test="${data != null}">

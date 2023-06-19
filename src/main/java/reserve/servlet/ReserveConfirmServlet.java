@@ -48,31 +48,25 @@ public class ReserveConfirmServlet extends HttpServlet {
 			return;
 		}
 		
-		//3.選択した予約カレンダーから選択した日付を特定する
 		LocalDate nowDate = LocalDate.now();
 		
 		int reserveDate = formbean.getReserveDate();
 		
-		for(int i=0; i<=6; i++) {
-			if(i==0) {
-				if(reserveDate%7==0) {
-					flowbean.setReserveDate(nowDate.plusDays(7));
-					break;
-				}
-			}else {
-				if(reserveDate%7==i) {
-					flowbean.setReserveDate(nowDate.plusDays(i));
-					break;
-				}
+		//3.選択した予約カレンダーから選択した日付を特定する
+		for(int i=1; i<=7; i++) {
+			if(reserveDate%7==i%7) {
+				flowbean.setReserveDate(nowDate.plusDays(i));
+				break;
 			}
 		}
 		
 		//4.選択した予約カレンダーから選択した時間帯を特定する
+		ReserveDAO dao = new ReserveDAO();
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);
 				try {
-					flowbean.setTimeName(new ReserveDAO().time(i+1));
+					flowbean.setTimeName(dao.time(i+1));
 				} catch (DaoException e) {
 					e.printStackTrace();
 				}
@@ -84,6 +78,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		flowbean.setCall(formbean.getCall());
 		flowbean.setMail(formbean.getMail());
 		flowbean.setName(formbean.getName());
+		flowbean.setConciergeCd((int)session.getAttribute("conciergeCd"));
 		session.setAttribute("ReserveSearchFlowBean", flowbean);
 		
 		//6.次画面呼び出しの設定。

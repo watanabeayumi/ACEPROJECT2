@@ -5,6 +5,8 @@ body {
   /*ページ全体の背景色をベージュに*/
   background:url("../pic/cloud.jpg");
   text-align: center;
+  width: max-content;
+  background-size: cover;
   
 }
 h1 {

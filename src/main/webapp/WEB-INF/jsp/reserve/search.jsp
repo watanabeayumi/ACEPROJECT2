@@ -66,10 +66,6 @@ pageEncoding="UTF-8"%>
 			<td><input name="name" type="text"></td>
 		</tr>
 			<c:forEach var="i" begin="0" end="7" step="1">
-		<tr>
-			<th></th>
-			<td></td>
-		</tr>
 			</c:forEach>
 		<br>
 		<tr>

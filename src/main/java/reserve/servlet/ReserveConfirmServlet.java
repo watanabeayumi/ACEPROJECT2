@@ -29,7 +29,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		//1.セッションスコープに保存している内容を取得する。
-		HttpSession session=request.getSession(false);
+		HttpSession session=request.getSession(true);
 		ReserveSearchFlowBean flowbean = new ReserveSearchFlowBean();
 		ReserveSearchFormBean formbean = new ReserveSearchFormBean();
 		

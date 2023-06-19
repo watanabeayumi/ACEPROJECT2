@@ -10,7 +10,14 @@ public class ReserveSearchFlowBean {
 	private int timeCd;
 	private String timeName;
 	private int conciergeCd;
+	private String conciergeName;
 	
+	public String getConciergeName() {
+		return conciergeName;
+	}
+	public void setConciergeName(String conciergeName) {
+		this.conciergeName = conciergeName;
+	}
 	public int getConciergeCd() {
 		return conciergeCd;
 	}

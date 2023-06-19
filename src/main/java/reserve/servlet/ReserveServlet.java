@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
+import reserve.flowbean.ReserveSearchFlowBean;
 
 /**
  * 予約可能日時カレンダーと入力内容を開くためのサーブレットです
@@ -28,9 +29,18 @@ public class ReserveServlet extends HttpServlet {
 		
 		//1.コンシェルジュコードをセッションに入れる
 		HttpSession session=request.getSession(true);
+		ReserveSearchFlowBean flowbean = new ReserveSearchFlowBean();
 		String concierge_cd=request.getParameter("conciergeCd");
 		int conciergeCd=Integer.parseInt(concierge_cd);
-		session.setAttribute("conciergeCd", conciergeCd);
+		session.setAttribute("conciergeCd",conciergeCd);
+		
+		//2.コンシェルジュコードから相談内容名を取得する
+		try {
+			String conciergeName = new ReserveDAO().concierge(conciergeCd);
+			session.setAttribute("conciergeName",conciergeName);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
 		
 		//2.今日の日付を取得し、LocalDateに変換
 		LocalDate nowDate = LocalDate.now();

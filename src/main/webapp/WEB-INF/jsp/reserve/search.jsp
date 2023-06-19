@@ -61,7 +61,7 @@ pageEncoding="UTF-8"%>
 	</div>
 	</c:if>
 	<br>
-	<div>
+	<table>
 	
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
 			</div>
 		</tr>
 		</c:if>
-	</div>
+	</table>
 	<table class="sousin">
 <tr><th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
 <th><input type="submit" value="送信する" class="botton"></th>

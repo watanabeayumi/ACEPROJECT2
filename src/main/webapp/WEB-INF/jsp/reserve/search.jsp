@@ -60,11 +60,12 @@ pageEncoding="UTF-8"%>
 	</div>
 	</c:if>
 	<br>
-	<table class="table">
-		<tr>
+	<table>
+	<div id="tb">
+		<tr class="nyuuryoku">
 			<th class="nyuuryoku">お名前：</th>
-			<td><input name="name" type="text"></td>
-		</tr>
+			<td class="tb"><input name="name" type="text"></td>
+		</tr><br>
 		<c:if test="${!empty NameErr}">
 			<div id="errormsg">
 				<ul>
@@ -73,14 +74,14 @@ pageEncoding="UTF-8"%>
 			</div>
 		</c:if>
 		<br>
-		<tr>
+		<tr class="nyuuryoku">
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
+			<td class="tb"><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
 		</tr>
 		<br>
-		<tr>
+		<tr class="nyuuryoku">
 			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
-		</tr>
+		</tr><br>
 		<c:if test="${!empty CallErr}">
 		<div id="errormsg">
 			<ul>
@@ -92,10 +93,11 @@ pageEncoding="UTF-8"%>
 			</ul>
 		</div>
 		</c:if>
-		<tr>
+		<tr class="nyuuryoku">
 			<th class="nyuuryoku">メールアドレス：</th>
-			<td><input name="mail" type="email"></td>
+			<td class="tb"><input name="mail" type="email"></td>
 		</tr>
+		</div>
 		<br>
 		<c:if test="${!empty MailErr}">
 			<div id="errormsg">

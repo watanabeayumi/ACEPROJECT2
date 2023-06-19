@@ -31,6 +31,8 @@ public class DeleteFormBean {
 		return errMsg;
 	}
 
+
+
 	public String getName() {
 		return name;
 	}

@@ -79,6 +79,7 @@ div{
     box-sizing: border-box;
     margin: 0.5em 0 auto;
     font-size: 40px;
+    border-spacing: 50px;    
 }
 .th{
 	font-size: 30px;

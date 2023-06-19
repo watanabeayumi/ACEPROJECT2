@@ -23,6 +23,7 @@ import reserve.dao.ReserveDAO;
 @WebServlet("/reserveInsurance")
 public class ReserveInsuranceServlet extends HttpServlet {
 	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//1.コンシェルジュコードをセッションに入れる
@@ -55,9 +56,4 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		
 		return;
 		}
-
-	private LocalDate now() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 }

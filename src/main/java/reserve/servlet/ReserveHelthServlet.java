@@ -55,9 +55,4 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	
 	return;
 	}
-
-private LocalDate now() {
-	// TODO 自動生成されたメソッド・スタブ
-	return null;
-}
 }

@@ -10,57 +10,64 @@ public class ReserveSearchFormBean {
 	private String call;
 	private String mail;
 	
-	public ArrayList<String> validate(HttpServletRequest request){
-	
-	String reserve_date=request.getParameter("reserve_date");
-	name=request.getParameter("name");
-	call=request.getParameter("call");
-	mail=request.getParameter("mail");
-	
-	ArrayList<String> errMsg=new ArrayList<>();
-	
-	ArrayList<String> reserveErr =new ArrayList<>();
-	if("".equals(reserve_date)) {
-		errMsg.add("チェックボックスが選択されていません。");
-		reserveErr.add("チェックボックスが選択されていません。");
-	}else {
-		try{
-	    	reserveDate = Integer.parseInt(reserve_date);
-	    }catch(NumberFormatException e){
-	    	reserveErr.add("日時が選択されていません。");
-	    	request.setAttribute("ReserveErr", reserveErr);
-	    	}
+	public ArrayList<String> checkDate(HttpServletRequest request){
+		
+		String reserve_date=request.getParameter("reserveDate");
+		
+		ArrayList<String> reserveErr =new ArrayList<>();
+		if("".equals(reserve_date)) {
+			reserveErr.add("チェックボックスが選択されていません。");
+		}else {
+			try{
+				reserveDate = Integer.parseInt(reserve_date);
+			}catch(NumberFormatException e){
+				reserveErr.add("日時が選択されていません。");
+			}
 		}
-	if("".equals(name)) {
-		errMsg.add("名前が入力されていません。");
-		String nameErr = "名前が入力されていません。";
-		request.setAttribute("NameErr", nameErr);
+		return reserveErr;
 	}
 	
-	ArrayList<String> callErr =new ArrayList<>();
-	if("".equals(call)) {
-		errMsg.add("電話番号が入力されていません。");
-		callErr.add("電話番号が入力されていません。");
-	}else{
-        if(call.length() * 3 ==call.getBytes().length){
-            errMsg.add("電話番号の入力に誤りがあります。");
-            callErr.add("電話番号が入力に誤りがあります。");
-            }
-        try {
-        	long longCall = Long.parseLong(call);
-        }catch(NumberFormatException e){
-        	errMsg.add("数字以外が入力されています。");
-        	callErr.add("数字以外が入力されています。");
-        	request.setAttribute("CallErr", callErr);
-        }
-         }
-    if("".equals(mail)) {
-		errMsg.add("メールアドレスが入力されていません。");
-		String mailErr = "メールアドレスが入力されていません。";
-		request.setAttribute("MailErr", mailErr);
+	public ArrayList<String> checkName(HttpServletRequest request){
+		
+		name=request.getParameter("name");
+		
+		ArrayList<String> nameErr =new ArrayList<>();
+		if("".equals(name)) {
+			nameErr.add("名前が入力されていません。");
+		}
+		return nameErr;
 	}
-    return errMsg;
-}
+	
+	public ArrayList<String> checkCall(HttpServletRequest request){
+		
+		name=request.getParameter("call");
+		
+		ArrayList<String> callErr =new ArrayList<>();
+		if("".equals(call)) {
+			callErr.add("電話番号が入力されていません。");
+		}else{
+			if(call.length() * 3 ==call.getBytes().length){
+				callErr.add("電話番号が入力に誤りがあります。");
+				}
+			try {
+				long longCall = Long.parseLong(call);
+			}catch(NumberFormatException e){
+				callErr.add("数字以外が入力されています。");
+			}
+		}
+		return callErr;
+	}
+	
+	public ArrayList<String> checkMail(HttpServletRequest request){
+		
+		name=request.getParameter("mail");
+		
+		ArrayList<String> mailErr =new ArrayList<>();
+		if("".equals(mail)) {
+			mailErr.add("メールアドレスが入力されていません。");
+		}
+		return mailErr;
+	}
 	
 	public int getReserveDate() {
 		return reserveDate;

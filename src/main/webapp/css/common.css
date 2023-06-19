@@ -4,9 +4,6 @@ body {
     background:url("../pic/cloud.jpg");
     text-align: center;
     background-size: cover;          
-    width:100%;                             
-    height:400px;   
-    background-repeat:  no-repeat; 
 }
 h1 {
     /*h1タグ内の文字色を変える*/

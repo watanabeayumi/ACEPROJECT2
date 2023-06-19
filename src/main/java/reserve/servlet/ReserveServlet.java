@@ -42,10 +42,10 @@ public class ReserveServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		//2.今日の日付を取得し、LocalDateに変換
+		//3.今日の日付を取得し、LocalDateに変換
 		LocalDate nowDate = LocalDate.now();
 		
-		//3.予約可能カレンダーを出力するための処理
+		//4.予約可能カレンダーを出力するための処理
 		List<LocalDate> reserveDateList = new ArrayList<>();
 		try {
 			reserveDateList = new ReserveDAO().selectReserve(nowDate, conciergeCd);
@@ -54,7 +54,7 @@ public class ReserveServlet extends HttpServlet {
 				}
 		session.setAttribute("ReserveDateList", reserveDateList);
 		
-		//4.予約可能カレンダーの上の明日以降の一週間を表示させるための処理
+		//5.予約可能カレンダーの上の明日以降の一週間を表示させるための処理
 		List<LocalDate> weekList = new ArrayList<>();
 		for(int k=1; k<=10; k++) {
 			LocalDate week = nowDate.plusDays(k);
@@ -62,7 +62,7 @@ public class ReserveServlet extends HttpServlet {
 		}
 		session.setAttribute("WeekList", weekList);
 		
-		//5.search.jspに遷移
+		//6.search.jspに遷移
 		request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 		
 		return;

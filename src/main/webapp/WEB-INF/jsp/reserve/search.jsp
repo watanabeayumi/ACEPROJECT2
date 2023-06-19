@@ -83,7 +83,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 	
 		<tr class="nyuuryoku">
-			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
+			<th class="th">※ハイフンなし、半角</th>
 		</tr>
 		<c:if test="${!empty CallErr}">
 		<tr>

@@ -15,7 +15,6 @@ import reserve.dao.ReserveDAO;
 import reserve.flowbean.ReserveSearchFlowBean;
 import reserve.formbean.ReserveSearchFormBean;
 
-
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
 	

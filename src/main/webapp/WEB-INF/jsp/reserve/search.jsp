@@ -62,8 +62,67 @@ pageEncoding="UTF-8"%>
 	</c:if>
 	<br>
 	<table>
-	<div id="tb">
+	
+		<tr>
+			<th class="nyuuryoku">お名前：</th>
+			<td><input name="name" type="text"></td>
+		</tr>
+		<c:if test="${!empty NameErr}">
+		<tr>
+			<div id="errormsg">
+				<ul>
+					<li><c:out value="${NameErr}"/></li>
+				</ul>
+			</div>
+		</tr>
+		</c:if>
+		
+		<tr>
+			<th class="nyuuryoku">電話：</th>
+			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
+		</tr>
+	
 		<tr class="nyuuryoku">
+			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
+		</tr>
+		<c:if test="${!empty CallErr}">
+		<tr>
+		<div id="errormsg">
+			<ul>
+				<c:forEach items="${CallErr}" var="err">
+					<li>
+						<c:out value="${err}" />
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+		</tr>
+		</c:if>
+		<tr>
+			<th class="nyuuryoku">メールアドレス：</th>
+			<td><input name="mail" type="email"></td>
+		</tr>
+		
+		
+		<c:if test="${!empty MailErr}">
+		<tr>
+			<div id="errormsg">
+				<ul>
+					<li><c:out value="${MailErr}"/></li>
+				</ul>
+			</div>
+		</tr>
+		</c:if>
+	</table>
+	<table class="sousin">
+<tr><th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
+<th><input type="submit" value="送信する" class="botton"></th>
+	</form>
+	</tr>
+</table>
+</body>
+</html>
+		>
 			<th class="nyuuryoku">お名前：</th>
 			<td class="tb"><input name="name" type="text"></td>
 		</tr><br>

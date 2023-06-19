@@ -23,11 +23,11 @@
 	</div>
 </c:if>
   <div class="cp_hr07">
-    <a class="menu" href="<c:url value='/reserveHouse' />">不動産やおうちの修繕</a><br>
-    <a class="menu" href="<c:url value='/reserveHelth' />">介護や終活</a><br>
-    <a class="menu" href="<c:url value='/reserveInheritance' />">相続</a><br>
-    <a class="menu" href="<c:url value='/reserveInsurance' />">車や保険</a><br>
-    <a class="menu" href="<c:url value='/reserveFinance' />">金融</a><br>
+    <a class="menu" href="<c:url value='/reserve?conciergeCd=1' />">不動産やおうちの修繕</a><br>
+    <a class="menu" href="<c:url value='/reserve?conciergeCd=2' />">介護や終活</a><br>
+    <a class="menu" href="<c:url value='/reserve?conciergeCd=3' />">相続</a><br>
+    <a class="menu" href="<c:url value='/reserve?conciergeCd=4' />">車や保険</a><br>
+    <a class="menu" href="<c:url value='/reserve?conciergeCd=5' />">金融</a><br>
     <a class="menu" href="<c:url value='/delete' />">予約キャンセル</a>
   </div>
 </body>

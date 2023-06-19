@@ -16,7 +16,8 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_RESERVEDATA = "SELECT * FROM t_reserve WHERE name=? AND tel=? AND address=?";
 	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
-	
+	private static final String SELECT_BY_INSERT="INSERT INTO t_reserve values (?, ?, ?, ?, ?, ?)";
+	private static final String SELECT_BY_DELETE="DELETE FROM t_reserve where name=? and tel=? and address=?";
 	/**
 	 * selectReserveメソッド
 	 * 予約情報が入っているかを確認するためのDAOメソッドです。
@@ -64,7 +65,7 @@ public class ReserveDAO extends CommonDAO {
 				int insert = 0;
 				try {
 					getConnection();
-					PreparedStatement statement=conn.prepareStatement("insert into t_reserve values (?, ?, ?, ?, ?, ?)");
+					PreparedStatement statement=conn.prepareStatement(SELECT_BY_INSERT);
 					
 					statement.setDate(1, Date.valueOf(date));
 					statement.setInt(2, time);
@@ -86,15 +87,15 @@ public class ReserveDAO extends CommonDAO {
 					
 				}
 	
+	
 
 	public int selectDelete(String name, String call, String mail)
 			throws DaoException {
 		int delete = 0;
 		try {
 			getConnection();
-			PreparedStatement statement = conn
-					.prepareStatement("delete from t_reserve where name=? and tel=? and address=?");
-
+			PreparedStatement statement = conn.prepareStatement(SELECT_BY_DELETE);
+					
 			statement.setString(1, name);
 			statement.setString(2, call);
 			statement.setString(3, mail);

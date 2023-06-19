@@ -26,6 +26,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		
 		request.setCharacterEncoding("utf-8");
 		
 		//1.セッションスコープに保存している内容を取得する。

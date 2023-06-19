@@ -71,31 +71,30 @@ pageEncoding="UTF-8"%>
 		
 			<div id="errormsg">
 				<tr><th><c:out value="${NameErr}"/></th></tr>
-		  </c:if>
 			</div>
-		
+		  </c:if>
 			
 		<tr>
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}" maxlength="11"></td>
 		</tr>
 
-		<tr class="nyuuryoku">
+		<tr>
 			<th class="th">※ハイフンなし、半角</th>
 		</tr>
 		<c:if test="${!empty CallErr}">
-		<tr>
+		
 		<div id="errormsg">
-			<ul>
-				<c:forEach items="${CallErr}" var="err">
-					<li>
-						<c:out value="${err}" />
-					</li>
+			<c:forEach items="${CallErr}" var="err">
+				
+						<tr><th><c:out value="${err}" /></th></tr>
 				</c:forEach>
-			</ul>
+			
 		</div>
-		</tr>
+		
 		</c:if>
+		
+		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="email"></td>
@@ -103,13 +102,13 @@ pageEncoding="UTF-8"%>
 		
 		
 		<c:if test="${!empty MailErr}">
-		<tr>
+		
 			<div id="errormsg">
-				<ul>
-					<li><c:out value="${MailErr}"/></li>
-				</ul>
+				
+				<tr><th><c:out value="${MailErr}"/></th></tr>
+				
 			</div>
-		</tr>
+		
 		</c:if>
 	</table>
 	<table class="sousin">

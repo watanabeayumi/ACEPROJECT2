@@ -26,6 +26,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 	 * @version 1.0
 	 */
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

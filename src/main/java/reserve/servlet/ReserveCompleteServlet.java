@@ -21,7 +21,6 @@ import reserve.flowbean.ReserveSearchFlowBean;
  * @version 1.0
  */
 
-
 @WebServlet("/reserveComplete")
 public class ReserveCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

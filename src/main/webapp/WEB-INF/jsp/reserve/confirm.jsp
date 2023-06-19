@@ -8,7 +8,6 @@
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
 </head>
-
 <body>
 <h1>予約確認</h1>
 <p>日付：<c:out value="${ReserveSearchFlowBean.reserveDate}" /></p>

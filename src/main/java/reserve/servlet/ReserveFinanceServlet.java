@@ -2,9 +2,7 @@ package reserve.servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -35,8 +33,7 @@ public class ReserveFinanceServlet extends HttpServlet {
 		session.setAttribute("conciergeCd", conciergeCd);
 		
 		//2.今日の日付を取得し、LocalDateに変換
-		Date strDate = new Date();
-		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		LocalDate nowDate = now();
 		
 		//3.予約可能カレンダーを出力するための処理
 		List<LocalDate> reserveDateList = new ArrayList<>();
@@ -60,4 +57,10 @@ public class ReserveFinanceServlet extends HttpServlet {
 		
 		return;
 		}
+
+
+	private LocalDate now() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }

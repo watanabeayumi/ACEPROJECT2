@@ -31,12 +31,12 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		//1.セッションスコープに保存している内容を取得する
+		//1.セッションスコープに保存している内容を取得する。
 		HttpSession session=request.getSession(false);
 		ReserveSearchFlowBean flowbean = new ReserveSearchFlowBean();
 		ReserveSearchFormBean formbean = new ReserveSearchFormBean();
 		
-		//2.もしエラーメッセージが空でなかった場合、エラーメッセージを表示させる
+		//2.もしエラーメッセージが空でなかった場合、エラーメッセージを表示させる。
 		List<String> errMsgList = formbean.validate(request);
 		
 		if(!errMsgList.isEmpty()){
@@ -45,7 +45,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			return;
 		}
 		
-		//3.７日分の予約可能日を表示させる設定
+		//3.７日分の予約可能日を表示させる設定。
 		Date strDate = new Date();
 		LocalDate nowDate = strDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		
@@ -67,7 +67,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			flowbean.setReserve_date(nowDate.plusDays(7));
 		}
 		
-		//4.予約時間の表示設定
+		//4.予約時間の表示設定。
 		if(reserveDate>=1&&reserveDate<=7) {
 			flowbean.setTimeCd(1);
 			flowbean.setTimeName("10:00∼11:00");
@@ -100,13 +100,13 @@ public class ReserveConfirmServlet extends HttpServlet {
 			flowbean.setTimeName("19:00∼20:00");
 		}
 		
-		//5.予約した値を、flowbeanのcall,mail,nameにセットする
+		//5.予約した値を、flowbeanのcall,mail,nameにセットする。
 		flowbean.setCall(formbean.getCall());
 		flowbean.setMail(formbean.getMail());
 		flowbean.setName(formbean.getName());
 		session.setAttribute("ReserveSearchFlowBean", flowbean);
 		
-		//6.次画面呼び出し
+		//6.次画面呼び出しの設定。
 			request.getRequestDispatcher("/WEB-INF/jsp/reserve/confirm.jsp").forward(request, response);
 		}
 

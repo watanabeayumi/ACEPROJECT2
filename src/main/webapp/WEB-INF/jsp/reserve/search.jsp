@@ -81,7 +81,7 @@ pageEncoding="UTF-8"%>
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}" maxlength="11"></td>
 		</tr>
-	
+
 		<tr class="nyuuryoku">
 			<th class="th">※ハイフンなし、半角</th>
 		</tr>

@@ -63,11 +63,11 @@ pageEncoding="UTF-8"%>
 	</c:if>
 	</table>
 	<br>
-	<p><c:out value="${conciergeName}"/></p>
+	<p>相談内容：<c:out value="${conciergeName}"/></p>
 	<table> 
 	
 		<tr>
-			<th> class="nyuuryoku">お名前：</th>
+			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
 	      <c:if test="${!empty NameErr}">

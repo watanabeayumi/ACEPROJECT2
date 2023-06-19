@@ -46,7 +46,8 @@ pageEncoding="UTF-8"%>
 					<tr>
 				</c:if>
 			</c:forEach>
-		</tr>   
+		</tr>
+		
 	</table>
 	<c:if test="${!empty ReserveErr}">
 	<div id="errormsg">
@@ -67,11 +68,13 @@ pageEncoding="UTF-8"%>
 			<td class="tb"><input name="name" type="text"></td>
 		</tr><br>
 		<c:if test="${!empty NameErr}">
+		<tr>
 			<div id="errormsg">
 				<ul>
 					<li><c:out value="${NameErr}"/></li>
 				</ul>
 			</div>
+		</tr>
 		</c:if>
 		<br>
 		<tr class="nyuuryoku">
@@ -83,6 +86,7 @@ pageEncoding="UTF-8"%>
 			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
 		</tr><br>
 		<c:if test="${!empty CallErr}">
+		<tr>
 		<div id="errormsg">
 			<ul>
 				<c:forEach items="${CallErr}" var="err">
@@ -92,6 +96,7 @@ pageEncoding="UTF-8"%>
 				</c:forEach>
 			</ul>
 		</div>
+		</tr>
 		</c:if>
 		<tr class="nyuuryoku">
 			<th class="nyuuryoku">メールアドレス：</th>
@@ -100,11 +105,13 @@ pageEncoding="UTF-8"%>
 		</div>
 		<br>
 		<c:if test="${!empty MailErr}">
+		<tr>
 			<div id="errormsg">
 				<ul>
 					<li><c:out value="${MailErr}"/></li>
 				</ul>
 			</div>
+		</tr>
 		</c:if>
 	</table>
 	<table class="sousin">

@@ -76,7 +76,7 @@ pageEncoding="UTF-8"%>
 		<br>
 		<tr class="nyuuryoku">
 			<th class="nyuuryoku">電話：</th>
-			<td class="tb"><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
+			<td class="nyuuryoku" ><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
 		</tr>
 		<br>
 		<tr class="nyuuryoku">

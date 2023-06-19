@@ -12,17 +12,6 @@ pageEncoding="UTF-8"%>
 <body>
 <h1>ご相談予約</h1>
 <h2>ご相談日時を選択し、入力事項をご入力下さい</h2>
-<c:if test="${!empty errMsgList}">
-	<div id="errormsg">
-		<ul>
-			<c:forEach items="${errMsgList}" var="err">
-				<li>
-					<c:out value="${err}" />
-				</li>
-			</c:forEach>
-		</ul>
-	</div>
-</c:if>
 <form  action="reserveConfirm" method="post">
 	<table class="table" border="1" height="150" width="300">
 
@@ -59,33 +48,62 @@ pageEncoding="UTF-8"%>
 			</c:forEach>
 		</tr>   
 	</table>
+	<c:if test="${!empty ReserveErr}">
+	<div id="errormsg">
+		<ul>
+			<c:forEach items="${ReserveErr}" var="err">
+				<li>
+					<c:out value="${err}" />
+				</li>
+			</c:forEach>
+		</ul>
+	</div>
+	</c:if>
 	<br>
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
-			<c:forEach var="i" begin="0" end="7" step="1">
-			</c:forEach>
+		<c:if test="${!empty NameErr}">
+			<div id="errormsg">
+				<ul>
+					<li><c:out value="${NameErr}"/></li>
+				</ul>
+			</div>
+		</c:if>
 		<br>
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
-
-
 		</tr>
 		<br>
 		<tr>
 			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
-			
 		</tr>
-		
+		<c:if test="${!empty CallErr}">
+		<div id="errormsg">
+			<ul>
+				<c:forEach items="${CallErr}" var="err">
+					<li>
+						<c:out value="${err}" />
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+		</c:if>
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="email"></td>
 		</tr>
 		<br>
+		<c:if test="${!empty MailErr}">
+			<div id="errormsg">
+				<ul>
+					<li><c:out value="${MailErr}"/></li>
+				</ul>
+			</div>
+		</c:if>
 	</table>
 	<table class="sousin">
 <tr><th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>

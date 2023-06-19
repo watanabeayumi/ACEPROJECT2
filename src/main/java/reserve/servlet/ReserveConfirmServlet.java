@@ -40,7 +40,6 @@ public class ReserveConfirmServlet extends HttpServlet {
 		List<String> errMsgList = formbean.validate(request);
 		
 		if(!errMsgList.isEmpty()){
-			request.setAttribute("errMsgList", errMsgList);
 			request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);
 			return;
 		}

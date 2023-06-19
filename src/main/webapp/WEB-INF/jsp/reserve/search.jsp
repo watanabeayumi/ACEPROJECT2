@@ -66,14 +66,13 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
-		
+		</tr>
 	      <c:if test="${!empty NameErr}">
 		
 			<div id="errormsg">
-				<td><c:out value="${NameErr}"/></td>
+				<tr><th><c:out value="${NameErr}"/></th></tr>
 		  </c:if>
 			</div>
-		</tr>
 		
 			
 		<tr>

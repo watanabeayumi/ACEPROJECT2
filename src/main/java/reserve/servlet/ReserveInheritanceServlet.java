@@ -31,7 +31,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	session.setAttribute("conciergeCd", conciergeCd);
 	
 	//2.今日の日付を取得し、LocalDateに変換
-	LocalDate nowDate = now();
+	LocalDate nowDate = LocalDate.now();
 	
 	//3.予約可能カレンダーを出力するための処理
 	List<LocalDate> reserveDateList = new ArrayList<>();

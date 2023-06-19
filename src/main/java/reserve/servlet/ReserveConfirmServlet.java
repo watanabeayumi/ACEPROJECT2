@@ -46,7 +46,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		}
 		
 		//3.７日分の予約可能日を表示させる設定。
-		LocalDate nowDate = now();
+		LocalDate nowDate = LocalDate.now();
 		
 		int reserveDate = formbean.getReserveDate();
 		

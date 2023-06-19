@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 body {
     /*ページ全体の背景色をベージュに*/
     background:url("../pic/cloud.jpg");
@@ -34,7 +32,7 @@ h2 {
 }
 .table{
 	margin: 2em auto; 
-    font-size: 13pt;
+    font-size: 20px;
     text-align: center;
     line-height: 30px;
 	}
@@ -60,9 +58,19 @@ div{
 	border-style: double;
 	border-color: #f06292;
 }
+.tb{
+	margin: 2em auto; 
+	width: 8%;
+    padding: 0.6em;
+    font-size: 20px;
+}
 .nyuuryoku{
-	font-size: 50px;
-	margin: 100;
+	width: 10em;
+    max-width: 100%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    margin: 0.7em 0;
+    font-size: 40px;
 }
 .th{
 	font-size: 30px;

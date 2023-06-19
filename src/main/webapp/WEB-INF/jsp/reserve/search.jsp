@@ -67,14 +67,15 @@ pageEncoding="UTF-8"%>
 	<table> 
 	
 		<tr>
-			<th class="nyuuryoku">お名前：</th>
+			<th> class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
 	      <c:if test="${!empty NameErr}">
-		
+		<tr>
 			<div class="errormsg">
-				<tr><th><c:out value="${NameErr}"/></th></tr>
+				<th><c:out value="${NameErr}"/></th>
 			</div>
+			</tr>
 		  </c:if>
 			
 		<tr>

@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>コンシェルジュ予約</title>
 <link rel="stylesheet"  href="css/common.css">
-
 </head>
 <body>
 <h1 id="topic">ご相談予約・削除受付</h1>

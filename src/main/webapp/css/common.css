@@ -2,58 +2,54 @@
 
 
 body {
-  /*ページ全体の背景色をベージュに*/
-  background: #fffbf4;
-  text-align: center;
-  
+    /*ページ全体の背景色をベージュに*/
+    background:url("../pic/cloud.jpg");
+    text-align: center;
+    background-size: cover;
 }
 h1 {
-  /*h1タグ内の文字色を変える*/
-  color: #f89174;
-  font-size:120px;
-  text-align: center;
+    /*h1タグ内の文字色を変える*/
+    color: #f89174;
+    font-size:120px;
+    text-align: center;
 }
 #headline {
-  /*id="headline"の下に点線を引く*/
-  border-bottom: dotted 2px #f89174;
+    /*id="headline"の下に点線を引く*/
+    border-bottom: dotted 2px #f89174;
 }
 #headline p {
-  /*id="headline"の中のフォントサイズを1.2倍に*/
-  font-size: 1.2em;
+    /*id="headline"の中のフォントサイズを1.2倍に*/
+    font-size: 1.2em;
 }
 h2 {
-  /*h2タグの文字色をオレンジに*/
-  color:orange;
-  font-size:85px;
-  text-align: center;
+    /*h2タグの文字色をオレンジに*/
+    color:orange;
+    font-size:85px;
+    text-align: center;
 }
 .menu {
-  /*リンクの文字色をグレイに*/
-  color:gray;
-  text-align: center;
+    /*リンクの文字色をグレイに*/
+    color:gray;
+    text-align: center;
 }
 .table{
-    margin: auto;
+	margin: 2em auto; 
     font-size: 13pt;
     text-align: center;
     line-height: 30px;
-    
-    
 	}
 .sousin{
 	margin-top: 50px;
- margin-left: auto;
- margin-right: auto;
-	 padding:1px;
+    margin-left: auto;
+    margin-right: auto;
+	padding:1px;
     font-size: 2pt;
     text-align: center;
     line-height: 40px;
-    
-	
 }
 div{
-padding:50px;
-font-size: 50px;
+    padding:50px;
+    font-size: 50px;
 }
 .cp_hr07 {
 	position: relative;
@@ -63,15 +59,13 @@ font-size: 50px;
 	border-width: 3px 0 0 0;
 	border-style: double;
 	border-color: #f06292;
-	
 }
 .nyuuryoku{
 	font-size: 50px;
 	margin: 100;
-	
 }
-.th{font-size: 30px;
-	
+.th{
+	font-size: 30px;
 }
 .cp_hr07::after {
 	position: absolute;
@@ -79,9 +73,10 @@ font-size: 50px;
 	left: 50%;
 	display: inline-block;
 	content: '★';
-	background: #ffffff;
+	background: transparent;
 }
-p { font-size:50px;
+p { 
+	font-size:50px;
 }
 .topic{
 	font-size:80px;
@@ -90,39 +85,36 @@ p { font-size:50px;
 	font-size:70px;
 }
 .botton{  
- border-radius: 6px;
- margin-top: 32px;
- margin-left: auto;
- margin-right: auto;
- padding-top: 20px;
- padding-bottom: 20px;
- width: 280px;
- display: block;
- letter-spacing: 0.05em;
- background-color:skyblue;
- font-weight: bold;
- font-size: 50px;
-
-
+    border-radius: 6px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+    display: block;
+    letter-spacing: 0.05em;
+    background-color:skyblue;
+    font-weight: bold;
+    font-size: 50px;
 }
 .anka{
-border-radius: 6px;
- margin-top: 35px;
- margin-left: auto;
- margin-right: auto;
- padding-top: 30px;
- padding-bottom: 10px;
- width: 295px;
- height: 73px; 
- border: solid 2px #696969;/*線*/
- display: block;
- letter-spacing: 0.05em;
- background-color:rgb(204, 166, 201);
- font-weight: bold;
- font-size: 40px;
- text-align: center;
- color:#000;
- 
+    border-radius: 6px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 295px;
+    height: 73px; 
+    border: solid 2px #696969;/*線*/
+    display: block;
+    letter-spacing: 0.05em;
+    background-color:rgb(204, 166, 201);
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    color:#000;
 }
 .namae{
 	padding-left: 10em;
@@ -194,26 +186,25 @@ input[type=radio]:checked{
 }
 
 @media (max-width: 800px) {
-   /* 横幅が800px以下の場合に適用するスタイル */
-   h1 {font-size: 60px;}
-   h2 {font-size: 50px;}
-   .cp_hr07 {font-size: 45px;}
-   p {font-size: 30px;}
+    /* 横幅が800px以下の場合に適用するスタイル */
+    h1 {font-size: 60px;}
+    h2 {font-size: 50px;}
+    .cp_hr07 {font-size: 45px;}
+    p {font-size: 30px;}
   
 }
 @media (min-width: 120px) {
-   /* 横幅が120px以上の場合に適用するスタイル */
-   h1 {font-size: 80px;}
-   h2 {font-size: 45px;}
-   .cp_hr07 {font-size: 45px;}
-   .th{font-size: 25px;}
-   p{font-size: 30px;}
-   #errormsg{font-size: 30px;
+    /* 横幅が120px以上の場合に適用するスタイル */
+    h1 {font-size: 80px;}
+    h2 {font-size: 45px;}
+    p{font-size: 30px;}
+    .cp_hr07 {font-size: 45px;}
+    .th{font-size: 25px;}
+    #errormsg{font-size: 30px;
 }  
 @media (min-width: 320px) {
-   p {font-size: 30px;}
+    p {font-size: 30px;}
 }   
-
 #errormsg ul{
 	margin:5px 0;
 	text-align: left;	
@@ -233,10 +224,8 @@ input[type=radio]:checked{
 	-ms-user-select: none;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
-	
 }
 .err{
 	text-align: left;
 }
-
 }

@@ -22,7 +22,7 @@
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
 		</tr>
 		<tr>
-			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
+			<th class="th">※ハイフンなし、半角</th>
 		</tr>
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>

@@ -58,19 +58,28 @@ div{
 	border-style: double;
 	border-color: #f06292;
 }
+.td{
+	margin: 2em auto; 
+	width: 4%;
+    padding: 0.9em;
+    font-size: 20px;
+    margin-right: 100px;
+}
 .tb{
 	margin: 2em auto; 
 	width: 8%;
     padding: 0.6em;
     font-size: 20px;
+    margin-right: 100px;
 }
 .nyuuryoku{
 	width: 10em;
     max-width: 100%;
-    padding: 0.8em;
+    padding: 0.9em;
     box-sizing: border-box;
-    margin: 0.7em 0 auto;
+    margin: 0.5em 0 auto;
     font-size: 40px;
+    border-spacing: 50px;    
 }
 .th{
 	font-size: 30px;

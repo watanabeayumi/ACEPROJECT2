@@ -53,11 +53,12 @@ public class DeleteServlet extends HttpServlet {
 		
 	//formBeanのNameとTelとAddressをReserveDAOのreserveに入れ、その抽出結果を名前reserveに格納。
 		try {
-			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
+			ReserveDAO dao = new ReserveDAO();
+			Reserve reserve = dao.reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
 		
 	//上記で抽出されたTimeCdをReserveDAOのtimeに入れてtimeNameを抽出。
-			String timeName = new ReserveDAO().time(reserve.getTimeCd());
-			String conciergeName = new ReserveDAO().concierge(reserve.getConciergeCd());
+			String timeName = dao.time(reserve.getTimeCd());
+			String conciergeName = dao.concierge(reserve.getConciergeCd());
 			
 			
 			flowBean = new DeleteFlowBean();

@@ -26,6 +26,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 	 * @version 1.0
 	 */
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -45,19 +46,19 @@ public class ReserveConfirmServlet extends HttpServlet {
 		}
 		
 		//3.７日分の予約可能日を表示させる設定。
-		LocalDate nowDate = now();
+		LocalDate nowDate = LocalDate.now();
 		
 		int reserveDate = formbean.getReserveDate();
 		
 		for(int i=0; i<=6; i++) {
 			if(i==0) {
 				if(reserveDate%7==0) {
-					flowbean.setReserve_date(nowDate.plusDays(7));
+					flowbean.setReserveDate(nowDate.plusDays(7));
 					break;
 				}
 			}else {
 				if(reserveDate%7==i) {
-					flowbean.setReserve_date(nowDate.plusDays(i));
+					flowbean.setReserveDate(nowDate.plusDays(i));
 					break;
 				}
 			}

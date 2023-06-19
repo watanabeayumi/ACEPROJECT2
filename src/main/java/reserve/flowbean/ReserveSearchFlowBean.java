@@ -3,7 +3,7 @@ package reserve.flowbean;
 import java.time.LocalDate;
 
 public class ReserveSearchFlowBean {
-	private LocalDate reserve_date;
+	private LocalDate reserveDate;
 	private String name;
 	private String call;
 	private String mail;
@@ -29,11 +29,11 @@ public class ReserveSearchFlowBean {
 	public void setTimeCd(int timeCd) {
 		this.timeCd = timeCd;
 	}
-	public LocalDate getReserve_date() {
-		return reserve_date;
+	public LocalDate getReserveDate() {
+		return reserveDate;
 	}
-	public void setReserve_date(LocalDate reserve_date) {
-		this.reserve_date = reserve_date;
+	public void setReserveDate(LocalDate reserveDate) {
+		this.reserveDate = reserveDate;
 	}
 	public String getName() {
 		return name;
@@ -55,3 +55,4 @@ public class ReserveSearchFlowBean {
 	}
 
 }
+

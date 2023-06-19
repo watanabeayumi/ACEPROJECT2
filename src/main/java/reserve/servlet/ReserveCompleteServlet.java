@@ -21,7 +21,6 @@ import reserve.flowbean.ReserveSearchFlowBean;
  * @version 1.0
  */
 
-
 @WebServlet("/reserveComplete")
 public class ReserveCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,7 +35,7 @@ public class ReserveCompleteServlet extends HttpServlet {
 		int ret=0;
 		try {
 //予約情報をReserveDAOのselectinsertに入れ、そのデータをreserveテーブルに挿入。
-			ret = new ReserveDAO().selectinsert(flowbean.getReserve_date(), flowbean.getTimeCd(), (int)session.getAttribute("conciergeCd"), flowbean.getName(), flowbean.getCall(), flowbean.getMail());
+			ret = new ReserveDAO().selectinsert(flowbean.getReserveDate(), flowbean.getTimeCd(), (int)session.getAttribute("conciergeCd"), flowbean.getName(), flowbean.getCall(), flowbean.getMail());
 		} catch (DaoException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();

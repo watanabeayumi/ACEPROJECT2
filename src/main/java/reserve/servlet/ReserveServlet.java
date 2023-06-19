@@ -15,15 +15,22 @@ import javax.servlet.http.HttpSession;
 import reserve.dao.DaoException;
 import reserve.dao.ReserveDAO;
 
+/**
+ * 予約可能日時カレンダーと入力内容を開くためのサーブレットです
+ * @author 渡辺友里
+ * @version 1.0
+ */
 @WebServlet("/reserve")
 public class ReserveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1.コンシェルジュコードをセッションに入れる
 		
+		//1.コンシェルジュコードをセッションに入れる
 		HttpSession session=request.getSession(true);
-		int conciergeCd=request.getParameter("conciergeCd");
+		String concierge_cd=request.getParameter("conciergeCd");
+		int conciergeCd=Integer.parseInt(concierge_cd);
+		session.setAttribute("conciergeCd", conciergeCd);
 		
 		//2.今日の日付を取得し、LocalDateに変換
 		LocalDate nowDate = LocalDate.now();
@@ -31,7 +38,7 @@ public class ReserveServlet extends HttpServlet {
 		//3.予約可能カレンダーを出力するための処理
 		List<LocalDate> reserveDateList = new ArrayList<>();
 		try {
-			reserveDateList = new ReserveDAO().selectReserve(nowDate, (int)request.getParameter("conciergeCd"));
+			reserveDateList = new ReserveDAO().selectReserve(nowDate, conciergeCd);
 			} catch (DaoException e) {
 				e.printStackTrace();
 				}

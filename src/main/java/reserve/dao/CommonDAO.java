@@ -28,17 +28,13 @@ public class CommonDAO {
 	protected void getConnection() throws DaoException {
 		try {
 			Class.forName("org.postgresql.Driver");
-
-			String url = "jdbc:postgresql://groupproject0707-server.postgres.database.azure.com:5432/groupproject0707-database";
-
-			conn = DriverManager.getConnection(url, "mtcdpkkkak", "tebasaki1234!");
-
+			String url = "jdbc:postgresql://localhost:5432/groupproject";
+			conn = DriverManager.getConnection(url, "postgres", "postgres");
 		} catch (ClassNotFoundException e) {
 			throw new DaoException(e);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DaoException(e);
 		}
-
 	}   
 } 

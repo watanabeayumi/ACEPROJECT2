@@ -16,7 +16,6 @@
 <p>名前：<c:out value="${ReserveSearchFlowBean.name}" /></p>
 <p>電話：<c:out value="${ReserveSearchFlowBean.call}" /></p>
 <p>メール：<c:out value="${ReserveSearchFlowBean.mail}" /></p>
-
 <table class="sousin">
 <tr>
 <th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>

@@ -55,9 +55,4 @@ public class ReserveInsuranceServlet extends HttpServlet {
 		
 		return;
 		}
-
-	private LocalDate now() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 }

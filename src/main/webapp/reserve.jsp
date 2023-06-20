@@ -30,5 +30,7 @@
     <a class="menu" href="<c:url value='/reserve?conciergeCd=5' />">金融</a><br>
     <a class="menu" href="<c:url value='/delete' />">予約キャンセル</a>
   </div>
+  <div class="imgpic">
+</div>
 </body>
 </html>

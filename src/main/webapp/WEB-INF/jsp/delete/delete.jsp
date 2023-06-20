@@ -12,6 +12,9 @@
 <h1>ご相談予約削除</h1>
 <h2>ご入力下さい</h2>
 <form  action="<c:url value='/delete'/>" method="post">
+	<c:if test="${!empty errMsgList}">
+		<c:out value="${errMsgList}"/>
+	</c:if>
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>

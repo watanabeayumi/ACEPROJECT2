@@ -2,6 +2,7 @@ package reserve.servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -40,12 +41,22 @@ public class DeleteServlet extends HttpServlet {
 		DeleteFormBean formBean = new DeleteFormBean();
 		
 	//formBeanのvalidateの情報もらってerrMsgListに入れる。？なんでリターンの名前使わない？
-		List<String> errMsgList = formBean.validate(request);
+		List<String> nameErr = formBean.checkName(request);
+		List<String> callErr = formBean.checkCall(request);
+		List<String> mailErr = formBean.checkMail(request);
 		
 	//もしエラーメッセージリストの中身が入っていたらerrMsgListというキー名で値をセット。reserve.jspに飛ばす。
-		if (!errMsgList.isEmpty()) {
-			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+		if(!nameErr.isEmpty() || !callErr.isEmpty() || !mailErr.isEmpty()){
+			if(!nameErr.isEmpty()) {
+				request.setAttribute("NameErr", nameErr);
+			}
+			if(!callErr.isEmpty()) {
+				request.setAttribute("CallErr", callErr);
+			}
+			if(!mailErr.isEmpty()) {
+				request.setAttribute("MailErr", mailErr);
+			}
+			request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request, response);
 			return;
 		}
 		DeleteFlowBean flowBean = new DeleteFlowBean();
@@ -74,9 +85,10 @@ public class DeleteServlet extends HttpServlet {
 			flowBean.setConciergeName(conciergeName);
 		} catch (DaoException e) {
 			e.printStackTrace();
+			List<String> errMsgList = new ArrayList<>();
 			errMsgList.add("入力された内容の予約情報は存在しませんでした。");
 			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request, response);
 			return;
 		}
 		session.setAttribute("DeleteFlowBean",flowBean);

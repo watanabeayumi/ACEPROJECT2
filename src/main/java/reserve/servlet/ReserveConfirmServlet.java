@@ -58,6 +58,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			return;
 		}
 		
+		//3.今日以降の予約情報で名前、電話番号、メールアドレスが一致する予約情報が入っていた場合予約できないメッセージを出すページに遷移する。
 		LocalDate nowDate = LocalDate.now();
 		ReserveDAO dao = new ReserveDAO();
 		try {
@@ -82,7 +83,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		int reserveDate = formbean.getReserveDate();
 		
-		//3.選択した予約カレンダーから選択した日付を特定する
+		//4.選択した予約カレンダーから選択した日付を特定する
 		for(int i=1; i<=7; i++) {
 			if(reserveDate%7==i%7) {
 				flowbean.setReserveDate(nowDate.plusDays(i));
@@ -90,7 +91,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 			}
 		}
 		
-		//4.選択した予約カレンダーから選択した時間帯を特定する
+		//5.選択した予約カレンダーから選択した時間帯を特定する
 		for(int i=0; i<=9; i++) {
 			if(reserveDate>=(1+7*i)&&reserveDate<=(7+7*i)) {
 				flowbean.setTimeCd(i+1);
@@ -103,14 +104,14 @@ public class ReserveConfirmServlet extends HttpServlet {
 			}
 		}
 		
-		//5.予約した値を、flowbeanのcall,mail,nameにセットする。
+		//6.予約した値を、flowbeanのcall,mail,nameにセットする。
 		flowbean.setCall(formbean.getCall());
 		flowbean.setMail(formbean.getMail());
 		flowbean.setName(formbean.getName());
 		flowbean.setConciergeCd((int)session.getAttribute("conciergeCd"));
 		session.setAttribute("ReserveSearchFlowBean", flowbean);
 		
-		//6.次画面呼び出しの設定。
+		//7.次画面呼び出しの設定。
 		request.getRequestDispatcher("/WEB-INF/jsp/reserve/confirm.jsp").forward(request, response);
 		}
 	}

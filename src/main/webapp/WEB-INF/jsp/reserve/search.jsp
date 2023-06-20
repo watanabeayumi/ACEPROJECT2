@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 		
 	</table>
-	
+	<br>
 	<table>
 	<c:if test="${!empty ReserveErr}">
 		<c:forEach items="${ReserveErr}" var="err">

@@ -220,15 +220,9 @@ input[type=radio]:checked{
 }
 .errormsg{
 	margin: auto;
-	padding: auto;
     color: #C0392B;
     background-color: #f2dede;
 	border: 1px solid #C0392B;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-	-moz-user-select: none;
-	-ms-touch-action: manipulation;
-	-ms-user-select: none;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
 }

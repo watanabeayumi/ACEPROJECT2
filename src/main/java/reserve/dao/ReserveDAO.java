@@ -23,7 +23,11 @@ public class ReserveDAO extends CommonDAO {
 	 * 予約情報が入っているかを確認するためのDAOメソッドです。
 	 * @author 渡辺友里
 	 * @version 1.0
+	 * @param timeCd 時間帯コード
+	 * @return timeName
+	 * @throws DaoException
 	 */
+	
 	public List<LocalDate> selectReserve(LocalDate reserveDate, int conciergeCd) throws DaoException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();
@@ -59,7 +63,12 @@ public class ReserveDAO extends CommonDAO {
 		return reserveDateList;
 	}
 
-	
+	/**
+	 * selectinsertメソッド
+	 * 予約情報を挿入するためのDAOメソッドです。
+	 * @author 黒田
+	 * @version 1.0
+	 */
 	public int selectinsert(LocalDate date, int time, int no, String name,  String call, String mail)
 			throws DaoException{
 				int insert = 0;
@@ -88,7 +97,12 @@ public class ReserveDAO extends CommonDAO {
 				}
 	
 	
-
+	/**
+	 * selectDeleteメソッド
+	 * 予約情報を削除するためのDAOメソッドです。
+	 * @author 黒田
+	 * @version 1.0
+	 */
 	public int selectDelete(String name, String call, String mail)
 			throws DaoException {
 		int delete = 0;
@@ -109,7 +123,12 @@ public class ReserveDAO extends CommonDAO {
 	}
 	
 	
-
+	/**
+	 * reserveメソッド
+	 * 予約情報を削除するためのDAOメソッドです。
+	 * @author 
+	 * @version 1.0
+	 */
 	public Reserve reserve(String name, String tel, String address, LocalDate reserve_date) throws DaoException {
 		Reserve reserve = null;
 		try {
@@ -139,6 +158,12 @@ public class ReserveDAO extends CommonDAO {
 
 	}
 	
+	/**
+	 * 
+	 * @param timeCd 時間帯コード
+	 * @return timeName
+	 * @throws DaoException
+	 */
 	public String time(int timeCd) throws DaoException{
 		String timeName = null;
 		

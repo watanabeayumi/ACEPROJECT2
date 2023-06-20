@@ -58,9 +58,10 @@ public class ReserveConfirmServlet extends HttpServlet {
 			return;
 		}
 		
+		LocalDate nowDate = LocalDate.now();
 		ReserveDAO dao = new ReserveDAO();
 		try {
-			Reserve reserve = dao.reserve(formbean.getName(), formbean.getCall(), formbean.getMail());
+			Reserve reserve = dao.reserve(formbean.getName(), formbean.getCall(), formbean.getMail(), nowDate);
 			if(reserve != null) {
 				String conciergeName = dao.concierge(reserve.getConciergeCd());
 				String timeName = dao.time(reserve.getTimeCd());
@@ -78,8 +79,6 @@ public class ReserveConfirmServlet extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-		
-		LocalDate nowDate = LocalDate.now();
 		
 		int reserveDate = formbean.getReserveDate();
 		

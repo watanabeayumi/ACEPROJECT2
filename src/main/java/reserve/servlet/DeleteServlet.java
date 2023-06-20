@@ -1,6 +1,7 @@
 package reserve.servlet;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -52,9 +53,10 @@ public class DeleteServlet extends HttpServlet {
 		DeleteFlowBean flowBean = new DeleteFlowBean();
 		
 	//formBeanのNameとTelとAddressをReserveDAOのreserveに入れ、その抽出結果を名前reserveに格納。
+		LocalDate nowDate = LocalDate.now();
 		try {
 			ReserveDAO dao = new ReserveDAO();
-			Reserve reserve = dao.reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
+			Reserve reserve = dao.reserve(formBean.getName(), formBean.getTel(), formBean.getAddress(), nowDate);
 		
 	//上記で抽出されたTimeCdをReserveDAOのtimeに入れてtimeNameを抽出。
 			String timeName = dao.time(reserve.getTimeCd());

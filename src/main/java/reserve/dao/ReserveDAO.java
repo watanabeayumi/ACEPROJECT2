@@ -13,7 +13,7 @@ import reserve.dto.Reserve;
 public class ReserveDAO extends CommonDAO {
 
 	private static final String SELECT_BY_RESERVE = "SELECT * FROM t_reserve WHERE reserve_date=? AND time_cd=? AND concierge_cd=?";
-	private static final String SELECT_BY_RESERVEDATA = "SELECT * FROM t_reserve WHERE name=? AND tel=? AND address=?";
+	private static final String SELECT_BY_RESERVEDATA = "SELECT * FROM t_reserve WHERE name=? AND tel=? AND address=? AND reserve_date>=?";
 	private static final String SELECT_BY_TIME ="SELECT * FROM t_time WHERE time_cd=?";
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	private static final String SELECT_BY_INSERT="INSERT INTO t_reserve values (?, ?, ?, ?, ?, ?)";
@@ -110,7 +110,7 @@ public class ReserveDAO extends CommonDAO {
 	
 	
 
-	public Reserve reserve(String name, String tel, String address) throws DaoException {
+	public Reserve reserve(String name, String tel, String address, LocalDate reserve_date) throws DaoException {
 		Reserve reserve = null;
 		try {
 			getConnection();
@@ -118,9 +118,10 @@ public class ReserveDAO extends CommonDAO {
 			statement.setString(1, name);
 			statement.setString(2, tel);
 			statement.setString(3, address);
-
+			statement.setDate(4, Date.valueOf(reserve_date));
+			
 			ResultSet resultSet = statement.executeQuery();
-
+			
 			if (resultSet.next()) {
 				reserve = new Reserve();
 				reserve.setReserveDate(resultSet.getDate("reserve_date").toLocalDate());

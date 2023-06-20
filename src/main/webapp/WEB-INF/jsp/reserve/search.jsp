@@ -62,10 +62,14 @@ pageEncoding="UTF-8"%>
 	</div>
 	</c:if>
 	</table>
+	
 	<br>
-	<p>相談内容：<c:out value="${conciergeName}"/></p>
+	
 	<table> 
 	
+	    <tr>
+	    <th>相談内容：<c:out value="${conciergeName}"/></th>
+	    </tr>
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>

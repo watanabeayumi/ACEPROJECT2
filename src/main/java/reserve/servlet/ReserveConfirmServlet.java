@@ -45,13 +45,13 @@ public class ReserveConfirmServlet extends HttpServlet {
 			if(!reserveErr.isEmpty()) {
 				request.setAttribute("ReserveErr", reserveErr);
 			}
-			if(!nameErr.isEmpty()) {
+			if(nameErr!=null) {
 				request.setAttribute("NameErr", nameErr);
 			}
 			if(!callErr.isEmpty()) {
 				request.setAttribute("CallErr", callErr);
 			}
-			if(!mailErr.isEmpty()) {
+			if(mailErr!=null) {
 				request.setAttribute("MailErr", mailErr);
 			}
 			request.getRequestDispatcher("/WEB-INF/jsp/reserve/search.jsp").forward(request, response);

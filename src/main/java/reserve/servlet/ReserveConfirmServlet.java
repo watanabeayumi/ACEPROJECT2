@@ -16,14 +16,15 @@ import reserve.dto.Reserve;
 import reserve.flowbean.ReserveSearchFlowBean;
 import reserve.formbean.ReserveSearchFormBean;
 
+
+/**
+ * 予約確認画面に入力値を表示させる画面です。
+ * @author 中山凜香、渡辺友里
+ * @version 1.0
+ */
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
-	
-	/**
-	 * 【予約確認画面に入力値を表示させる画面です。】
-	 * @author 【中山凜香、渡辺友里】
-	 * @version 1.0
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

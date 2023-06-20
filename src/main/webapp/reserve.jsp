@@ -16,7 +16,7 @@
 		<ul>
 			<c:forEach items="${errMsgList}" var="err">
 				<li>
-					<c:out value="${err}" />
+					<c:out value="${err}" />　
 				</li>
 			</c:forEach>
 		</ul>

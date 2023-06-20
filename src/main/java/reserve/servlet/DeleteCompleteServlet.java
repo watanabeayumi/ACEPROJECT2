@@ -33,8 +33,8 @@ public class DeleteCompleteServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		//?????
-		request.removeAttribute("DeleteFlowBean");
+		
+		
 		HttpSession session=request.getSession(false);
 		//DeleteServletでセットしたkey名DeleteFlowBeanの値をDeleteFlowBeanにflowbeanって値でセット。（下でflowbean使う為。）
 		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
@@ -55,6 +55,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 			errMsgList.add("削除できませんでした。");
 			request.setAttribute("errMsgList", errMsgList);
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			request.removeAttribute("DeleteFlowBean");
 			return;
 			
 		}

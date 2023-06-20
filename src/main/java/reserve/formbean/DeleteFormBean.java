@@ -10,14 +10,14 @@ public class DeleteFormBean {
 	private String tel;
 	private String address;
 
-	public ArrayList<String> checkName(HttpServletRequest request) throws UnsupportedEncodingException {
+	public String checkName(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
 		name = request.getParameter("name");
 		
-		ArrayList<String> nameErr = new ArrayList<>();
+		String nameErr = null;
 		
 		if ("".equals(name)) {
-			nameErr.add("名前が入力されていません。");
+			nameErr = "名前が入力されていません。";
 		}
 		return nameErr;
 	}
@@ -25,21 +25,28 @@ public class DeleteFormBean {
 	public ArrayList<String> checkCall(HttpServletRequest request){
 		tel = request.getParameter("call");
 		
-		ArrayList<String> callErr = new ArrayList<>();
-		
-		if ("".equals(tel)) {
+		ArrayList<String> callErr =new ArrayList<>();
+		if("".equals(tel)) {
 			callErr.add("電話番号が入力されていません。");
+		}else{
+			if(tel.length() * 3 ==tel.getBytes().length){
+				callErr.add("電話番号が入力に誤りがあります。");
+				}
+			try {
+				long longCall = Long.parseLong(tel);
+			}catch(NumberFormatException e){
+				callErr.add("数字以外が入力されています。");
+			}
 		}
 		return callErr;
 	}
 	
-	public ArrayList<String> checkMail(HttpServletRequest request){
+	public String checkMail(HttpServletRequest request){
 		address = request.getParameter("mail");
 		
-		ArrayList<String> mailErr = new ArrayList<>();
-		
-		if ("".equals(tel)) {
-			mailErr.add("電話番号が入力されていません。");
+		String mailErr = null;
+		if("".equals(address)) {
+			mailErr = "メールアドレスが入力されていません。";
 		}
 		return mailErr;
 	}

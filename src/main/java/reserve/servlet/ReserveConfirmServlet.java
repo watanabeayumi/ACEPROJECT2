@@ -41,7 +41,7 @@ public class ReserveConfirmServlet extends HttpServlet {
 		List<String> callErr = formbean.checkCall(request);
 		String mailErr = formbean.checkMail(request);
 		
-		if(!reserveErr.isEmpty() || !nameErr.isEmpty() || !callErr.isEmpty() || !mailErr.isEmpty()){
+		if(!reserveErr.isEmpty() || nameErr!=null || !callErr.isEmpty() || mailErr!=null){
 			if(!reserveErr.isEmpty()) {
 				request.setAttribute("ReserveErr", reserveErr);
 			}

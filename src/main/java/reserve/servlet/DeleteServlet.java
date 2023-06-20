@@ -20,7 +20,7 @@ import reserve.formbean.DeleteFormBean;
 
 /**
  * 削除確認画面を開くサーブレットです。
- * @author  渡邊あ、渡部ゆ、黒田
+ * @author  渡部あ、渡辺ゆ、黒田
  * @version 1.0
  */
 
@@ -41,19 +41,19 @@ public class DeleteServlet extends HttpServlet {
 		DeleteFormBean formBean = new DeleteFormBean();
 		
 	//formBeanのvalidateの情報もらってerrMsgListに入れる。？なんでリターンの名前使わない？
-		List<String> nameErr = formBean.checkName(request);
+		String nameErr = formBean.checkName(request);
 		List<String> callErr = formBean.checkCall(request);
-		List<String> mailErr = formBean.checkMail(request);
+		String mailErr = formBean.checkMail(request);
 		
 	//もしエラーメッセージリストの中身が入っていたらerrMsgListというキー名で値をセット。reserve.jspに飛ばす。
-		if(!nameErr.isEmpty() || !callErr.isEmpty() || !mailErr.isEmpty()){
-			if(!nameErr.isEmpty()) {
+		if(nameErr!=null || !callErr.isEmpty() || mailErr!=null){
+			if(nameErr!=null) {
 				request.setAttribute("NameErr", nameErr);
 			}
 			if(!callErr.isEmpty()) {
 				request.setAttribute("CallErr", callErr);
 			}
-			if(!mailErr.isEmpty()) {
+			if(mailErr!=null) {
 				request.setAttribute("MailErr", mailErr);
 			}
 			request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request, response);

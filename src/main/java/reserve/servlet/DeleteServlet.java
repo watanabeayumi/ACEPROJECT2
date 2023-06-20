@@ -40,7 +40,7 @@ public class DeleteServlet extends HttpServlet {
 		HttpSession session=request.getSession(false);
 		DeleteFormBean formBean = new DeleteFormBean();
 		
-	//formBeanのvalidateの情報もらってerrMsgListに入れる。？なんでリターンの名前使わない？
+	//formBeanのvalidateの情報もらってerrMsgListに入れる。
 		String nameErr = formBean.checkName(request);
 		List<String> callErr = formBean.checkCall(request);
 		String mailErr = formBean.checkMail(request);

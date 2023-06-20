@@ -23,6 +23,7 @@
 		</tr>
 		</c:if>
 			
+			
 		<tr>
 			<th class="nyuuryoku">電話：</th>
 			<td><input name="call" type="tel" pattern="[0-9]{10,11}" maxlength="11"></td>

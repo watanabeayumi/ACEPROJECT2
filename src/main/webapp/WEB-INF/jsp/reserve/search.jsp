@@ -54,7 +54,7 @@ pageEncoding="UTF-8"%>
 	<c:if test="${!empty ReserveErr}">
 		<c:forEach items="${ReserveErr}" var="err">
 			<tr>
-				<th class="errormsg"><c:out value="${err}" /></th>
+				<th class="errormsg"><c:out value="${err}"/></th>
 			</tr>
 		</c:forEach>
 	</c:if>
@@ -73,7 +73,7 @@ pageEncoding="UTF-8"%>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
-		<c:if test="${!empty NameErr}">
+		<c:if test="${!empty NameErr}"/>
 		<tr>
 			<th class="errormsg"><c:out value="${NameErr}"/></th>
 		</tr>
@@ -87,10 +87,10 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="th">※ハイフンなし、半角</th>
 		</tr>
-		<c:if test="${!empty CallErr}">
+		<c:if test="${!empty CallErr}"/>
 			<c:forEach items="${CallErr}" var="err">
 				<tr>
-					<th class="errormsg"><c:out value="${err}" /></th>
+					<th class="errormsg"><c:out value="${err}"/></th>
 				</tr>
 			</c:forEach>
 		</c:if>
@@ -100,7 +100,7 @@ pageEncoding="UTF-8"%>
 			<td><input name="mail" type="email"></td>
 		</tr>
 		
-		<c:if test="${!empty MailErr}">
+		<c:if test="${!empty MailErr}"/>
 			<tr>
 				<th class="errormsg"><c:out value="${MailErr}"/></th>
 			</tr>

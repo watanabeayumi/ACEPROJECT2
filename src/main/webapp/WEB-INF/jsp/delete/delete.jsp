@@ -17,17 +17,38 @@
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
+		<c:if test="${!empty NameErr}">
+		<tr>
+			<th class="errormsg"><c:out value="${NameErr}"/></th>
+		</tr>
+		</c:if>
+			
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
+			<td><input name="call" type="tel" pattern="[0-9]{10,11}" maxlength="11"></td>
 		</tr>
+
 		<tr>
 			<th class="th">※ハイフンなし、半角</th>
 		</tr>
+		<c:if test="${!empty CallErr}">
+			<c:forEach items="${CallErr}" var="err">
+				<tr>
+					<th class="errormsg"><c:out value="${err}"/></th>
+				</tr>
+			</c:forEach>
+		</c:if>
+		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="email"></td>
 		</tr>
+		
+		<c:if test="${!empty MailErr}">
+			<tr>
+				<th class="errormsg"><c:out value="${MailErr}"/></th>
+			</tr>
+		</c:if>
 	</table>
 	<table class="sousin">
 		<tr>

@@ -4718,10 +4718,9 @@ run();
   // {{MODULE_ADDITIONS}}
 
   return result;
+}
 onmessage = function(e){
   var catch_img = new ImageData(e.data,320,240); //送られたデータを使って、画像を生成する
   var code = zbarProcessImageData(catch_img); //画像を解析する
   postMessage(code);
 } 
-}
-

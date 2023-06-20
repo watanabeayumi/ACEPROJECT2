@@ -18,16 +18,15 @@ public class ReserveDAO extends CommonDAO {
 	private static final String SELECT_BY_CONCIRGE ="SELECT * FROM t_concierge WHERE concierge_cd=?";
 	private static final String SELECT_BY_INSERT="INSERT INTO t_reserve values (?, ?, ?, ?, ?, ?)";
 	private static final String SELECT_BY_DELETE="DELETE FROM t_reserve where name=? and tel=? and address=?";
+	
 	/**
-	 * selectReserveメソッド
-	 * 予約情報が入っているかを確認するためのDAOメソッドです。
+	 * 指定した日付と時間帯で予約が入っているかを確認するためのメソッドです。
 	 * @author 渡辺友里
 	 * @version 1.0
 	 * @param timeCd 時間帯コード
 	 * @return timeName
 	 * @throws DaoException
 	 */
-	
 	public List<LocalDate> selectReserve(LocalDate reserveDate, int conciergeCd) throws DaoException {
 		
 		List<LocalDate> reserveDateList = new ArrayList<>();
@@ -64,47 +63,50 @@ public class ReserveDAO extends CommonDAO {
 	}
 
 	/**
-	 * selectinsertメソッド
-	 * 予約情報を挿入するためのDAOメソッドです。
+	 * 予約情報を挿入するためのメソッドです。
 	 * @author 黒田
 	 * @version 1.0
+	 * @param date 予約日
+	 * @param time 時間帯コード
+	 * @param no コンシェルジュコード
+	 * @param name 名前
+	 * @param call 電話番号
+	 * @param mail メールアドレス
+	 * @return insert
+	 * @throws DaoException
 	 */
-	public int selectinsert(LocalDate date, int time, int no, String name,  String call, String mail)
-			throws DaoException{
-				int insert = 0;
-				try {
-					getConnection();
-					PreparedStatement statement=conn.prepareStatement(SELECT_BY_INSERT);
-					
-					statement.setDate(1, Date.valueOf(date));
-					statement.setInt(2, time);
-					statement.setInt(3, no);
-					statement.setString(4, name);
-					statement.setString(5, call);
-					statement.setString(6, mail);
-					insert=statement.executeUpdate();
-					
-					
-				
-				
-				}catch(SQLException e) {
-						throw new DaoException(e);
-				}finally {
-						closeConnection();
-				}
-				return insert;
-					
-				}
-	
+	public int selectinsert(LocalDate date, int time, int no, String name,  String call, String mail) throws DaoException{
+		int insert = 0;
+		try {
+			getConnection();
+			PreparedStatement statement=conn.prepareStatement(SELECT_BY_INSERT);
+			
+			statement.setDate(1, Date.valueOf(date));
+			statement.setInt(2, time);
+			statement.setInt(3, no);
+			statement.setString(4, name);
+			statement.setString(5, call);
+			statement.setString(6, mail);
+			insert=statement.executeUpdate();
+		}catch(SQLException e) {
+			throw new DaoException(e);
+		}finally {
+			closeConnection();
+		}
+		return insert;
+	}
 	
 	/**
-	 * selectDeleteメソッド
-	 * 予約情報を削除するためのDAOメソッドです。
+	 * 予約情報を削除するためのメソッドです。
 	 * @author 黒田
 	 * @version 1.0
+	 * @param name 名前
+	 * @param call 電話番号
+	 * @param mail メールアドレス
+	 * @return delete
+	 * @throws DaoException
 	 */
-	public int selectDelete(String name, String call, String mail)
-			throws DaoException {
+	public int selectDelete(String name, String call, String mail) throws DaoException {
 		int delete = 0;
 		try {
 			getConnection();
@@ -122,12 +124,16 @@ public class ReserveDAO extends CommonDAO {
 		return delete;
 	}
 	
-	
 	/**
-	 * reserveメソッド
-	 * 予約情報を削除するためのDAOメソッドです。
-	 * @author 
+	 * 名前と電話番号とメールアドレスを条件に、今日以降の予約が入ってるかどうかを確認するメソッド
+	 * @author 渡辺友里
 	 * @version 1.0
+	 * @param name 名前
+	 * @param tel 電話番号
+	 * @param address メールアドレス
+	 * @param reserve_date 予約日
+	 * @return reserve
+	 * @throws DaoException
 	 */
 	public Reserve reserve(String name, String tel, String address, LocalDate reserve_date) throws DaoException {
 		Reserve reserve = null;
@@ -146,20 +152,19 @@ public class ReserveDAO extends CommonDAO {
 				reserve.setReserveDate(resultSet.getDate("reserve_date").toLocalDate());
 				reserve.setConciergeCd(resultSet.getInt("concierge_cd"));
 				reserve.setTimeCd(resultSet.getInt("time_cd"));
-
 			}
-
 		} catch (SQLException e) {
 			throw new DaoException(e);
 		} finally {
 			closeConnection();
 		}
 		return reserve;
-
 	}
 	
 	/**
-	 * 
+	 * 時間帯コードから時間帯名を取得するメソッド
+	 * @author 渡辺友里
+	 * @version 1.0
 	 * @param timeCd 時間帯コード
 	 * @return timeName
 	 * @throws DaoException
@@ -186,7 +191,13 @@ public class ReserveDAO extends CommonDAO {
 		
 		return timeName;
 	}
-	
+	/**
+	 * コンシェルジュコードからコンシェルジュ名を取得するメソッド
+	 * @author 渡辺友里
+	 * @param conciergeCd コンシェルジュコード
+	 * @return conciergeName
+	 * @throws DaoException
+	 */
 	public String concierge(int conciergeCd) throws DaoException{
 		String conciergeName = null;
 		

@@ -25,9 +25,7 @@ import reserve.formbean.ReserveSearchFormBean;
 @WebServlet("/reserveConfirm")
 public class ReserveConfirmServlet extends HttpServlet {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		

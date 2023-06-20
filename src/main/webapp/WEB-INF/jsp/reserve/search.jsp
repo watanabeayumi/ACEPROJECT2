@@ -54,15 +54,21 @@ pageEncoding="UTF-8"%>
 	<c:if test="${!empty ReserveErr}">
 		<c:forEach items="${ReserveErr}" var="err">
 			<tr>
-				<th class="errormsg"><c:out value="${err}" /></th>
+				<th class="errormsg"><c:out value="${err}"/></th>
 			</tr>
 		</c:forEach>
 	</c:if>
 	</table>
+	
 	<br>
-	<p>相談内容：<c:out value="${conciergeName}"/></p>
+	
+	
 	<table> 
 	
+	    <tr>
+	   		 <th class="nyuuryoku">相談内容：</th>
+	    	<td class="nyuuryoku"><c:out value="${conciergeName}"/></td>
+	    </tr>
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
@@ -84,7 +90,7 @@ pageEncoding="UTF-8"%>
 		<c:if test="${!empty CallErr}">
 			<c:forEach items="${CallErr}" var="err">
 				<tr>
-					<th class="errormsg"><c:out value="${err}" /></th>
+					<th class="errormsg"><c:out value="${err}"/></th>
 				</tr>
 			</c:forEach>
 		</c:if>

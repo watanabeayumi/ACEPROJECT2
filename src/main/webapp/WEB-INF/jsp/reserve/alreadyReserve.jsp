@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>既に予約があります。</title>
+<link rel="stylesheet"  href="css/common.css">
 </head>
 <body>
 <p>相談内容：<c:out value="${AlreadyReserve.conciergeName}"/></p>

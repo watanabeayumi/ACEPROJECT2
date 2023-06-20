@@ -58,12 +58,6 @@ div{
 	border-style: double;
 	border-color: #f06292;
 }
-.tb{
-	margin: 2em auto; 
-	width: 8%;
-    padding: 0.6em;
-    font-size: 20px;
-}
 .nyuuryoku{
 	width: 10em;
     max-width: 100%;
@@ -71,6 +65,7 @@ div{
     box-sizing: border-box;
     margin: 0.7em 0 auto;
     font-size: 40px;
+    text-align: center;
 }
 .th{
 	font-size: 30px;
@@ -164,6 +159,8 @@ input[type=text]{
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
     line-height:2;
+    text-align: center;
+
 }
 input[type=tel]{
 	font-size: 200%;
@@ -171,6 +168,8 @@ input[type=tel]{
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
     line-height:2;
+    text-align: center;
+
 }
 input[type=email]{
 	font-size: 200%;
@@ -178,6 +177,8 @@ input[type=email]{
     border: 3px solid rgb(43, 60, 60);
     text-align:left;
     line-height:2;
+    text-align: center;
+
 }
 input[type=radio]{
     content: "";
@@ -186,12 +187,15 @@ input[type=radio]{
     width: 65px;
     height: 30px;
     visibility: visible;
+    text-align: center;
+
 }
 
 input[type=radio]:checked{
     border: 3px solid rgb(233, 64, 50);
     box-sizing: border-box;
     color: lightcoral;
+    text-align: center;
 }
 
 @media (max-width: 800px) {

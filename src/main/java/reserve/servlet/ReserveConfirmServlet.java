@@ -37,9 +37,9 @@ public class ReserveConfirmServlet extends HttpServlet {
 		
 		//2.もしエラーメッセージが空でなかった場合、エラーメッセージを表示させる。
 		List<String> reserveErr = formbean.checkDate(request);
-		List<String> nameErr = formbean.checkName(request);
+		String nameErr = formbean.checkName(request);
 		List<String> callErr = formbean.checkCall(request);
-		List<String> mailErr = formbean.checkMail(request);
+		String mailErr = formbean.checkMail(request);
 		
 		if(!reserveErr.isEmpty() || !nameErr.isEmpty() || !callErr.isEmpty() || !mailErr.isEmpty()){
 			if(!reserveErr.isEmpty()) {

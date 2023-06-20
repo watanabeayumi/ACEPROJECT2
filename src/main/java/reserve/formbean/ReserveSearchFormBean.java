@@ -27,13 +27,13 @@ public class ReserveSearchFormBean {
 		return reserveErr;
 	}
 	
-	public ArrayList<String> checkName(HttpServletRequest request){
+	public String checkName(HttpServletRequest request){
 		
 		name=request.getParameter("name");
 		
-		ArrayList<String> nameErr =new ArrayList<>();
+		String nameErr = null;
 		if("".equals(name)) {
-			nameErr.add("名前が入力されていません。");
+			nameErr = "名前が入力されていません。";
 		}
 		return nameErr;
 	}
@@ -58,13 +58,13 @@ public class ReserveSearchFormBean {
 		return callErr;
 	}
 	
-	public ArrayList<String> checkMail(HttpServletRequest request){
+	public String checkMail(HttpServletRequest request){
 		
 		mail=request.getParameter("mail");
 		
-		ArrayList<String> mailErr =new ArrayList<>();
+		String mailErr = null;
 		if("".equals(mail)) {
-			mailErr.add("メールアドレスが入力されていません。");
+			mailErr = "メールアドレスが入力されていません。";
 		}
 		return mailErr;
 	}

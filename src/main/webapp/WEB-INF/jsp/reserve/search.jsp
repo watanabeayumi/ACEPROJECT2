@@ -66,7 +66,8 @@ pageEncoding="UTF-8"%>
 	<table> 
 	
 	    <tr>
-	    <th class="nyuuryoku">相談内容：<c:out value="${conciergeName}"/></th>
+	   		 <th class="nyuuryoku">相談内容：</th>
+	    	<td><c:out value="${conciergeName}"/></td>
 	    </tr>
 		<tr>
 			<th class="nyuuryoku">お名前：</th>

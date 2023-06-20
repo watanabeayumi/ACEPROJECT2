@@ -26,8 +26,6 @@ import reserve.formbean.DeleteFormBean;
 @WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
 	
-	
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request,response);

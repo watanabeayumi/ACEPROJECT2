@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
 	<title>QuaggaJS</title>
-	<!-- CSS -->
+	<!-- CSS --> 
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body>

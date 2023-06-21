@@ -23,7 +23,7 @@
 
     function snapshot() {
       if (localMediaStream === null) return;
-      var k = (320 + 240) / (video.videoWidth + video.videoHeight);
+      var k = (800 + 500) / (video.videoWidth + video.videoHeight);
       canvas.width = Math.ceil(video.videoWidth * k);
       canvas.height = Math.ceil(video.videoHeight * k);
       var ctx = canvas.getContext('2d');

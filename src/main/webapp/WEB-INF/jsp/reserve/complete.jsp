@@ -12,6 +12,7 @@
 	<h1>ご相談予約完了</h1>
 	<h2>予約完了</h2>
 	<p id="touroku">登録できました</p>
+	<div class="imgpic2"></div>
 	<table class="sousin">
 		<tr>
 			<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>

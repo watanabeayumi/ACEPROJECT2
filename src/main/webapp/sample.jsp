@@ -10,73 +10,99 @@
 <script src="js/quagga.min.js">
 </script>
 <script>
-import Quagga from 'quagga';
 
-export class  ScanComponent {
- 
-public startCapture() {
-    // Quaggaの設定項目
-    const config = {
-      // カメラの映像の設定
-      inputStream: {
-        type: 'LiveStream',
-        // カメラ映像を表示するHTML要素の設定
-        target: '#camera-area',
-        // バックカメラの利用を設定. (フロントカメラは"user")
-        constraints: {
-          height: 300,
-          facingMode: 'environment'
-        },
-        size: 900,
-        // 検出範囲の指定:
-        area: { top: '0%', right: '0%', left: '0%', bottom: '30%' },
-        singleChannel: false
-      },
-      // 解析するワーカ数の設定
-      numOfWorkers: navigator.hardwareConcurrency || 4,
-      // バーコードの種類を設定
-      decoder: { readers: ['ean_reader'] },
-      locate: false
-    };
- 
-    Quagga.onDetected(result => {
-      // 検出時の処理
-      this.onDetected(result);
-    });
-    Quagga.onProcessed(result => {
-      // 検出中の処理
-      this.onProcessed(result);
-    });
-    // 初期化処理
-    Quagga.init(config, error => {
-      if (!!error) {
-        console.error(`Error: ${error}`, error);
-        return;
+var DetectedCount=0,DetectedCode="";
+var video,tmp,tmp_ctx,jan,prev,prev_ctx,w,h,mw,mh,x1,y1;
+window.addEventListener('load',function(event){
+  video=document.createElement('video');
+  video.setAttribute("autoplay","");
+  video.setAttribute("muted","");
+  video.setAttribute("playsinline","");
+  video.onloadedmetadata = function(e){video.play();};
+  prev=document.getElementById("preview");
+  prev_ctx=prev.getContext("2d");
+  tmp = document.createElement('canvas');
+  tmp_ctx = tmp.getContext("2d");
+  jan=document.getElementById("jan");
+
+  //カメラ使用の許可ダイアログが表示される
+  navigator.mediaDevices.getUserMedia(
+    //マイクはオフ, カメラの設定   背面カメラを希望する 640×480を希望する
+    {"audio":false,"video":{"facingMode":"environment","width":{"ideal":1000},"height":{"ideal":1000}}}
+  ).then( //許可された場合
+    function(stream){
+      video.srcObject = stream;
+      //0.5秒毎にスキャンする
+      setTimeout(Scan,500,true);
+    }
+  ).catch( //許可されなかった場合
+    function(err){jan.value+=err+'\n';}
+  );
+
+  function Scan(first){
+    if(first){
+      //選択された幅高さ
+      w=video.videoWidth;
+      h=video.videoHeight;
+      //画面上の表示サイズ
+      prev.style.width=(w/2)+"px";
+      prev.style.height=(h/2)+"px";
+      //内部のサイズ
+      prev.setAttribute("width",w);
+      prev.setAttribute("height",h);
+      mw=w*0.5;
+      mh=w*0.2;
+      x1=(w-mw)/2;
+      y1=(h-mh)/2;
+    }
+    prev_ctx.drawImage(video,0,0,w,h);
+    prev_ctx.beginPath();
+    prev_ctx.strokeStyle="rgb(255,0,0)";
+    prev_ctx.lineWidth=2;
+    prev_ctx.rect(x1,y1,mw,mh);
+    prev_ctx.stroke();
+    tmp.setAttribute("width",mw);
+    tmp.setAttribute("height",mh);
+    tmp_ctx.drawImage(prev,x1,y1,mw,mh,0,0,mw,mh);
+
+    tmp.toBlob(function(blob){
+      let reader = new FileReader();
+      reader.onload=function(){
+        let config={
+          decoder: {
+            readers: ["ean_reader","ean_8_reader"],
+            multiple: false, //同時に複数のバーコードを解析しない
+          },
+          locator:{patchSize:"large",halfSample:false},
+          locate:false,
+          src:reader.result,
+        };
+        Quagga.decodeSingle(config,function(){});
       }
-      // エラーがない場合は、読み取りを開始
-      Quagga.start();
+      reader.readAsDataURL(blob);
     });
+    setTimeout(Scan,50,false);
   }
-}
- 
-private onDetected(result): void {
-　const barcode = result.codeResult.code;
-  if(barcode) {
-    // バーコード検出時の処理を実装
- 
-    // 撮影を止める
-    this.stopCapture();
-  }
-}
- 
-private onProcessed(result): void {
-}
- 
-private stopCapture(): void {
-    Quagga.stop();
-}
+
+  Quagga.onDetected(function (result) {
+    //読み取り誤差が多いため、3回連続で同じ値だった場合に成功とする
+    if(DetectedCode==result.codeResult.code){
+      DetectedCount++;
+    }else{
+      DetectedCount=0;
+      DetectedCode=result.codeResult.code;
+    }
+    if(DetectedCount>31){
+      console.log(result.codeResult.code);
+      jan.value+=result.codeResult.code+'\n';
+      jan.scrollTop=jan.scrollHeight;
+      DetectedCode='';
+      DetectedCount=0;
+    }
+  });
+});
+
 </script>
-</head>
 <body>
 <c:if test="${!empty JanErr}">
 	<c:out value="${JanErr}" />

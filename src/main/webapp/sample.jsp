@@ -10,23 +10,71 @@
 <script src="js/quagga.min.js">
 </script>
 <script>
-var DetectedCount=0,DetectedCode="";
-var video,tmp,tmp_ctx,jan,prev,prev_ctx,w,h,mw,mh,x1,y1;
-window.addEventListener('load',function(event){
-  video=document.createElement('video');
-  video.setAttribute("autoplay","");
-  video.setAttribute("muted","");
-  video.setAttribute("playsinline","");
-  video.onloadedmetadata = function(e){video.play();};
-  prev=document.getElementById("preview");
-  prev_ctx=prev.getContext("2d");
-  tmp = document.createElement('canvas');
-  tmp_ctx = tmp.getContext("2d");
-  jan=document.getElementById("jan");
+import Quagga from 'quagga';
 
+export class  ScanComponent {
  
-
-   
+public startCapture() {
+    // Quaggaの設定項目
+    const config = {
+      // カメラの映像の設定
+      inputStream: {
+        type: 'LiveStream',
+        // カメラ映像を表示するHTML要素の設定
+        target: '#camera-area',
+        // バックカメラの利用を設定. (フロントカメラは"user")
+        constraints: {
+          height: 300,
+          facingMode: 'environment'
+        },
+        size: 900,
+        // 検出範囲の指定:
+        area: { top: '0%', right: '0%', left: '0%', bottom: '30%' },
+        singleChannel: false
+      },
+      // 解析するワーカ数の設定
+      numOfWorkers: navigator.hardwareConcurrency || 4,
+      // バーコードの種類を設定
+      decoder: { readers: ['ean_reader'] },
+      locate: false
+    };
+ 
+    Quagga.onDetected(result => {
+      // 検出時の処理
+      this.onDetected(result);
+    });
+    Quagga.onProcessed(result => {
+      // 検出中の処理
+      this.onProcessed(result);
+    });
+    // 初期化処理
+    Quagga.init(config, error => {
+      if (!!error) {
+        console.error(`Error: ${error}`, error);
+        return;
+      }
+      // エラーがない場合は、読み取りを開始
+      Quagga.start();
+    });
+  }
+}
+ 
+private onDetected(result): void {
+　const barcode = result.codeResult.code;
+  if(barcode) {
+    // バーコード検出時の処理を実装
+ 
+    // 撮影を止める
+    this.stopCapture();
+  }
+}
+ 
+private onProcessed(result): void {
+}
+ 
+private stopCapture(): void {
+    Quagga.stop();
+}
 </script>
 </head>
 <body>

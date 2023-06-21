@@ -4,15 +4,23 @@ body {
     background:url("../pic/cloud.jpg");
     text-align: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .imgpic{
     background-image:url("../pic/hitoboto.png");          
 	position: sticky;
     top: 0;
     background-repeat: no-repeat;
-    width: 90%;
+    width: 50%;
     height: 400px;
 } 
+.imgpic2{
+	background-image:url("../pic/nekosan.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+    width: 90%;
+    height: 400px;
+}
 h1 {
     /*h1タグ内の文字色を変える*/
     color: #f89174;

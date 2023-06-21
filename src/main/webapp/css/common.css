@@ -15,9 +15,9 @@ body {
 } 
 .imgpic2{
 	background-image:url("../pic/nekosan.png");
-	text-align: center;
+	margin : 0 auto;
 	background-repeat: no-repeat;
-    width: 80%;
+    width: 90%;
     height: 400px;
 }
 h1 {

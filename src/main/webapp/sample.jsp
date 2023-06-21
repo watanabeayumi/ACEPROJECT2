@@ -7,10 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=4,user-scalable=yes">
 <!-- quaggaJSの読み込み -->
-<script src="js/quagga.min.js">
-</script>
+<script src="js/quagga.min.js"></script>
 <script>
-
 var DetectedCount=0,DetectedCode="";
 var video,tmp,tmp_ctx,jan,prev,prev_ctx,w,h,mw,mh,x1,y1;
 window.addEventListener('load',function(event){
@@ -103,10 +101,8 @@ window.addEventListener('load',function(event){
 });
 
 </script>
-<body>
-<c:if test="${!empty JanErr}">
-	<c:out value="${JanErr}" />
-</c:if>
+</head>
+</html>
 <form action="sample" method="post">
   <div><canvas id="preview"></canvas></div>
   <textarea id="jan" name="jan" rows="8" cols="40"></textarea>

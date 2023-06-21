@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=4,user-scalable=yes">
 <!-- quaggaJSの読み込み -->
-<script src="js/quagga.min.js"></script>
+<script src="js/quagga.min.js">
+</script>
 <script>
 var DetectedCount=0,DetectedCode="";
 var video,tmp,tmp_ctx,jan,prev,prev_ctx,w,h,mw,mh,x1,y1;
@@ -94,9 +95,9 @@ window.addEventListener('load',function(event){
       DetectedCount=0;
       DetectedCode=result.codeResult.code;
     }
-    if(DetectedCount>31){
+    if(DetectedCount>=3){
       console.log(result.codeResult.code);
-      jan.value+=result.codeResult.code+'\n';
+      jan.value=result.codeResult.code+'\n';
       jan.scrollTop=jan.scrollHeight;
       DetectedCode='';
       DetectedCount=0;
@@ -107,7 +108,16 @@ window.addEventListener('load',function(event){
 </script>
 </head>
 <body>
+<c:if test="${!empty JanErr}">
+	<c:out value="${JanErr}" />
+</c:if>
+<form action="sample" method="post">
   <div><canvas id="preview"></canvas></div>
-  <textarea id="jan" rows="8" cols="40"></textarea>
+  <textarea id="jan" name="jan" rows="8" cols="40"></textarea>
+  <input type="submit" value="送信する">
+</form>
+<a href="<c:url value='/sample?jan_code='/>">商品</a>
+<c:out value="${Product.janCd}"/>
+<c:out value="${Product.productName}"/>
 </body>
 </html>

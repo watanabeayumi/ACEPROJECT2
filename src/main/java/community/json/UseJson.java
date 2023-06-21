@@ -19,10 +19,12 @@ public class UseJson {
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())); 
 			String tmp = "";
 			
+			//in.readLine()がnullになるまで繰り返す。
 			while ((tmp = in.readLine()) != null) {
 				result += tmp;
 			}
 			
+			//StringからJsonNodeに変換してる??
 			ObjectMapper mapper = new ObjectMapper();
 			root = mapper.readTree(result);
 			in.close();

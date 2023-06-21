@@ -15,11 +15,10 @@ body {
 } 
 .imgpic2{
 	background-image:url("../pic/nekosan.png");
-	position: sticky;
 	text-align: center;
 	background-repeat: no-repeat;
     width: 80%;
-    height: 300px;
+    height: 400px;
 }
 h1 {
     /*h1タグ内の文字色を変える*/

@@ -2,9 +2,9 @@
 <html>
   <head> </head>
   <body></body>
-  <script src="../js/code.jquery.com_jquery-3.7.0.min.js">
+  <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script>
   //データ取得
-  function ajaxRequest(lat,long){
 	  const url ='https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch';
 	  const appId ='dj00aiZpPXplM2JnMGdmVGc5WiZzPWNvbnN1bWVyc2VjcmV0Jng9MWM-';
 	  
@@ -12,17 +12,18 @@
 		  url: url,
 		  data:{
 			  appid: appid,
-			  jan_code: '4901085179611'
-		  }
+			  
+			  jan_code: 4901085179611
+		       }
 	  })
 	  .done(function(data){
-		  console.log(data);
+		  //console.log(data);
+		  console.log('商品名:' + data.hits.name);
 	  })
 	  .fail(function(){
 		  console.log('$.ajax failed!');
-	  })
-  }
+	  });
     
- console.log('商品名:' + data.hits/name);
+ 
  </script>
 </html>

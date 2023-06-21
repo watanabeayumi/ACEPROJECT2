@@ -20,7 +20,7 @@
 	  })
 	  .done(function(data){
 		  //console.log(data);
-		  console.log('商品名:' + data.hits.name);
+		  console.log('商品名:' + data.hits.name[1]);
 	  })
 	  .fail(function(){
 		  console.log('$.ajax failed!');

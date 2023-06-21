@@ -71,6 +71,10 @@ window.addEventListener('load',function(event){
             readers: ["ean_reader","ean_8_reader"],
             multiple: false, //同時に複数のバーコードを解析しない
           },
+          locate: true, // 精度向上のためlocateオプションを設定
+          src: reader.result,
+          singleChannel: false,
+        };
           locator:{patchSize:"large",halfSample:false},
           locate:false,
           src:reader.result,

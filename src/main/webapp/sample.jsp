@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=4,user-scalable=yes">
 <!-- quaggaJSの読み込み -->
-<script src="WEB-INF/lib/quagga.min.js"></script>
+<script src="js/quagga.min.js"></script>
 <script>
 var DetectedCount=0,DetectedCode="";
 var video,tmp,tmp_ctx,jan,prev,prev_ctx,w,h,mw,mh,x1,y1;
@@ -90,7 +90,7 @@ window.addEventListener('load',function(event){
       DetectedCount=0;
       DetectedCode=result.codeResult.code;
     }
-    if(DetectedCount>=1){
+    if(DetectedCount>31){
       console.log(result.codeResult.code);
       jan.value+=result.codeResult.code+'\n';
       jan.scrollTop=jan.scrollHeight;

@@ -51,7 +51,7 @@ public class JanCameraProductServlet extends HttpServlet {
 		flowbean.setJanCd(jan);
 		
 		session.setAttribute("Product", flowbean);
-		request.getRequestDispatcher("sample.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/reserve/product.jsp").forward(request, response);
 	}
 
 }

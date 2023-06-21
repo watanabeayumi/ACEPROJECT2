@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+	
+  <head>
+	 <meta charset="UTF-8">
+  </head>
   <body></body>
   <script src="https://code.jquery.com/jquery-3.7.0.js"
           integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
@@ -20,12 +23,14 @@
 	  })
 	  .done(function(data){
 		  //console.log(data);
+
 		  console.log('商品名:' + data.hits.name[1]);
+          console.log('商品名:' + data.hits.name);
+		  
 	  })
 	  .fail(function(){
 		  console.log('$.ajax failed!');
 	  });
-        
-   
+ 
  </script>
 </html>

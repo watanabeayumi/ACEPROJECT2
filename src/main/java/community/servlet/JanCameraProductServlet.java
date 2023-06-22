@@ -45,6 +45,12 @@ public class JanCameraProductServlet extends HttpServlet {
 		root = json.getJson(urlString);
 		
 		JsonNode hits = root.get("hits");
+		if(hits==null) {
+			String prodErr = "商品情報が存在しませんでした。";
+			request.setAttribute("JanErr", prodErr);
+			request.getRequestDispatcher("jan-camera.jsp").forward(request, response);
+			return;
+		}
 		JsonNode index = hits.get(5);
 		JsonNode name = index.get("name");
 		flowbean.setProductName(name);

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	
+  <head>
+	 <meta charset="UTF-8">
+  </head>
+  <body></body>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script>
+  //データ取得
+	  const url ='https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch';
+	  const appid ='dj00aiZpPThRZ2lYQ3JLanZuZSZzPWNvbnN1bWVyc2VjcmV0Jng9ZWY-';
+	  
+	  $.ajax({
+		  url: url,
+		  data:{
+			  appid: appid,
+			  
+			  jan_code: '4901085179611'
+		       }
+	  })
+	  .done(function(data){
+		  //console.log(data);
+
+		  console.log('商品名:' + data.hits[1].name);
+         
+		  
+	  })
+	  .fail(function(){
+		  console.log('$.ajax failed!');
+	  });
+ 
+ </script>
+</html>

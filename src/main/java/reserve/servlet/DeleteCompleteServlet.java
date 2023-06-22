@@ -16,25 +16,38 @@ import reserve.dao.ReserveDAO;
 import reserve.flowbean.DeleteFlowBean;
 
 
+/**
+ * 削除完了画面を開くサーブレットです。
+ * @author 黒田
+ * @version 1.0
+ */
+
+
+
 @WebServlet("/deleteComplete")
 public class DeleteCompleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	//黒田りさ作成
+	
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		request.removeAttribute("DeleteFlowBean");
+		
+		
 		HttpSession session=request.getSession(false);
+		//DeleteServletでセットしたkey名DeleteFlowBeanの値をDeleteFlowBeanにflowbeanって値でセット。（下でflowbean使う為。）
 		DeleteFlowBean flowbean=(DeleteFlowBean) session.getAttribute("DeleteFlowBean");
 		
 		int ret=0;
 		try {
+			
+	//formBeanのNameとTelとAddressをReserveDAOのselectDeleteに入れて削除。
 			ret = new ReserveDAO().selectDelete(flowbean.getName(), flowbean.getTel(), flowbean.getAddress());
 		} catch (DaoException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+	//retが0以外なら（削除できていたら）deleteComplete.jspに飛ばす。
 		if(ret !=0) {
 			request.getRequestDispatcher("/WEB-INF/jsp/delete/deleteComplete.jsp").forward(request, response);
 		}else {
@@ -42,6 +55,7 @@ public class DeleteCompleteServlet extends HttpServlet {
 			errMsgList.add("削除できませんでした。");
 			request.setAttribute("errMsgList", errMsgList);
 			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			request.removeAttribute("DeleteFlowBean");
 			return;
 			
 		}

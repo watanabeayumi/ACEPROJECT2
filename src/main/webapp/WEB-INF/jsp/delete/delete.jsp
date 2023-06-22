@@ -12,43 +12,59 @@
 <h1>ご相談予約削除</h1>
 <h2>ご入力下さい</h2>
 <form  action="<c:url value='/delete'/>" method="post">
+	<c:if test="${!empty errMsgList}">
+		<c:out value="${errMsgList}"/>
+	</c:if>
 	<table class="table">
 		<tr>
 			<th class="nyuuryoku">お名前：</th>
 			<td><input name="name" type="text"></td>
 		</tr>
-		<c:forEach var="i" begin="0" end="7" step="1">
+		<c:if test="${!empty NameErr}">
 		<tr>
-			<th></th>
-			<td></td>
+			<th class="errormsg"><c:out value="${NameErr}"/></th>
 		</tr>
-			</c:forEach>
+		</c:if>
+			
+			
 		<tr>
 			<th class="nyuuryoku">電話：</th>
-
-			<td><input name="call" type="tel" pattern="[0-9]{10,11}"></td>
-
-
+			<td><input name="call" type="tel" pattern="[0-9]{10,11}" maxlength="11"></td>
 		</tr>
-		<br>
+
 		<tr>
-			<th class="th">※ハイフンなし、半角でご記入下さい。</th>
-			
+			<th class="th">※ハイフンなし、半角</th>
 		</tr>
+		<c:if test="${!empty CallErr}">
+			<c:forEach items="${CallErr}" var="err">
+				<tr>
+					<th class="errormsg"><c:out value="${err}"/></th>
+				</tr>
+			</c:forEach>
+		</c:if>
 		
 		<tr>
 			<th class="nyuuryoku">メールアドレス：</th>
 			<td><input name="mail" type="email"></td>
 		</tr>
+		
+		<c:if test="${!empty MailErr}">
+			<tr>
+				<th class="errormsg"><c:out value="${MailErr}"/></th>
+			</tr>
+		</c:if>
 	</table>
-
-<table class="sousin">
-<tr>
-<th><a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a></th>
-<th><input type="submit" value="送信する" class="botton"></th>
+	<table class="sousin">
+		<tr>
+			<th>
+				<a href="<c:url value='/reserve.jsp'/>" class="anka" onclick="history.back()">メニューに戻る</a>
+			</th>
+			<th>
+				<input type="submit" value="送信する" class="botton">
+			</th>
+		</tr>
+	</table>
 </form>
-</tr>
-</table>
 </body>
 </html>
 

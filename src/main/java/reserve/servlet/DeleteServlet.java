@@ -1,6 +1,8 @@
 package reserve.servlet;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,10 +18,16 @@ import reserve.dto.Reserve;
 import reserve.flowbean.DeleteFlowBean;
 import reserve.formbean.DeleteFormBean;
 
+/**
+ * 削除確認画面を開くサーブレットです。
+ * @author  渡部あ、渡辺ゆ、黒田
+ * @version 1.0
+ */
 
 @WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
 	
+
 	
 	/**
 	 * 予約登録画面で登録した予約情報を取得して、予約登録内容を削除するサーブレットです。
@@ -27,30 +35,57 @@ public class DeleteServlet extends HttpServlet {
 	 * @version 1.0
 	 */
 	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+
 		//セッションから名前、予約情報DeleteFormBeanから取得する。
+
 		request.setCharacterEncoding("utf-8");
+		
+	//新たなセッション発行しない。
 		HttpSession session=request.getSession(false);
 		DeleteFormBean formBean = new DeleteFormBean();
-		List<String> errMsgList = formBean.validate(request);
 		
-		if (!errMsgList.isEmpty()) {
-			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+	//formBeanのvalidateの情報もらってerrMsgListに入れる。
+		String nameErr = formBean.checkName(request);
+		List<String> callErr = formBean.checkCall(request);
+		String mailErr = formBean.checkMail(request);
+		
+	//もしエラーメッセージリストの中身が入っていたらerrMsgListというキー名で値をセット。reserve.jspに飛ばす。
+		if(nameErr!=null || !callErr.isEmpty() || mailErr!=null){
+			if(nameErr!=null) {
+				request.setAttribute("NameErr", nameErr);
+			}
+			if(!callErr.isEmpty()) {
+				request.setAttribute("CallErr", callErr);
+			}
+			if(mailErr!=null) {
+				request.setAttribute("MailErr", mailErr);
+			}
+			request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request, response);
 			return;
 		}
 		DeleteFlowBean flowBean = new DeleteFlowBean();
+		
+	//formBeanのNameとTelとAddressをReserveDAOのreserveに入れ、その抽出結果を名前reserveに格納。
+		LocalDate nowDate = LocalDate.now();
 		try {
-			Reserve reserve = new ReserveDAO().reserve(formBean.getName(), formBean.getTel(), formBean.getAddress());
-			String timeName = new ReserveDAO().time(reserve.getTimeCd());
-			String conciergeName = new ReserveDAO().concierge(reserve.getConciergeCd());
+			ReserveDAO dao = new ReserveDAO();
+			Reserve reserve = dao.reserve(formBean.getName(), formBean.getTel(), formBean.getAddress(), nowDate);
+		
+	//上記で抽出されたTimeCdをReserveDAOのtimeに入れてtimeNameを抽出。
+			String timeName = dao.time(reserve.getTimeCd());
+			String conciergeName = dao.concierge(reserve.getConciergeCd());
+			
 			
 			flowBean = new DeleteFlowBean();
+			
+	//formBeanの値や上で抽出した値をflowBeanにセット。（確認画面のjspで出力する時に使う。）
 			flowBean.setName(formBean.getName());
 			flowBean.setTel(formBean.getTel());
 			flowBean.setAddress(formBean.getAddress());
@@ -61,12 +96,14 @@ public class DeleteServlet extends HttpServlet {
 			flowBean.setConciergeName(conciergeName);
 		} catch (DaoException e) {
 			e.printStackTrace();
+			List<String> errMsgList = new ArrayList<>();
 			errMsgList.add("入力された内容の予約情報は存在しませんでした。");
 			request.setAttribute("errMsgList", errMsgList);
-			request.getRequestDispatcher("reserve.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/delete/delete.jsp").forward(request, response);
 			return;
 		}
 		session.setAttribute("DeleteFlowBean",flowBean);
 		request.getRequestDispatcher("/WEB-INF/jsp/delete/deleteConfirm.jsp").forward(request,response);
 }
 	}
+

@@ -20,7 +20,12 @@ import reserve.formbean.DeleteFormBean;
 @WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
 	
-	//渡部あゆみと黒田りさ作成
+	
+	/**
+	 * 予約登録画面で登録した予約情報を取得して、予約登録内容を削除するサーブレットです。
+	 * @author 渡部あゆみ、黒田りさ
+	 * @version 1.0
+	 */
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -28,6 +33,7 @@ public class DeleteServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//セッションから名前、予約情報DeleteFormBeanから取得する。
 		request.setCharacterEncoding("utf-8");
 		HttpSession session=request.getSession(false);
 		DeleteFormBean formBean = new DeleteFormBean();

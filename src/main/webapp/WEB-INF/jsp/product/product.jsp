@@ -41,8 +41,8 @@
 		</div>
 
 		<div class="row">
-            <div class="bottom"><a href="<c:url value='/reviewUproad' />">口コミを見る</a></div>
-            <div class="bottom"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
+            <div class="col-2 content"><a href="<c:url value='/reviewUproad' />">口コミを見る</a></div>
+            <div class="col-2 content"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
         </div>
         
 

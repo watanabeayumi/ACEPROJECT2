@@ -11,18 +11,18 @@
 	<body>
 		<h1>商品情報</h1>
 		<div>
-			<div class="col-4">商品名</div>
-			<div class="col-8"><c:out value="${Product.productName}"/></div>
+			<div class="col-4 area">商品名</div>
+			<div class="col-8 area"><c:out value="${Product.productName}"/></div>
 		</div>
 		<div>
-			<div class="col-4">バーコード番号</div>
-			<div class="col-8"><c:out value="${Product.janCd}"/></div>
+			<div class="col-4 area">バーコード番号</div>
+			<div class="col-8 area"><c:out value="${Product.janCd}"/></div>
 		</div>
 		<div>
-			<div class="col-2">カテゴリ</div>
-			<div class="col-4"><c:out value="${Product.categoryName}"/></div>
-			<div class="col-2">商品カテゴリ</div>
-			<div class="col-4"><c:out value="${Product.prodCategoryName}"/></div>
+			<div class="col-2 area">カテゴリ</div>
+			<div class="col-4 area"><c:out value="${Product.categoryName}"/></div>
+			<div class="col-2 area">商品カテゴリ</div>
+			<div class="col-4 area"><c:out value="${Product.prodCategoryName}"/></div>
 		</div>
 		<div>
 			<div class="col-4">ブランド</div>

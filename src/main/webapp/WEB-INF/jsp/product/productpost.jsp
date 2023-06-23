@@ -9,33 +9,22 @@
 </head>
 <body>
    <h1>商品名:<c:out value="${Product.productName}"/></h1>
-   <form  action="Servlet" method="post">
+   <form action="Servlet" method="post">
    
-   <div class="review">
   <p>レビュー</p>
-  <div class="stars">
-    <input id="hoshi1" type="radio" name="hoshi" value="5" />
-    <label for="hoshi1">★</label>
-    <input id="hoshi2" type="radio" name="hoshi" value="4" />
-    <label for="hoshi2">★</label>
-    <input id="hoshi3" type="radio" name="hoshi" value="3" />
-    <label for="hoshi3">★</label>
-    <input id="hoshi4" type="radio" name="hoshi" value="2" />
-    <label for="hoshi4">★</label>
-    <input id="hoshi5" type="radio" name="hoshi" value="1" />
-    <label for="hoshi5">★</label>
- 
+  <select id="hyoka"name="hyoka">
+  評価<option value="1">★</option>
+      <option value="2">★★</option>
+      <option value="3">★★★</option>
+      <option value="4">★★★★</option>
+      <option value="5">★★★★★</option>
+  </select>
   </div>
-</div>
   ニックネーム<input name="name" type="textbox"><br>
-  投稿フォーム<textarea name="otoiawase" rows="5" cols="40"></textarea>
-  <th><input type="submit" value="送信する" class="botton"></th>
+  投稿フォーム<br>
+  <textarea name="touko" rows="5" cols="40"></textarea>
+  <th><input type="submit" value="投稿する" class="botton"></th>
 </form>
-	
-
-  
-
-
        
     
     

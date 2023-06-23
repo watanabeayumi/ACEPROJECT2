@@ -27,6 +27,8 @@
   投稿フォーム<textarea name="otoiawase" rows="5" cols="40"></textarea>
   <th><input type="submit" value="送信する" class="botton"></th>
 	</form>
+	
+
   
 
 

@@ -8,25 +8,36 @@ import java.net.URL;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * URLを開いてAPIからテキストを読み込み、それをJsonNode型に変換するためのクラス
+ * @author 渡辺友里
+ * @version 1.0
+ */
 public class UseJson {
 	public JsonNode getJson(String urlString) {
 		String result = "";
 		JsonNode root = null;
 		try {
+			//1.urlを接続する
 			URL url = new URL(urlString);
 			HttpURLConnection con = (HttpURLConnection)url.openConnection();
-			con.connect(); // URL接続
+			con.connect();
+			
+			//2.APIからレスポンスをもらう
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())); 
 			String tmp = "";
 			
-			//in.readLine()がnullになるまで繰り返す。
+			//3.in.readLine()がnullになるまで繰り返す
 			while ((tmp = in.readLine()) != null) {
 				result += tmp;
 			}
 			
-			//StringからJsonNodeに変換してる??
+			//4.JavaオブジェクトとJSON文字列の相互変換ができる
 			ObjectMapper mapper = new ObjectMapper();
+			
+			//5.JsonNode 型のオブジェクトとして読み込む
 			root = mapper.readTree(result);
+			
 			in.close();
 			con.disconnect();
 		}catch(Exception e) {

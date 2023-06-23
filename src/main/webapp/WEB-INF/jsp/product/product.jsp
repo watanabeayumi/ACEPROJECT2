@@ -20,7 +20,7 @@
                 <h1>商品情報</h1>
 	        </div>
         </div>
-
+<div class="border">
         <div class="row">
 			<div class="col-4 content">商品名</div>
 			<div class="col-8 content"><c:out value="${Product.productName}"/></div>
@@ -41,11 +41,11 @@
 		</div>
 
 		<div class="row">
-            <div class="col-2 content"><a href="<c:url value='/reviewUproad' />">口コミを見る</a></div>
-            <div class="col-2 content"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
+          <div class="col-2 content" id="seebotton"><a href="<c:url value='/reviewUproad' />">口コミを見る</a></div>
+          <div class="col-2 content" id="postbotton"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
         </div>
         
-
+</div>
     </div>
 
 	</body>

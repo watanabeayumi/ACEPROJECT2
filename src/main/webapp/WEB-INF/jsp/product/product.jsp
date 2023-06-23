@@ -39,6 +39,7 @@
 			<div class="col-4">ブランド</div>
 			<div class="col-8"><c:out value="${Product.brandName}"/></div>
 		</div>
+
 		<div class="row">
             <div class="bottom"><a href="<c:url value='/reviewUproad' />">口コミを見る</a></div>
             <div class="bottom"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
@@ -46,6 +47,7 @@
         
 
     </div>
+
 	</body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

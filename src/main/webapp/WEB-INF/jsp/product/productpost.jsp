@@ -9,7 +9,7 @@
 </head>
 <body>
    <h1>商品名:<c:out value="${Product.productName}"/></h1>
-   <form  action="" method="post">
+   <form  action="Servlet" method="post">
    
    <div class="review">
   <p>レビュー</p>
@@ -23,6 +23,11 @@
     </span>
   </div>
 </div>
+  ニックネーム<input name="name" type="textbox">
+  投稿フォーム<textarea name="otoiawase" rows="5" cols="40"></textarea>
+  <th><input type="submit" value="送信する" class="botton"></th>
+	</form>
+  
 
 
        

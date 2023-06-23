@@ -21,14 +21,9 @@
   </select>
   </div>
   ニックネーム<input name="name" type="textbox"><br>
-  投稿フォーム<textarea name="touko" rows="5" cols="40"></textarea>
+  投稿フォーム<textarea name="touko" rows="5" cols="30"></textarea>
   <th><input type="submit" value="投稿する" class="botton"></th>
 </form>
-	
-
-  
-
-
        
     
     

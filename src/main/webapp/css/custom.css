@@ -50,8 +50,32 @@ html, body{
 	align-items: center;
 }
 
-
-form {
-     width: 250px;
-     border: solid 1px black;
- }
+.hyoka{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.hyoka input[type='radio']{
+  display: none;
+}
+.hyoka label{
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 50px;
+}
+.hyoka label .text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+}
+.hyoka label:hover,
+.hyoka label:hover ~ label,
+.hyoka input[type='radio']:checked ~ label{
+  color: #ffcc00;
+}

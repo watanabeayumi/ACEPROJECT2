@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ProductPostServelet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 
 		
 		

@@ -9,7 +9,7 @@
 <body>
 <h1>商品名:<c:out value="${Product.productName}"/></h1>
 
-<form action="サイトURL" method="get/post">
+<form action="/productReview" method="post">
  <input type="search" name="search" placeholder="キーワードを入力”>
  <input type="submit" name="submit" value="検索”>
 </form>

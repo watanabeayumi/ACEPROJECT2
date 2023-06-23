@@ -9,5 +9,10 @@
 <body>
 <h1>商品名:<c:out value="${Product.productName}"/></h1>
 
+<form action="サイトURL" method="get/post">
+ <input type="search" name="search" placeholder="キーワードを入力”>
+ <input type="submit" name="submit" value="検索”>
+</form>
+<a href="productpost.jsp">投稿</a>
 </body>
 </html>

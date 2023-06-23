@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ProductPostServelet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
 		
+		
+request.getRequestDispatcher("/WEB-INF/jsp/product/productpost.jsp").forward(request, response);
 		
 	
 }

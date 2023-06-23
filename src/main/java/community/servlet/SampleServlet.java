@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import community.flowbean.ReviewFlowBean;
+import community.flowbean.ProductFlowBean;
 import community.formbean.ReviewFormBean;
 import community.json.UseJson;
 @WebServlet("/sample")
@@ -25,7 +25,7 @@ public class SampleServlet extends HttpServlet {
 		
 		HttpSession session=request.getSession(true);
 		ReviewFormBean formbean = new ReviewFormBean();
-		ReviewFlowBean flowbean = new ReviewFlowBean();
+		ProductFlowBean flowbean = new ProductFlowBean();
 		
 		String janErr = formbean.checkJan(request);
 		if(janErr!=null) {

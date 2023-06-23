@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import community.flowbean.ReviewFlowBean;
+import community.flowbean.ProductFlowBean;
 import community.formbean.ReviewFormBean;
 import community.json.UseJson;
 
@@ -25,7 +25,7 @@ public class JanCameraProductServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession(true);
 		ReviewFormBean formbean = new ReviewFormBean();
-		ReviewFlowBean flowbean = new ReviewFlowBean();
+		ProductFlowBean flowbean = new ProductFlowBean();
 		
 		String janErr = formbean.checkJan(request);
 		if(janErr!=null) {
@@ -51,12 +51,28 @@ public class JanCameraProductServlet extends HttpServlet {
 			return;
 		}
 		JsonNode index = hits.get(5);
-		JsonNode name = index.get("name");
-		flowbean.setProductName(name);
+		
+		JsonNode productName = index.get("name");
+		
+		JsonNode category = index.get("parentGenreCategories");
+		JsonNode categoryIndex =category.get(0);
+		JsonNode categoryName = categoryIndex.get("name");
+		
+		JsonNode pCategory = index.get("genreCategory");
+		JsonNode pCategoryName = pCategory.get("name");
+		
+		JsonNode brand = index.get("parentBrands");
+		JsonNode brandIndex = brand.get(1);
+		JsonNode brandName = brandIndex.get("name");
+		
+		flowbean.setProductName(productName);
 		flowbean.setJanCd(jan);
+		flowbean.setCategoryName(categoryName);
+		flowbean.setProdCategoryName(pCategoryName);
+		flowbean.setBrandName(brandName);
 		
 		session.setAttribute("Product", flowbean);
-		request.getRequestDispatcher("/WEB-INF/jsp/reserve/product.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/product/product.jsp").forward(request, response);
 	}
 
 }

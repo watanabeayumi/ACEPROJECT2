@@ -111,7 +111,5 @@
   <textarea id="jan" name="jan" rows="8" cols="40"></textarea>
   <input type="submit" value="送信する">
 </form>
-<c:out value="${Product.janCd}"/>
-<c:out value="${Product.productName}"/>
 </body>
 </html>

@@ -29,6 +29,6 @@
 			<div class="col-8"><c:out value="${Product.brandName}"/></div>
 		</div>
 		<a href="<c:url value='/productReview' />">口コミを見る</a>
-		<a href="<c:url value='/#' />">口コミを投稿する</a>
+		<a href="<c:url value='/productPost' />">口コミを投稿する</a>
 	</body>
 </html>

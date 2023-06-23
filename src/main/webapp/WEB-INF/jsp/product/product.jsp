@@ -45,6 +45,7 @@
           <div class="col-2 content" id="postbotton"><a href="<c:url value='/productPost' />">口コミを投稿する</a></div>
         </div>
         
+        
 </div>
     </div>
 

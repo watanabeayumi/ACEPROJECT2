@@ -4,7 +4,7 @@ body {
     background:url("../pic/cloud.jpg");
     text-align: center;
     background-size: cover;
-    background-repeat:repeat;
+    background-repeat: no-repeat;
 }
 .imgpic{
     background-image:url("../pic/hitoboto.png");          

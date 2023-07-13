@@ -3,8 +3,8 @@ body {
     /*ページ全体の背景色をベージュに*/
     background:url("../pic/cloud.jpg");
     text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   
+    
 }
 .imgpic{
     background-image:url("../pic/hitoboto.png");          

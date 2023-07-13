@@ -225,7 +225,7 @@ input[type=radio]:checked{
 }
 @media (min-width: 120px) {
     /* 横幅が120px以上の場合に適用するスタイル */
-    h1 {font-size: 35px;}
+    h1 {font-size: 20px;}
     h2 {font-size: 30px;}
     p{font-size: 20px;}
     .cp_hr07 {font-size: 25px;}

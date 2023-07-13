@@ -216,20 +216,21 @@ input[type=radio]:checked{
 
 @media (max-width: 800px) {
     /* 横幅が800px以下の場合に適用するスタイル */
-    h1 {font-size: 60px;}
-    h2 {font-size: 50px;}
-    .cp_hr07 {font-size: 45px;}
-    p {font-size: 30px;}
+    h1 {font-size: 35px;}
+    h2 {font-size: 30px;}
+    .cp_hr07 {font-size: 25px;}
+    p {font-size: 20px;}
   
 }
 @media (min-width: 120px) {
     /* 横幅が120px以上の場合に適用するスタイル */
-    h1 {font-size: 80px;}
-    h2 {font-size: 45px;}
-    p{font-size: 30px;}
-    .cp_hr07 {font-size: 45px;}
+    h1 {font-size: 35px;}
+    h2 {font-size: 30px;}
+    p{font-size: 20px;}
+    .cp_hr07 {font-size: 25px;}
     .th{font-size: 25px;}
     #errormsg{font-size: 30px;}
+    .imgpic{size: 20px;}
 }  
 @media (min-width: 320px) {
     p {font-size: 30px;}

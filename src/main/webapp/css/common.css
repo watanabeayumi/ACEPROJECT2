@@ -2,8 +2,9 @@
 body {
     /*ページ全体の背景色をベージュに*/
     background:url("../pic/cloud.jpg");
-    text-align: center;
-   
+    background-repeat: repeat;
+  max-width: 100%;
+  height: atuo;
     
 }
 .imgpic{
@@ -214,6 +215,19 @@ input[type=radio]:checked{
     text-align: center;
 }
 
+
+
+.errormsg{
+	margin: auto;
+    color: #C0392B;
+    background-color: #f2dede;
+	border: 1px solid #C0392B;
+	-webkit-border-radius: 4px;
+	-webkit-user-select: none;
+}
+.err{
+	text-align: left;
+}
 @media (max-width: 800px) {
     /* 横幅が800px以下の場合に適用するスタイル */
     h1 {font-size: 60px;}
@@ -234,16 +248,3 @@ input[type=radio]:checked{
 @media (min-width: 320px) {
     p {font-size: 30px;}
 }
-.errormsg{
-	margin: auto;
-    color: #C0392B;
-    background-color: #f2dede;
-	border: 1px solid #C0392B;
-	-webkit-border-radius: 4px;
-	-webkit-user-select: none;
-}
-.err{
-	text-align: left;
-}
-
-

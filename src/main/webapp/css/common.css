@@ -3,8 +3,8 @@ body {
     /*ページ全体の背景色をベージュに*/
     background:url("../pic/cloud.jpg");
     background-repeat: repeat;
-  max-width: 100%;
-  height: atuo;
+    max-width: 100%;
+    height: atuo;
     
 }
 .imgpic{

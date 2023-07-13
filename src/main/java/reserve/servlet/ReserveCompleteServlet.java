@@ -29,12 +29,12 @@ public class ReserveCompleteServlet extends HttpServlet {
 		
 		HttpSession session=request.getSession(false);
 		
-//ReserveCompleteServletで格納したテーブルの値（キー名ReserveSearchFlowBean）をReserveSearchFlowBeanにflowbeanという名前で格納。
+		//ReserveCompleteServletで格納したテーブルの値（キー名ReserveSearchFlowBean）をReserveSearchFlowBeanにflowbeanという名前で格納。
 		ReserveSearchFlowBean flowbean=(ReserveSearchFlowBean) session.getAttribute("ReserveSearchFlowBean");
 		
 		int ret=0;
 		try {
-//予約情報をReserveDAOのselectinsertに入れ、そのデータをreserveテーブルに挿入。
+			//予約情報をReserveDAOのselectinsertに入れ、そのデータをreserveテーブルに挿入。
 			ret = new ReserveDAO().selectinsert(flowbean.getReserveDate(), flowbean.getTimeCd(), (int)session.getAttribute("conciergeCd"), flowbean.getName(), flowbean.getCall(), flowbean.getMail());
 		} catch (DaoException e) {
 			// TODO 自動生成された catch ブロック
@@ -44,7 +44,7 @@ public class ReserveCompleteServlet extends HttpServlet {
 		request.removeAttribute("conciergeCd");
 		request.removeAttribute("ReserveDateList");
 		request.removeAttribute("WeekList");
-//上記で挿入できていれば（retが０以外なら）complete.jspに飛ばす。
+		//上記で挿入できていれば（retが０以外なら）complete.jspに飛ばす。
 		if(ret !=0) {
 			request.getRequestDispatcher("/WEB-INF/jsp/reserve/complete.jsp").forward(request, response);
 			

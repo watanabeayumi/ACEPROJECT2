@@ -215,8 +215,6 @@ input[type=radio]:checked{
     text-align: center;
 }
 
-
-
 .errormsg{
 	margin: auto;
     color: #C0392B;
